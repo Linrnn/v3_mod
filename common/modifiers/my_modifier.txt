@@ -1,0 +1,4 @@
+my_modifier_limit_ci =
+{
+	country_construction_add = -5
+}

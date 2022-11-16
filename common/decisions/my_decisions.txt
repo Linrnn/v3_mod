@@ -1,0 +1,35 @@
+my_decision_set_ci =
+{
+	possible =
+	{
+		OR =
+		{
+			is_player = yes
+			NOT = { has_modifier = my_modifier_limit_ci }
+		}
+	}
+	when_taken =
+	{
+		if =
+		{
+			limit = { has_modifier = my_modifier_limit_ci }
+			remove_modifier = my_modifier_limit_ci
+		}
+		else =
+		{
+			add_modifier = my_modifier_limit_ci
+		}
+	}
+	ai_chance =
+	{
+		base = 0
+		modifier =
+		{
+			trigger =
+			{
+				NOT = { has_modifier = my_modifier_limit_ci }
+			}
+			add = 100
+		}
+	}
+}
