@@ -33,3 +33,19 @@ my_decision_set_ci =
 		}
 	}
 }
+
+my_decision_add_cash
+{
+	possible =
+	{
+		is_player = yes
+	}
+	when_taken =
+	{
+		add_treasury = 10000000
+	}
+	ai_chance =
+	{
+		base = 0
+	}
+}
