@@ -1,0 +1,20 @@
+﻿NEconomy =
+{
+	MAX_WEEKLY_CONSTRUCTION_PROGRESS = 1000	# 单个项目每周的最大施工进度
+}
+
+NDiplomacy =
+{
+	DEFAULT_TRUCE_MONTHS = 0				# 停战（持续：月）
+	WAR_GOAL_HUMILIATION_MONTHS = 0			# 羞辱（持续：月）
+	BASE_YEARLY_INFAMY_DECAY_RATE = 100		# 恶名衰退（每年）
+
+	#EXPEL_DIPLOMATS_MONTHS = 0				# 驱逐外交官（持续：月）
+	#SWAY_OFFER_OBLIGATION_MANEUVERS_COST	# 通过 country_diplomatic_play_maneuvers_add 解决
+}
+
+#NCharacters =
+#{
+#	RECRUIT_COMMANDER_NUM_OPTIONS = 6		# 将领候选人
+#	RECRUIT_COMMANDER_POOL_SIZE = 12		# 将领候选池
+#}

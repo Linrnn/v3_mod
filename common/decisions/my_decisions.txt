@@ -1,23 +1,26 @@
-my_decision_set_ci =
+cheat_set_modifier_1 =
 {
+	#is_shown =
+	#{
+	#}
 	possible =
 	{
 		OR =
 		{
 			is_player = yes
-			NOT = { has_modifier = my_modifier_limit_ci }
+			NOT = { has_modifier = my_modifier_1 }
 		}
 	}
 	when_taken =
 	{
-		if =
+		IF =
 		{
-			limit = { has_modifier = my_modifier_limit_ci }
-			remove_modifier = my_modifier_limit_ci
+			LIMIT = { has_modifier = my_modifier_1 }
+			remove_modifier = my_modifier_1
 		}
-		else =
+		ELSE =
 		{
-			add_modifier = my_modifier_limit_ci
+			add_modifier = my_modifier_1
 		}
 	}
 	ai_chance =
@@ -31,5 +34,103 @@ my_decision_set_ci =
 			}
 			add = 100
 		}
+	}
+}
+
+cheat_add_cash
+{
+	possible =
+	{
+		is_player = yes
+	}
+	when_taken =
+	{
+		add_treasury = 100000000
+	}
+	ai_chance =
+	{
+		base = 0
+	}
+}
+
+cheat_annex_not_decentralized_country
+{
+	possible =
+	{
+		is_player = yes
+	}
+	when_taken =
+	{
+		every_country =
+		{
+			IF =
+			{
+				LIMIT =
+				{
+					NOT = { THIS = ROOT }
+					NOT = { is_country_type = decentralized } # 不是松散联邦（即不是可殖民国家）
+				}
+				ROOT = { annex = PREV }
+			}
+		}
+	}
+	ai_chance =
+	{
+		base = 0
+	}
+}
+
+cheat_annex_decentralized_country
+{
+	possible =
+	{
+		is_player = yes
+	}
+	when_taken =
+	{
+		every_country =
+		{
+			IF =
+			{
+				LIMIT =
+				{
+					NOT = { THIS = ROOT }
+					is_country_type = decentralized # 是松散联邦（即是可殖民国家）
+				}
+				ROOT = { annex = PREV }
+			}
+		}
+	}
+	ai_chance =
+	{
+		base = 0
+	}
+}
+
+cheat_remove_build
+{
+	possible =
+	{
+		is_player = yes
+	}
+	when_taken =
+	{
+		every_state =
+		{
+			remove_building = building_shipyards # 造船厂
+			remove_building = building_government_administration # 政府行政机构
+
+			remove_building = building_fishing_wharf # 渔业码头
+
+			remove_building = building_barracks # 兵营
+			remove_building = building_naval_base # 海军基地
+			remove_building = building_port # 港口
+
+			remove_building = building_construction_sector # 建筑部门
+		}
+	}
+	ai_chance =
+	{
+		base = 0
 	}
 }
