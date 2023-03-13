@@ -1,0 +1,32 @@
+﻿#建造部门，此mod需要放最后加载
+building_construction_sector = {
+	building_group = bg_construction
+	texture = "gfx/interface/icons/building_icons/construction_camp.dds"
+	city_type = city
+	levels_per_mesh = 5
+	
+	has_max_level = yes
+	
+	required_construction = construction_cost_very_low
+	unlocking_technologies = {
+		urbanization
+	}
+	production_method_groups = {
+		pmg_base_building_construction_sector
+		pmg_iron_weapon_recovery
+		pmg_steel_weapon_recovery
+		pmg_explosive_recovery
+		pmg_heavy_weapon_recovery
+	}
+	
+	possible = {
+		owner = {
+			OR = {
+				has_building = building_construction_sector
+				NOT = { is_subject_type = subject_type_puppet } # 不是傀儡国
+			}
+		}
+	}
+
+	ai_value = 2000 # Construction sector should generally be preferred over other equal-priority spending items
+}

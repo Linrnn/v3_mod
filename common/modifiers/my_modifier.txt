@@ -1,7 +1,7 @@
 my_modifier_1 =
 {
 	country_diplomatic_play_maneuvers_add = 10000	# 博弈行动力
+	country_construction_add = -4					# 建造力
 
-	#country_construction_add = -5					# 建造力
 	#country_infamy_decay_mult = 20					# 恶名衰退
 }
