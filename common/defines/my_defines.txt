@@ -1,20 +1,29 @@
 ﻿NEconomy =
 {
-	MAX_WEEKLY_CONSTRUCTION_PROGRESS = 1000	# 单个项目每周的最大施工进度
+	MAX_WEEKLY_CONSTRUCTION_PROGRESS = 100000		# 单个项目每周最大施工进度
+	MAX_WEEKLY_CONSTRUCTION_ALLOCATION = 100000		# 每周分配给项目的最大施工点
 }
 
 NDiplomacy =
 {
-	DEFAULT_TRUCE_MONTHS = 0				# 停战（持续：月）
-	WAR_GOAL_HUMILIATION_MONTHS = 0			# 羞辱（持续：月）
+	INFAMY_THRESHOLD_INFAMOUS = 250			# 声名狼藉阈值
+	INFAMY_THRESHOLD_NOTORIOUS = 500		# 臭名昭著阈值
+	INFAMY_THRESHOLD_PARIAH = 1000			# 国际弃民阈值
 	BASE_YEARLY_INFAMY_DECAY_RATE = 100		# 恶名衰退（每年）
 
+	# DEFAULT_TRUCE_MONTHS = 0				# 停战（持续：月）
+	# WAR_GOAL_HUMILIATION_MONTHS = 0		# 羞辱（持续：月）
 	#EXPEL_DIPLOMATS_MONTHS = 0				# 驱逐外交官（持续：月）
 	#SWAY_OFFER_OBLIGATION_MANEUVERS_COST	# 通过 country_diplomatic_play_maneuvers_add 解决
 }
 
+#NPops =
+#{
+#	MIGRATION_MAX_EMIGRATION_AS_POPULATION_FRACTION = 0.01	# 每周移民的上限被限制在一个州人口的这一部分
+#}
+
 #NCharacters =
 #{
-#	RECRUIT_COMMANDER_NUM_OPTIONS = 6		# 将领候选人
-#	RECRUIT_COMMANDER_POOL_SIZE = 12		# 将领候选池
+#	RECRUIT_COMMANDER_NUM_OPTIONS = 6	# 将领候选人
+#	RECRUIT_COMMANDER_POOL_SIZE = 12	# 将领候选池
 #}

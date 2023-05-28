@@ -1,136 +1,117 @@
-cheat_set_modifier_1 =
+cheat_设置修正_1 =
 {
-	#is_shown =
-	#{
+	#is_shown = {
 	#}
-	possible =
-	{
-		OR =
-		{
+	possible = {
+		or = {
 			is_player = yes
-			NOT = { has_modifier = my_modifier_1 }
+			not = {
+				has_modifier = my_modifier_1
+			}
 		}
 	}
-	when_taken =
-	{
-		IF =
-		{
-			LIMIT = { has_modifier = my_modifier_1 }
+	when_taken = {
+		if = {
+			limit = {
+				has_modifier = my_modifier_1
+			}
 			remove_modifier = my_modifier_1
 		}
-		ELSE =
-		{
+		else = {
 			add_modifier = my_modifier_1
 		}
 	}
-	ai_chance =
-	{
+	ai_chance = {
 		base = 0
-		modifier =
-		{
-			trigger =
-			{
-				NOT = { has_modifier = my_modifier_limit_ci }
+		modifier = {
+			trigger = {
+				not = {
+					has_modifier = my_modifier_1
+				}
 			}
 			add = 100
 		}
 	}
 }
 
-cheat_add_cash
+cheat_增加金币
 {
-	possible =
-	{
+	possible = {
 		is_player = yes
 	}
-	when_taken =
-	{
+	when_taken = {
 		add_treasury = 100000000
 	}
-	ai_chance =
-	{
+	ai_chance = {
 		base = 0
 	}
 }
 
-cheat_annex_not_decentralized_country
+cheat_吞并普通国家
 {
-	possible =
-	{
+	possible = {
 		is_player = yes
 	}
-	when_taken =
-	{
-		every_country =
-		{
-			IF =
-			{
-				LIMIT =
-				{
-					NOT = { THIS = ROOT }
-					NOT = { is_country_type = decentralized } # 不是松散联邦（即不是可殖民国家）
+	when_taken = {
+		every_country = {
+			if = {
+				limit = {
+					not = {
+						this = root
+						is_country_type = decentralized		# 松散联邦（即可殖民国家）
+					}
 				}
-				ROOT = { annex = PREV }
+				root = {
+					annex = prev
+				}
 			}
 		}
 	}
-	ai_chance =
-	{
+	ai_chance = {
 		base = 0
 	}
 }
 
-cheat_annex_decentralized_country
+cheat_吞并松散联邦
 {
-	possible =
-	{
+	possible = {
 		is_player = yes
 	}
-	when_taken =
-	{
-		every_country =
-		{
-			IF =
-			{
-				LIMIT =
-				{
-					NOT = { THIS = ROOT }
-					is_country_type = decentralized # 是松散联邦（即是可殖民国家）
+	when_taken = {
+		every_country = {
+			if = {
+				limit = {
+					not = {
+						this = root
+					}
+					is_country_type = decentralized
 				}
-				ROOT = { annex = PREV }
+				root = {
+					annex = prev
+				}
 			}
 		}
 	}
-	ai_chance =
-	{
+	ai_chance = {
 		base = 0
 	}
 }
 
-cheat_remove_build
+cheat_移除建筑
 {
-	possible =
-	{
+	possible = {
 		is_player = yes
 	}
-	when_taken =
-	{
-		every_state =
-		{
-			remove_building = building_shipyards # 造船厂
-			remove_building = building_government_administration # 政府行政机构
-
-			remove_building = building_fishing_wharf # 渔业码头
-
-			remove_building = building_barracks # 兵营
-			remove_building = building_naval_base # 海军基地
-			remove_building = building_port # 港口
-
-			remove_building = building_construction_sector # 建筑部门
+	when_taken = {
+		every_state = {
+			every_scope_building = {
+				state = {
+					remove_building = prev
+				}
+			}
 		}
 	}
-	ai_chance =
-	{
+	ai_chance = {
 		base = 0
 	}
 }
