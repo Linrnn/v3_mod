@@ -4,7 +4,7 @@ cheat_设置修正_1 =
 	#}
 	possible = {
 		or = {
-			is_player = yes
+			#is_player = yes
 			not = {
 				has_modifier = my_modifier_1
 			}
@@ -34,84 +34,84 @@ cheat_设置修正_1 =
 	}
 }
 
-cheat_增加金币
-{
-	possible = {
-		is_player = yes
-	}
-	when_taken = {
-		add_treasury = 100000000
-	}
-	ai_chance = {
-		base = 0
-	}
-}
+# cheat_增加金币
+# {
+# 	possible = {
+# 		is_player = yes
+# 	}
+# 	when_taken = {
+# 		add_treasury = 100000000
+# 	}
+# 	ai_chance = {
+# 		base = 0
+# 	}
+# }
 
-cheat_吞并普通国家
-{
-	possible = {
-		is_player = yes
-	}
-	when_taken = {
-		every_country = {
-			if = {
-				limit = {
-					not = {
-						this = root
-						is_country_type = decentralized		# 松散联邦（即可殖民国家）
-					}
-				}
-				root = {
-					annex = prev
-				}
-			}
-		}
-	}
-	ai_chance = {
-		base = 0
-	}
-}
+# cheat_吞并普通国家
+# {
+# 	possible = {
+# 		is_player = yes
+# 	}
+# 	when_taken = {
+# 		every_country = {
+# 			if = {
+# 				limit = {
+# 					not = {
+# 						this = root
+# 						is_country_type = decentralized		# 松散联邦（即可殖民国家）
+# 					}
+# 				}
+# 				root = {
+# 					annex = prev
+# 				}
+# 			}
+# 		}
+# 	}
+# 	ai_chance = {
+# 		base = 0
+# 	}
+# }
 
-cheat_吞并松散联邦
-{
-	possible = {
-		is_player = yes
-	}
-	when_taken = {
-		every_country = {
-			if = {
-				limit = {
-					not = {
-						this = root
-					}
-					is_country_type = decentralized
-				}
-				root = {
-					annex = prev
-				}
-			}
-		}
-	}
-	ai_chance = {
-		base = 0
-	}
-}
+# cheat_吞并松散联邦
+# {
+# 	possible = {
+# 		is_player = yes
+# 	}
+# 	when_taken = {
+# 		every_country = {
+# 			if = {
+# 				limit = {
+# 					not = {
+# 						this = root
+# 					}
+# 					is_country_type = decentralized
+# 				}
+# 				root = {
+# 					annex = prev
+# 				}
+# 			}
+# 		}
+# 	}
+# 	ai_chance = {
+# 		base = 0
+# 	}
+# }
 
-cheat_移除建筑
-{
-	possible = {
-		is_player = yes
-	}
-	when_taken = {
-		every_state = {
-			every_scope_building = {
-				state = {
-					remove_building = prev
-				}
-			}
-		}
-	}
-	ai_chance = {
-		base = 0
-	}
-}
+# cheat_移除建筑
+# {
+# 	possible = {
+# 		is_player = yes
+# 	}
+# 	when_taken = {
+# 		every_state = {
+# 			every_scope_building = {
+# 				state = {
+# 					remove_building = prev
+# 				}
+# 			}
+# 		}
+# 	}
+# 	ai_chance = {
+# 		base = 0
+# 	}
+# }
