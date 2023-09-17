@@ -1,4 +1,10 @@
 ﻿l_simp_chinese:
+ building_output_fish_mult:0 "建筑@fish!鱼类产出"
+ building_output_wood_mult:0 "建筑@wood!木材产出"
+ building_output_rubber_mult:0 "建筑@rubber!糖产出"
+ building_output_iron_mult:0 "建筑@iron!铁产出"
+ building_output_lead_mult:0 "建筑@lead!铅矿产出"
+
  state_trait_lorraine_iron:0 "洛林铁场"
  state_trait_iron_range:0 "铁矿山"
  state_trait_anthracite:0 "无烟煤"
@@ -42,7 +48,7 @@
  default_building_subsistence_arctic:0 "北极$default_building_subsistence_farms$"
  default_building_subsistence_dry:0 "干式$default_building_subsistence_farms$"
  default_building_subsistence_middle_eastern:0 "中东$default_building_subsistence_farms$"
- 
+
  state_trait_baku:0 "第一巴库"
  state_trait_rich_oil:0 "丰富的石油储备"
  state_trait_rich_rubber:0 "适用于橡胶生产"
