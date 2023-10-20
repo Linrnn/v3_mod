@@ -1,11 +1,24 @@
-my_modifier_1 = {
-	country_diplomatic_play_maneuvers_add = 10000	# 博弈行动力
-	#country_construction_add = -4					# 建造力
+# my_modifier_1 = {
+# 	country_diplomatic_play_maneuvers_add = 10000	# 博弈行动力
+# 	#country_construction_add = -4					# 建造力
 
-	#country_infamy_decay_mult = 20					# 恶名衰退
-}
+# 	#country_infamy_decay_mult = 20					# 恶名衰退
+# }
 
-#========================以下为原版修正========================
+# my_asset_output_modifier = {
+# 	# 新增修正
+# 	building_output_fish_mult = 100
+# 	building_output_wood_mult = 1
+# 	building_output_rubber_mult = 100
+# 	building_output_iron_mult = 1
+# 	building_output_lead_mult = 1
+# 	# 原版修正
+# 	building_output_oil_mult = 100
+# 	building_output_sugar_mult = 100
+# 	building_output_hardwood_mult = 1
+# }
+
+#==============================以下为原版修正==============================
 # 每级识字率修正
 country_literacy_rate = {
 	# 原版
@@ -26,4 +39,67 @@ state_region_devastation = {
 	# 新增
 	state_birth_rate_mult = -1.0					# 州出生率
     state_standard_of_living_add = -10				# 州生活水平
+}
+
+#==============================以下为模版修正==============================
+#building_throughput_{good_type}_mult	吞吐量修正
+#building_output_{good_type}_mult		产出修正
+
+# 产出修正模版
+output_modifier_template = {
+	# 日用品
+	building_output_grain_mult = 0.0				# 谷物
+	building_output_fish_mult = 0.0					# 鱼类
+	building_output_fabric_mult = 0.0				# 织物
+	building_output_wood_mult = 0.0					# 木材
+	building_output_groceries_mult = 0.0			# 加工食品
+	building_output_clothes_mult = 0.0				# 衣物
+	building_output_furniture_mult = 0.0			# 家具
+	building_output_paper_mult = 0.0				# 纸张
+	building_output_services_mult = 0.0				# 服务
+	building_output_transportation_mult = 0.0		# 运力
+	building_output_electricity_mult = 0.0			# 电力
+	# 工业品
+	building_output_clippers_mult = 0.0				# 帆船
+	building_output_steamers_mult = 0.0				# 蒸汽船
+	building_output_silk_mult = 0.0					# 丝绸
+	building_output_dye_mult = 0.0					# 染料
+	building_output_sulfur_mult = 0.0				# 硫磺
+	building_output_coal_mult = 0.0					# 煤炭
+	building_output_iron_mult = 0.0					# 铁
+	building_output_lead_mult = 0.0					# 铅矿
+	building_output_hardwood_mult = 0.0				# 硬木
+	building_output_rubber_mult = 0.0				# 橡胶
+	building_output_oil_mult = 0.0					# 油
+	building_output_engines_mult = 0.0				# 发动机
+	building_output_steel_mult = 0.0				# 钢
+	building_output_glass_mult = 0.0				# 玻璃
+	building_output_fertilizer_mult = 0.0			# 肥料
+	building_output_tools_mult = 0.0				# 工具
+	building_output_explosives_mult = 0.0			# 炸药
+	# 奢侈品
+	building_output_porcelain_mult = 0.0			# 瓷器
+	building_output_meat_mult = 0.0					# 肉类
+	building_output_fruit_mult = 0.0				# 水果
+	building_output_liquor_mult = 0.0				# 烈酒
+	building_output_wine_mult = 0.0					# 葡萄酒
+	building_output_tea_mult = 0.0					# 茶叶
+	building_output_coffee_mult = 0.0				# 咖啡
+	building_output_sugar_mult = 0.0				# 糖
+	building_output_tobacco_mult = 0.0				# 烟草
+	building_output_opium_mult = 0.0				# 鸦片
+	building_output_automobiles_mult = 0.0			# 汽车
+	building_output_telephones_mult = 0.0			# 电话机
+	building_output_radios_mult = 0.0				# 无线电
+	building_output_luxury_clothes_mult = 0.0		# 高档衣服
+	building_output_luxury_furniture_mult = 0.0		# 高档家具
+	building_output_fine_art_mult = 0.0				# 艺术品
+	# 军用品
+	building_output_ammunition_mult = 0.0			# 弹药
+	building_output_small_arms_mult = 0.0			# 轻武器
+	building_output_artillery_mult = 0.0			# 火炮
+	building_output_tanks_mult = 0.0				# 坦克
+	building_output_aeroplanes_mult = 0.0			# 飞机
+	building_output_manowars_mult = 0.0				# 风帆战舰
+	building_output_ironclads_mult = 0.0			# 铁甲舰
 }

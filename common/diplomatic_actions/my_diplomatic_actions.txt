@@ -1,5 +1,4 @@
-﻿cheat_附庸国家 =
-{
+﻿cheat_附庸国家 = {
 	requires_approval = no
 	should_notify_third_parties = no
 	show_effect_in_tooltip = no
@@ -70,8 +69,7 @@ cheat_认可国家 = {
     }
 }
 
-# cheat_吞并国家 =
-# {
+# cheat_吞并国家 = {
 # 	requires_approval = no
 # 	should_notify_third_parties = no
 # 	show_effect_in_tooltip = no
@@ -95,8 +93,7 @@ cheat_认可国家 = {
 # 	}
 # }
 
-# cheat_移除建筑 =
-# {
+# cheat_移除建筑 = {
 # 	requires_approval = no
 # 	should_notify_third_parties = no
 # 	show_effect_in_tooltip = no

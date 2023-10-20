@@ -1,40 +1,40 @@
-cheat_设置修正_1 = {
-	is_shown = {
-		not = {
-			has_modifier = my_modifier_1
-		}
-	}
+# cheat_设置修正_1 = {
+# 	is_shown = {
+# 		not = {
+# 			has_modifier = my_modifier_1
+# 		}
+# 	}
 
-	possible = {
-		not = {
-			has_modifier = my_modifier_1
-		}
-	}
+# 	possible = {
+# 		not = {
+# 			has_modifier = my_modifier_1
+# 		}
+# 	}
 
-	when_taken = {
-		if = {
-			limit = {
-				has_modifier = my_modifier_1
-			}
-			remove_modifier = my_modifier_1
-		}
-		else = {
-			add_modifier = my_modifier_1
-		}
-	}
+# 	when_taken = {
+# 		if = {
+# 			limit = {
+# 				has_modifier = my_modifier_1
+# 			}
+# 			remove_modifier = my_modifier_1
+# 		}
+# 		else = {
+# 			add_modifier = my_modifier_1
+# 		}
+# 	}
 
-	ai_chance = {
-		base = 0
-		modifier = {
-			trigger = {
-				not = {
-					has_modifier = my_modifier_1
-				}
-			}
-			add = 100
-		}
-	}
-}
+# 	ai_chance = {
+# 		base = 0
+# 		modifier = {
+# 			trigger = {
+# 				not = {
+# 					has_modifier = my_modifier_1
+# 				}
+# 			}
+# 			add = 100
+# 		}
+# 	}
+# }
 
 # cheat_资源修正 = {
 # 	possible = {
