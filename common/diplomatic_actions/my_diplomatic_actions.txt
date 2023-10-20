@@ -2,7 +2,6 @@
 	requires_approval = no
 	should_notify_third_parties = no
 	show_effect_in_tooltip = no
-
 	potential = {
 		is_player = yes
 		not = {
@@ -16,14 +15,12 @@
 			}
 		}
 	}
-
 	accept_effect = {
 		scope:target_country = {
 			change_subject_type = subject_type_puppet
 		}
 		#save_scope_as = scope_rootxxx
 	}
-
 	ai = {
 		will_propose = {
 			always = no
@@ -35,7 +32,6 @@ cheat_认可国家 = {
 	requires_approval = no
     should_notify_third_parties = no
 	show_effect_in_tooltip = yes
-
 	potential = {
 		country_rank >= rank_value:great_power
 		OR = {
@@ -46,7 +42,6 @@ cheat_认可国家 = {
 			is_country_type = unrecognized
 		}
 	}
-
     possible = {
         is_at_war = no
         is_revolutionary = no
@@ -55,13 +50,11 @@ cheat_认可国家 = {
 			has_war_with = scope:target_country
 		}
 	}
-
     accept_effect = {
         scope:target_country = {
 			set_country_type = recognized
 		}
     }
-
     ai = {
         will_propose = {
             always = no
@@ -73,7 +66,6 @@ cheat_认可国家 = {
 # 	requires_approval = no
 # 	should_notify_third_parties = no
 # 	show_effect_in_tooltip = no
-
 # 	potential = {
 # 		is_player = yes
 # 		scope:target_country = {
@@ -81,11 +73,9 @@ cheat_认可国家 = {
 # 			is_subject_type = subject_type_puppet
 # 		}
 # 	}
-
 # 	accept_effect = {
 # 		annex = scope:target_country
 # 	}
-
 # 	ai = {
 # 		will_propose = {
 # 			always = no
@@ -97,7 +87,6 @@ cheat_认可国家 = {
 # 	requires_approval = no
 # 	should_notify_third_parties = no
 # 	show_effect_in_tooltip = no
-
 # 	potential = {
 # 		is_player = yes
 # 		scope:target_country = {
@@ -105,7 +94,6 @@ cheat_认可国家 = {
 # 			is_subject_type = subject_type_puppet
 # 		}
 # 	}
-
 # 	accept_effect = {
 # 		scope:target_country = {
 # 			every_scope_state = {
@@ -117,7 +105,6 @@ cheat_认可国家 = {
 # 			}
 # 		}
 # 	}
-
 # 	ai = {
 # 		will_propose = {
 # 			always = no

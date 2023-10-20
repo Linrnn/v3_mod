@@ -1,28 +1,78 @@
+cheat_重置生育法律 = {
+	is_shown = {
+		is_player = yes
+	}
+	possible = {
+		not = {
+			has_law = law_type:law_no_childbirth_policy
+		}
+	}
+	when_taken = {
+		activate_law = law_type:law_no_childbirth_policy	# 激活法律
+	}
+	ai_chance = {
+		base = 0
+	}
+}
+
+cheat_设置附庸经济法律 = {
+	is_shown = {
+		is_player = yes
+	}
+	possible = {
+		any_country = {
+			is_subject_of = root
+			not = {
+				has_law = law_type:law_industry_banned
+			}
+		}
+	}
+	when_taken = {
+		every_country = {
+			if = {
+				limit = {
+					is_subject_of = root
+					not = {
+						has_law = law_type:law_industry_banned
+					}
+				}
+				activate_law = law_type:law_industry_banned
+			}
+		}
+	}
+	ai_chance = {
+		base = 0
+	}
+}
+
 # cheat_设置修正_1 = {
 # 	is_shown = {
 # 		not = {
 # 			has_modifier = my_modifier_1
 # 		}
 # 	}
-
 # 	possible = {
 # 		not = {
 # 			has_modifier = my_modifier_1
 # 		}
 # 	}
-
 # 	when_taken = {
 # 		if = {
 # 			limit = {
 # 				has_modifier = my_modifier_1
 # 			}
 # 			remove_modifier = my_modifier_1
+# 			every_interest_group = {							# 每一个利益集团
+# 				remove_ideology = ideology_my_childbirth_policy	# 移除意识形态
+# 			}
 # 		}
 # 		else = {
 # 			add_modifier = my_modifier_1
+# 			every_interest_group = {							# 每一个利益集团
+# 				add_ideology = ideology_my_childbirth_policy	# 增加意识形态
+# 			}
 # 		}
 # 	}
-
 # 	ai_chance = {
 # 		base = 0
 # 		modifier = {
@@ -43,7 +93,6 @@
 # 			has_modifier = my_asset_output_modifier
 # 		}
 # 	}
-
 # 	when_taken = {
 # 		if = {
 # 			limit = {
@@ -55,7 +104,6 @@
 # 			add_modifier = my_asset_output_modifier
 # 		}
 # 	}
-
 # 	ai_chance = {
 # 		base = 0
 # 	}
@@ -65,11 +113,9 @@
 # 	possible = {
 # 		is_player = yes
 # 	}
-#
 # 	when_taken = {
 # 		add_treasury = 100000000
 # 	}
-#
 # 	ai_chance = {
 # 		base = 0
 # 	}
@@ -79,7 +125,6 @@
 # 	possible = {
 # 		is_player = yes
 # 	}
-#
 # 	when_taken = {
 # 		every_country = {
 # 			if = {
@@ -95,7 +140,6 @@
 # 			}
 # 		}
 # 	}
-#
 # 	ai_chance = {
 # 		base = 0
 # 	}
@@ -105,7 +149,6 @@
 # 	possible = {
 # 		is_player = yes
 # 	}
-#
 # 	when_taken = {
 # 		every_country = {
 # 			if = {
@@ -121,7 +164,6 @@
 # 			}
 # 		}
 # 	}
-#
 # 	ai_chance = {
 # 		base = 0
 # 	}
@@ -131,7 +173,6 @@
 # 	possible = {
 # 		is_player = yes
 # 	}
-#
 # 	when_taken = {
 # 		every_state = {
 # 			every_scope_building = {
@@ -141,7 +182,6 @@
 # 			}
 # 		}
 # 	}
-#
 # 	ai_chance = {
 # 		base = 0
 # 	}

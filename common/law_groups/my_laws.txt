@@ -1,10 +1,10 @@
 ﻿lawgroup_modifier_policy = {
 	law_group_category = power_structure
-	#base_enactment_days = 1
+	#progressive_movement_chance = 1.5
+	#regressive_movement_chance = 0.15
 }
 
 lawgroup_childbirth_policy = {
 	law_group_category = human_rights
-	progressive_movement_chance = 1.5
-	regressive_movement_chance = 0.15
+	base_enactment_days = 1				# 基础制定天数
 }

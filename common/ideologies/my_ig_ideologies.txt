@@ -1,0 +1,19 @@
+﻿# strongly_approve		# 非常支持
+# approve				# 支持
+# neutral				# 中立
+# disapprove			# 反对
+# strongly_disapprove	# 非常反对
+
+ideology_my_childbirth_policy = {
+	lawgroup_childbirth_policy = {
+		law_no_childbirth_policy = neutral
+		law_encourage_childbirth_1 = approve
+		law_encourage_childbirth_2 = approve
+		law_encourage_childbirth_3 = approve
+		law_encourage_childbirth_4 = approve
+		law_control_childbirth_1 = approve
+		law_control_childbirth_2 = approve
+		law_control_childbirth_3 = approve
+		law_control_childbirth_4 = approve
+	}
+}
