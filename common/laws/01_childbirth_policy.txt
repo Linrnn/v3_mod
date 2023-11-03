@@ -13,40 +13,28 @@
 law_encourage_childbirth_1 = {
 	group = lawgroup_childbirth_policy
 	modifier = {
-		state_birth_rate_mult = 0.02
-		state_tax_collection_mult = -0.01
+		state_birth_rate_mult = 0.1
 	}
 }
 
 law_encourage_childbirth_2 = {
 	group = lawgroup_childbirth_policy
 	modifier = {
-		state_birth_rate_mult = 0.05
-		state_tax_collection_mult = -0.02
+		state_birth_rate_mult = 0.2
 	}
 }
 
 law_encourage_childbirth_3 = {
 	group = lawgroup_childbirth_policy
 	modifier = {
-		state_birth_rate_mult = 0.09
-		state_tax_collection_mult = -0.03
+		state_birth_rate_mult = 0.5
 	}
 }
 
 law_encourage_childbirth_4 = {
 	group = lawgroup_childbirth_policy
 	modifier = {
-		state_birth_rate_mult = 0.16
-		state_tax_collection_mult = -0.04
-	}
-}
-
-law_encourage_childbirth_4 = {
-	group = lawgroup_childbirth_policy
-	modifier = {
-		state_birth_rate_mult = 0.3
-		state_tax_collection_mult = -0.05
+		state_birth_rate_mult = 1
 	}
 }
 
@@ -55,31 +43,27 @@ law_encourage_childbirth_4 = {
 law_control_childbirth_1 = {
 	group = lawgroup_childbirth_policy
 	modifier = {
-		state_birth_rate_mult = -0.03
-		state_tax_collection_mult = -0.01
+		state_birth_rate_mult = -0.1
 	}
 }
 
 law_control_childbirth_2 = {
 	group = lawgroup_childbirth_policy
 	modifier = {
-		state_birth_rate_mult = -0.08
-		state_tax_collection_mult = -0.02
+		state_birth_rate_mult = -0.2
 	}
 }
 
 law_control_childbirth_3 = {
 	group = lawgroup_childbirth_policy
 	modifier = {
-		state_birth_rate_mult = -0.20
-		state_tax_collection_mult = -0.04
+		state_birth_rate_mult = -0.5
 	}
 }
 
 law_control_childbirth_4 = {
 	group = lawgroup_childbirth_policy
 	modifier = {
-		state_birth_rate_mult = -0.48
-		state_tax_collection_mult = -0.08
+		state_birth_rate_mult = -1
 	}
 }
