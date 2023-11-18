@@ -1,32 +1,32 @@
 ﻿NEconomy = {
-	MAX_WEEKLY_CONSTRUCTION_PROGRESS = 100000					# 单个项目每周最大施工进度
-	MAX_WEEKLY_CONSTRUCTION_ALLOCATION = 100000					# 每周分配给项目的最大施工点
+	# MAX_WEEKLY_CONSTRUCTION_PROGRESS = 100000					# 单个项目每周最大施工进度
+	# MAX_WEEKLY_CONSTRUCTION_ALLOCATION = 100000					# 每周分配给项目的最大施工点
 
 	PRICE_RANGE = 0.999											# 商品的最小价格为基数*（1-x），最大价格为基数*[1+x），x锁定为[0-1]
 	BUY_SELL_DIFF_AT_MAX_FACTOR = 10							# 物价供需范围修改为x倍（原版2倍）
 	TRADE_ROUTE_MAX_LEVEL = 1000								# 贸易路线最高等级
 
-	BUILDING_PROFIT_TARGET_TO_RAISE_WAGES = 0.5					# 利润达到（原版0.3）会给工人涨薪
-	BUILDING_PROFIT_TARGET_TO_LOWER_WAGES = 0.05				# 如果利润率达到或低于此水平，考虑出于SoL或就业原因降低工资（原版0.15），使用 BUILDING_WEEKS_BETWEEN_PAY_CHANGES
-	BUILDING_WEEKS_BETWEEN_PAY_CHANGES = 6						# 在工资变化和解雇员工之间有一个冷却时间（原版12），这样建筑物就不会对暂时的环境变化进行过度补偿
+	# BUILDING_PROFIT_TARGET_TO_RAISE_WAGES = 0.5					# 利润达到（原版0.3）会给工人涨薪
+	# BUILDING_PROFIT_TARGET_TO_LOWER_WAGES = 0.05				# 如果利润率达到或低于此水平，考虑出于SoL或就业原因降低工资（原版0.15），使用 BUILDING_WEEKS_BETWEEN_PAY_CHANGES
+	# BUILDING_WEEKS_BETWEEN_PAY_CHANGES = 6						# 在工资变化和解雇员工之间有一个冷却时间（原版12），这样建筑物就不会对暂时的环境变化进行过度补偿
 	#BUILDING_LAYOFFS_DECREASE_BY = 0.2							# 裁员力度（原版0.15）
 	#BUILDING_CASH_RESERVES_STATUS_QUO_THRESHOLD = 0.6			# 储备金低于这个百分比开始裁员降薪（原版0.5）
 
-	MIN_RAISE_TO_HIRE = 0.2										# 跳槽需要的涨薪幅度（原版0.1）
-	MAX_WAGE_STEP_CHANGE = 0.01					   	 			# 工资率每周最多变化幅度（原版0.1）
+	# MIN_RAISE_TO_HIRE = 0.2										# 跳槽需要的涨薪幅度（原版0.1）
+	# MAX_WAGE_STEP_CHANGE = 0.01					   	 			# 工资率每周最多变化幅度（原版0.1）
 
 	COUNTRY_GDP_MODIFIER_MAX_MULTIPLIER = 200000000				# GDP铸币税取消上限，1.3版本蠢驴把GDP铸币税的上限砍到了200k，即GDP到200M铸币税就不再增长了。本mod将GDP乘数上限调整到200B，约等于取消了铸币税的上限设定。
 }
 
-NMilitary = {
-	BATTLE_LETHALITY_MAX = 0.01
-	BATTLE_RAW_MANPOWER_INFLICTED_CASUALTY_RATIO = 1.0			# 原地损耗率
-	BATTLE_COMBAT_EFFICIENCY_INFLICTED_CASUALTY_RATIO = 2.0		# 战死率
+# NMilitary = {
+# 	BATTLE_LETHALITY_MAX = 0.01
+# 	BATTLE_RAW_MANPOWER_INFLICTED_CASUALTY_RATIO = 1.0			# 原地损耗率
+# 	BATTLE_COMBAT_EFFICIENCY_INFLICTED_CASUALTY_RATIO = 2.0		# 战死率
 
-	MIN_MANPOWER_CASUALTY_PER_ROUND = 50						# 每轮最少人力损失
+# 	MIN_MANPOWER_CASUALTY_PER_ROUND = 50						# 每轮最少人力损失
 
-	CONVOY_RAIDING_STRENGTH_MULT = 0.1							# 每个车队袭击点的强度 x (num flotillas * ce offense)
-}
+# 	CONVOY_RAIDING_STRENGTH_MULT = 0.1							# 每个车队袭击点的强度 x (num flotillas * ce offense)
+# }
 
 NDiplomacy = {
 	INFAMY_THRESHOLD_INFAMOUS = 250								# 声名狼藉阈值
@@ -40,30 +40,30 @@ NDiplomacy = {
 	#SWAY_OFFER_OBLIGATION_MANEUVERS_COST						# 通过 country_diplomatic_play_maneuvers_add 解决
 }
 
-NWar = {
-	MAX_SIMULTANEOUS_BATTLES = 6								# 一个战线的将领数
+# NWar = {
+# 	MAX_SIMULTANEOUS_BATTLES = 6								# 一个战线的将领数
 
-	DEVASTATION_INCREASE_RATE = 0.2								# 每天，随职业水平变化，破坏率增加
-	DEVASTATION_FROM_BATTLES = 0.5 								# 对于每场战斗，战争造成的破坏
+# 	DEVASTATION_INCREASE_RATE = 0.2								# 每天，随职业水平变化，破坏率增加
+# 	DEVASTATION_FROM_BATTLES = 0.5 								# 对于每场战斗，战争造成的破坏
 
-	WAR_EXHAUSTION_BASE = 0.2
+# 	WAR_EXHAUSTION_BASE = 0.2
 
-	WAR_EXHAUSTION_KIA_BASE_MULTIPLIER = 0.2					# 伤亡造成的战争疲劳
-	WAR_EXHAUSTION_KIA_BATTLES_LOST_MULTIPLIER = 1 				# 当我方 100% 战斗失败时，伤亡造成的厌战程度进一步乘以此
+# 	WAR_EXHAUSTION_KIA_BASE_MULTIPLIER = 0.2					# 伤亡造成的战争疲劳
+# 	WAR_EXHAUSTION_KIA_BATTLES_LOST_MULTIPLIER = 1 				# 当我方 100% 战斗失败时，伤亡造成的厌战程度进一步乘以此
 
-	MAX_SIMULTANEOUS_BATTLES = 6                    			# 允许生成最多x场战斗
-	#LOCK_PROVINCE_CAPTURE_TO_SINGLE_STATE = yes      			# 如果“yes”，则只会在与战斗省份相同的状态下占领省份
-}
+# 	MAX_SIMULTANEOUS_BATTLES = 6                    			# 允许生成最多x场战斗
+# 	#LOCK_PROVINCE_CAPTURE_TO_SINGLE_STATE = yes      			# 如果“yes”，则只会在与战斗省份相同的状态下占领省份
+# }
 
-NPops = {
-	POP_GROWTH_SOL_DELTA_CAP = 5								# 生活水平大于x，人口开始增加
-	POP_GROWTH_SOL_CAP = 15										# 生活水平等于x，人口增长最快
-	POP_GROWTH_SOL_EQUILIBRIUM = 25								# 生活水平大于x，人口开始减少
+# NPops = {
+# 	POP_GROWTH_SOL_DELTA_CAP = 5								# 生活水平大于x，人口开始增加
+# 	POP_GROWTH_SOL_CAP = 15										# 生活水平等于x，人口增长最快
+# 	POP_GROWTH_SOL_EQUILIBRIUM = 25								# 生活水平大于x，人口开始减少
 
-	#MIGRATION_MAX_EMIGRATION_AS_POPULATION_FRACTION = 0.01		# 每周移民的上限被限制在一个州人口的这一部分
-}
+# 	#MIGRATION_MAX_EMIGRATION_AS_POPULATION_FRACTION = 0.01		# 每周移民的上限被限制在一个州人口的这一部分
+# }
 
 NCharacters = {
-	RECRUIT_COMMANDER_NUM_OPTIONS = 6							# 将领候选人
-	RECRUIT_COMMANDER_POOL_SIZE = 12							# 将领候选池
+	RECRUIT_COMMANDER_NUM_OPTIONS = 5							# 将领候选人
+	RECRUIT_COMMANDER_POOL_SIZE = 10							# 将领候选池
 }

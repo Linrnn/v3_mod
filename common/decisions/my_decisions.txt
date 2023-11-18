@@ -8,7 +8,7 @@ cheat_重置生育法律 = {
 		}
 	}
 	when_taken = {
-		activate_law = law_type:law_no_childbirth_policy	# 激活法律
+		activate_law = law_type:law_no_childbirth_policy			# 激活法律
 	}
 	ai_chance = {
 		base = 0
@@ -24,10 +24,10 @@ cheat_设置附庸法律 = {
 			is_subject_of = root
 			or = {
 				not = {
-					has_law = law_type:law_industry_banned
+					has_law = law_type:law_industry_banned			# 禁止工业化
 				}
 				not = {
-					has_law = law_type:law_control_childbirth_4
+					has_law = law_type:law_control_childbirth_2
 				}
 			}
 		}
@@ -47,10 +47,10 @@ cheat_设置附庸法律 = {
 				limit = {
 					is_subject_of = root
 					not = {
-						has_law = law_type:law_control_childbirth_4
+						has_law = law_type:law_control_childbirth_2
 					}
 				}
-				activate_law = law_type:law_control_childbirth_4
+				activate_law = law_type:law_control_childbirth_2
 			}
 		}
 	}
