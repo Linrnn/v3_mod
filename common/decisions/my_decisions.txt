@@ -15,19 +15,24 @@ cheat_重置生育法律 = {
 	}
 }
 
-cheat_设置附庸法律 = {
+cheat_设置法律 = {
 	is_shown = {
 		is_player = yes
 	}
 	possible = {
 		any_country = {
-			is_subject_of = root
+			not = {
+				this = root
+			}
 			or = {
-				not = {
-					has_law = law_type:law_industry_banned			# 禁止工业化
+				and = {
+					is_subject_of = root
+					not = {
+						has_law = law_type:law_industry_banned			# 禁止工业化
+					}
 				}
 				not = {
-					has_law = law_type:law_control_childbirth_2
+					has_law = law_type:law_control_childbirth_1
 				}
 			}
 		}
@@ -45,12 +50,12 @@ cheat_设置附庸法律 = {
 			}
 			if = {
 				limit = {
-					is_subject_of = root
 					not = {
-						has_law = law_type:law_control_childbirth_2
+						this = root
+						has_law = law_type:law_control_childbirth_1
 					}
 				}
-				activate_law = law_type:law_control_childbirth_2
+				activate_law = law_type:law_control_childbirth_1
 			}
 		}
 	}

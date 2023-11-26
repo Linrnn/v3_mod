@@ -1,4 +1,4 @@
-﻿cheat_附庸国家 = {
+﻿cheat_变成傀儡国 = {
 	requires_approval = no
 	should_notify_third_parties = no
 	show_effect_in_tooltip = no
@@ -18,6 +18,36 @@
 	accept_effect = {
 		scope:target_country = {
 			change_subject_type = subject_type_puppet
+		}
+		#save_scope_as = scope_rootxxx
+	}
+	ai = {
+		will_propose = {
+			always = no
+		}
+	}
+}
+
+cheat_变成自治领 = {
+	requires_approval = no
+	should_notify_third_parties = no
+	show_effect_in_tooltip = no
+	potential = {
+		is_player = yes
+		not = {
+			is_country_type = decentralized
+		}
+		scope:target_country = {
+			is_subject_of = root
+			not = {
+				is_country_type = decentralized
+				is_subject_type = subject_type_dominion		# 自治领
+			}
+		}
+	}
+	accept_effect = {
+		scope:target_country = {
+			change_subject_type = subject_type_dominion
 		}
 		#save_scope_as = scope_rootxxx
 	}
