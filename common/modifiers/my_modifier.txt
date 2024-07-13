@@ -37,7 +37,7 @@
 # 	state_construction_mult = -1.0					# 州建造效率
 # 	# 新增
 # 	state_birth_rate_mult = -1.0					# 州出生率
-#     state_standard_of_living_add = -10				# 州生活水平
+#     state_standard_of_living_add = -10			# 州生活水平
 # }
 
 #==============================以下为模版修正==============================

@@ -15,7 +15,7 @@
 	# MIN_RAISE_TO_HIRE = 0.2									# 跳槽需要的涨薪幅度（原版0.1）
 	# MAX_WAGE_STEP_CHANGE = 0.01					   	 		# 工资率每周最多变化幅度（原版0.1）
 
-	# COUNTRY_GDP_MODIFIER_MAX_MULTIPLIER = 200000000			# GDP铸币税取消上限，1.3版本蠢驴把GDP铸币税的上限砍到了200k，即GDP到200M铸币税就不再增长了。本mod将GDP乘数上限调整到200B，约等于取消了铸币税的上限设定。
+	COUNTRY_GDP_MODIFIER_MAX_MULTIPLIER = 200000000				# GDP铸币税取消上限，1.3版本蠢驴把GDP铸币税的上限砍到了200k，即GDP到200M铸币税就不再增长了。本mod将GDP乘数上限调整到200B，约等于取消了铸币税的上限设定。
 
 	COMPANY_ON_ESTABLISH_COOLDOWN_MONTHS = 0					# 建立公司X个月后，才能解散公司
 	COMPANY_ON_DISBAND_COOLDOWN_MONTHS = 0						# 解散公司X个月后，才能重建公司

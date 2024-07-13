@@ -25,12 +25,12 @@ cheat_设置法律 = {
 				this = root
 			}
 			or = {
-				and = {
-					is_subject_of = root
-					not = {
-						has_law = law_type:law_industry_banned			# 禁止工业化
-					}
-				}
+				# and = {
+				# 	is_subject_of = root
+				# 	not = {
+				# 		has_law = law_type:law_industry_banned			# 禁止工业化
+				# 	}
+				# }
 				not = {
 					has_law = law_type:law_control_childbirth_1
 				}
@@ -39,15 +39,15 @@ cheat_设置法律 = {
 	}
 	when_taken = {
 		every_country = {
-			if = {
-				limit = {
-					is_subject_of = root
-					not = {
-						has_law = law_type:law_industry_banned
-					}
-				}
-				activate_law = law_type:law_industry_banned
-			}
+			# if = {
+			# 	limit = {
+			# 		is_subject_of = root
+			# 		not = {
+			# 			has_law = law_type:law_industry_banned
+			# 		}
+			# 	}
+			# 	activate_law = law_type:law_industry_banned
+			# }
 			if = {
 				limit = {
 					not = {
