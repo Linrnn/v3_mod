@@ -38,6 +38,10 @@ my_cheat.1 = {
 		every_country = {
 			if = {
 				limit = {
+					or = {
+						is_subject_of = root
+						this = root
+					}
 					not = {
 						has_law = law_type:law_command_economy
 					}
