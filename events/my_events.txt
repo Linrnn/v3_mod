@@ -1,0 +1,106 @@
+namespace = my_cheat
+
+my_cheat.1 = {
+	type = country_event
+	placement = root
+	duration = 0
+	title = 作弊事件
+
+	option = {
+		name = 重置_生育法律
+		if = {
+			limit = {
+				not = {
+					has_law = law_type:law_no_childbirth_policy
+				}
+			}
+			activate_law = law_type:law_no_childbirth_policy	# 激活法律
+		}
+	}
+
+	option = {
+		name = 强制_禁止工业化
+		every_country = {
+			if = {
+				limit = {
+					is_subject_of = root
+					not = {
+						has_law = law_type:law_industry_banned
+					}
+				}
+				activate_law = law_type:law_industry_banned
+			}
+		}
+	}
+
+	option = {
+		name = 强制_计划经济
+		every_country = {
+			if = {
+				limit = {
+					not = {
+						has_law = law_type:law_command_economy
+					}
+				}
+				activate_law = law_type:law_command_economy
+			}
+		}
+	}
+
+	option = {
+		name = 强制_计划生育
+		every_country = {
+			if = {
+				limit = {
+					is_subject_of = root	
+					not = {
+						has_law = law_type:law_control_childbirth_1
+					}
+				}
+				activate_law = law_type:law_control_childbirth_1
+			}
+		}
+	}
+
+	option = {
+		name = 吞并_松散联邦_先
+		every_country = {
+			if = {
+				limit = {
+					not = {
+						this = root
+					}
+					is_country_type = decentralized		# 松散联邦（即可殖民国家）
+				}
+				root = {
+					annex = prev
+				}
+			}
+		}
+	}
+
+	option = {
+		name = 吞并_普通国家_后
+		every_country = {
+			if = {
+				limit = {
+					not = {
+						this = root
+						is_country_type = decentralized
+					}
+				}
+				root = {
+					annex = prev
+				}
+			}
+		}
+	}
+
+	option = {
+		name = 退出
+		default_option = yes
+		ai_chance = {
+			base = 100
+		}
+	}
+}

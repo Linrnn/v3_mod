@@ -1,68 +1,163 @@
-cheat_重置生育法律 = {
+cheat = {
 	is_shown = {
 		is_player = yes
 	}
 	possible = {
-		not = {
-			has_law = law_type:law_no_childbirth_policy
-		}
+		is_player = yes
 	}
 	when_taken = {
-		activate_law = law_type:law_no_childbirth_policy				# 激活法律
+		trigger_event = {
+			id = my_cheat.1
+			days = 0
+			popup = yes
+		}
 	}
 	ai_chance = {
 		base = 0
 	}
 }
 
-cheat_设置法律 = {
-	is_shown = {
-		is_player = yes
-	}
-	possible = {
-		any_country = {
-			not = {
-				this = root
-			}
-			or = {
-				and = {
-					is_subject_of = root
-					not = {
-						has_law = law_type:law_industry_banned			# 禁止工业化
-					}
-				}
-				not = {
-					has_law = law_type:law_control_childbirth_1
-				}
-			}
-		}
-	}
-	when_taken = {
-		every_country = {
-			if = {
-				limit = {
-					is_subject_of = root
-					not = {
-						has_law = law_type:law_industry_banned
-					}
-				}
-				activate_law = law_type:law_industry_banned
-			}
-			if = {
-				limit = {
-					not = {
-						this = root
-						has_law = law_type:law_control_childbirth_1
-					}
-				}
-				activate_law = law_type:law_control_childbirth_1
-			}
-		}
-	}
-	ai_chance = {
-		base = 0
-	}
-}
+# cheat_重置生育法律 = {
+# 	is_shown = {
+# 		is_player = yes
+# 	}
+# 	possible = {
+# 		not = {
+# 			has_law = law_type:law_no_childbirth_policy
+# 		}
+# 	}
+# 	when_taken = {
+# 		activate_law = law_type:law_no_childbirth_policy				# 激活法律
+# 	}
+# 	ai_chance = {
+# 		base = 0
+# 	}
+# }
+
+# cheat_设置法律 = {
+# 	is_shown = {
+# 		is_player = yes
+# 	}
+# 	possible = {
+# 		any_country = {
+# 			not = {
+# 				this = root
+# 			}
+# 			or = {
+# 				and = {
+# 					is_subject_of = root
+# 					not = {
+# 						has_law = law_type:law_industry_banned			# 禁止工业化
+# 					}
+# 				}
+# 				not = {
+# 					has_law = law_type:law_control_childbirth_1
+# 				}
+# 			}
+# 		}
+# 	}
+# 	when_taken = {
+# 		every_country = {
+# 			if = {
+# 				limit = {
+# 					is_subject_of = root
+# 					not = {
+# 						has_law = law_type:law_industry_banned
+# 					}
+# 				}
+# 				activate_law = law_type:law_industry_banned
+# 			}
+# 			if = {
+# 				limit = {
+# 					not = {
+# 						this = root
+# 						has_law = law_type:law_control_childbirth_1
+# 					}
+# 				}
+# 				activate_law = law_type:law_control_childbirth_1
+# 			}
+# 		}
+# 	}
+# 	ai_chance = {
+# 		base = 0
+# 	}
+# }
+
+# cheat_强制计划经济 = {
+# 	is_shown = {
+# 		is_player = yes
+# 	}
+# 	possible = {
+# 		any_country = {
+# 			not = {
+# 				has_law = law_type:law_command_economy			# 计划经济
+# 			}
+# 		}
+# 	}
+# 	when_taken = {
+# 		every_country = {
+# 			if = {
+# 				limit = {
+# 					not = {
+# 						has_law = law_type:law_command_economy
+# 					}
+# 				}
+# 				activate_law = law_type:law_command_economy
+# 			}
+# 		}
+# 	}
+# 	ai_chance = {
+# 		base = 0
+# 	}
+# }
+
+# cheat_吞并松散联邦_先 = {
+# 	possible = {
+# 		is_player = yes
+# 	}
+# 	when_taken = {
+# 		every_country = {
+# 			if = {
+# 				limit = {
+# 					not = {
+# 						this = root
+# 					}
+# 					is_country_type = decentralized
+# 				}
+# 				root = {
+# 					annex = prev
+# 				}
+# 			}
+# 		}
+# 	}
+# 	ai_chance = {
+# 		base = 0
+# 	}
+# }
+
+# cheat_吞并普通国家_后 = {
+# 	possible = {
+# 		is_player = yes
+# 	}
+# 	when_taken = {
+# 		every_country = {
+# 			if = {
+# 				limit = {
+# 					not = {
+# 						this = root
+# 						is_country_type = decentralized		# 松散联邦（即可殖民国家）
+# 					}
+# 				}
+# 				root = {
+# 					annex = prev
+# 				}
+# 			}
+# 		}
+# 	}
+# 	ai_chance = {
+# 		base = 0
+# 	}
+# }
 
 # cheat_设置修正_1 = {
 # 	is_shown = {
@@ -134,54 +229,6 @@ cheat_设置法律 = {
 # 	}
 # 	when_taken = {
 # 		add_treasury = 100000000
-# 	}
-# 	ai_chance = {
-# 		base = 0
-# 	}
-# }
-
-# cheat_吞并普通国家 = {
-# 	possible = {
-# 		is_player = yes
-# 	}
-# 	when_taken = {
-# 		every_country = {
-# 			if = {
-# 				limit = {
-# 					not = {
-# 						this = root
-# 						is_country_type = decentralized		# 松散联邦（即可殖民国家）
-# 					}
-# 				}
-# 				root = {
-# 					annex = prev
-# 				}
-# 			}
-# 		}
-# 	}
-# 	ai_chance = {
-# 		base = 0
-# 	}
-# }
-
-# cheat_吞并松散联邦 = {
-# 	possible = {
-# 		is_player = yes
-# 	}
-# 	when_taken = {
-# 		every_country = {
-# 			if = {
-# 				limit = {
-# 					not = {
-# 						this = root
-# 					}
-# 					is_country_type = decentralized
-# 				}
-# 				root = {
-# 					annex = prev
-# 				}
-# 			}
-# 		}
 # 	}
 # 	ai_chance = {
 # 		base = 0
