@@ -1,7 +1,54 @@
-﻿# cheat_变成傀儡国 = {
+﻿# 认可 = {
+# 	requires_approval = no
+#     should_notify_third_parties = no
+# 	show_effect_in_tooltip = yes
+
+# 	groups = {
+# 		general
+# 	}
+
+# 	potential = {
+# 		country_rank >= rank_value:great_power
+# 		OR = {
+# 			is_country_type = recognized
+# 			is_country_type = colonial
+# 		}
+# 		scope:target_country = {
+# 			is_country_type = unrecognized
+# 		}
+# 	}
+
+#     possible = {
+#         is_at_war = no
+#         is_revolutionary = no
+# 		country_rank >= rank_value:great_power
+# 		NOT = {
+# 			has_war_with = scope:target_country
+# 		}
+# 	}
+
+#     accept_effect = {
+#         scope:target_country = {
+# 			set_country_type = recognized
+# 		}
+#     }
+
+#     ai = {
+#         will_propose = {
+#             always = no
+#         }
+#     }
+# }
+
+# 附庸 = {
 # 	requires_approval = no
 # 	should_notify_third_parties = no
 # 	show_effect_in_tooltip = no
+
+# 	groups = {
+# 		general
+# 	}
+
 # 	potential = {
 # 		is_player = yes
 # 		not = {
@@ -15,12 +62,13 @@
 # 			}
 # 		}
 # 	}
+
 # 	accept_effect = {
 # 		scope:target_country = {
 # 			change_subject_type = subject_type_puppet
 # 		}
-# 		#save_scope_as = scope_rootxxx
 # 	}
+
 # 	ai = {
 # 		will_propose = {
 # 			always = no
@@ -28,44 +76,15 @@
 # 	}
 # }
 
-# cheat_认可国家 = {
-# 	requires_approval = no
-#     should_notify_third_parties = no
-# 	show_effect_in_tooltip = yes
-# 	potential = {
-# 		country_rank >= rank_value:great_power
-# 		OR = {
-# 			is_country_type = recognized
-# 			is_country_type = colonial
-# 		}
-# 		scope:target_country = {
-# 			is_country_type = unrecognized
-# 		}
-# 	}
-#     possible = {
-#         is_at_war = no
-#         is_revolutionary = no
-# 		country_rank >= rank_value:great_power
-# 		NOT = {
-# 			has_war_with = scope:target_country
-# 		}
-# 	}
-#     accept_effect = {
-#         scope:target_country = {
-# 			set_country_type = recognized
-# 		}
-#     }
-#     ai = {
-#         will_propose = {
-#             always = no
-#         }
-#     }
-# }
-
-# cheat_吞并国家 = {
+# 吞并 = {
 # 	requires_approval = no
 # 	should_notify_third_parties = no
 # 	show_effect_in_tooltip = no
+
+# 	groups = {
+# 		general
+# 	}
+
 # 	potential = {
 # 		is_player = yes
 # 		scope:target_country = {
@@ -73,38 +92,11 @@
 # 			is_subject_type = subject_type_puppet
 # 		}
 # 	}
+
 # 	accept_effect = {
 # 		annex = scope:target_country
 # 	}
-# 	ai = {
-# 		will_propose = {
-# 			always = no
-# 		}
-# 	}
-# }
 
-# cheat_移除建筑 = {
-# 	requires_approval = no
-# 	should_notify_third_parties = no
-# 	show_effect_in_tooltip = no
-# 	potential = {
-# 		is_player = yes
-# 		scope:target_country = {
-# 			is_subject_of = root
-# 			is_subject_type = subject_type_puppet
-# 		}
-# 	}
-# 	accept_effect = {
-# 		scope:target_country = {
-# 			every_scope_state = {
-# 				every_scope_building = {
-# 					state = {
-# 						remove_building = prev
-# 					}
-# 				}
-# 			}
-# 		}
-# 	}
 # 	ai = {
 # 		will_propose = {
 # 			always = no
