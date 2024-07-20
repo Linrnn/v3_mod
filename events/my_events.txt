@@ -200,6 +200,25 @@ my_cheat.1 = {
 	}
 
 	option = {
+		name = 拆除_部分建筑
+		every_country = {
+			if = {
+				limit = {
+					not = {
+						this = root
+					}
+				}
+				every_scope_state = {
+					if = { limit = { has_building = building_barracks } remove_building = building_barracks }									# 兵营
+					if = { limit = { has_building = building_naval_base } remove_building = building_naval_base }								# 海军基地
+					if = { limit = { has_building = building_construction_sector } remove_building = building_construction_sector }				# 建造部门
+				}
+			}
+		}
+	}
+
+
+	option = {
 		name = 退出
 		default_option = yes
 		ai_chance = {
