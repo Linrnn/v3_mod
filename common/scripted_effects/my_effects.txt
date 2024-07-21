@@ -1,0 +1,108 @@
+# 增加建筑
+my_add_building = {
+	if = {
+		limit = {
+			has_building = $my_building$
+		}
+		every_scope_building = {
+			if = {
+				limit = {
+					is_building_type = $my_building$
+				}
+				scope:second_state = {
+					my_add_one_building = {
+						my_bd = $my_building$
+						my_lv = prev.level
+					}
+				}
+			}
+		}
+	}
+	else = {
+		create_building = {
+			building = $my_building$
+			level = 1
+		}
+	}
+}
+
+# 移除建筑
+my_remove_building = {
+	if = {
+		limit = {
+			has_building = $my_building$
+		}
+		remove_building = $my_building$
+	}
+}
+
+# 通过法律
+my_activate_law = {
+	if = {
+		limit = {
+			not = {
+				has_law = law_type:$my_law$
+			}
+		}
+		activate_law = law_type:$my_law$
+	}
+}
+
+# 建筑加一级
+my_add_one_building = {
+	# my_lv:0-9, my_bd:1-10
+	if = { limit = { $my_lv$ = 0 } create_building = { building = $my_bd$ level = 1 } }
+	else_if = { limit = { $my_lv$ = 1 } create_building = { building = $my_bd$ level = 2 } }
+	else_if = { limit = { $my_lv$ = 2 } create_building = { building = $my_bd$ level = 3 } }
+	else_if = { limit = { $my_lv$ = 3 } create_building = { building = $my_bd$ level = 4 } }
+	else_if = { limit = { $my_lv$ = 4 } create_building = { building = $my_bd$ level = 5 } }
+	else_if = { limit = { $my_lv$ = 5 } create_building = { building = $my_bd$ level = 6 } }
+	else_if = { limit = { $my_lv$ = 6 } create_building = { building = $my_bd$ level = 7 } }
+	else_if = { limit = { $my_lv$ = 7 } create_building = { building = $my_bd$ level = 8 } }
+	else_if = { limit = { $my_lv$ = 8 } create_building = { building = $my_bd$ level = 9 } }
+	else_if = { limit = { $my_lv$ = 9 } create_building = { building = $my_bd$ level = 10 } }
+	# my_lv:10-19, my_bd:11-20
+	else_if = { limit = { $my_lv$ = 10 } create_building = { building = $my_bd$ level = 11 } }
+	else_if = { limit = { $my_lv$ = 11 } create_building = { building = $my_bd$ level = 12 } }
+	else_if = { limit = { $my_lv$ = 12 } create_building = { building = $my_bd$ level = 13 } }
+	else_if = { limit = { $my_lv$ = 13 } create_building = { building = $my_bd$ level = 14 } }
+	else_if = { limit = { $my_lv$ = 14 } create_building = { building = $my_bd$ level = 15 } }
+	else_if = { limit = { $my_lv$ = 15 } create_building = { building = $my_bd$ level = 16 } }
+	else_if = { limit = { $my_lv$ = 16 } create_building = { building = $my_bd$ level = 17 } }
+	else_if = { limit = { $my_lv$ = 17 } create_building = { building = $my_bd$ level = 18 } }
+	else_if = { limit = { $my_lv$ = 18 } create_building = { building = $my_bd$ level = 19 } }
+	else_if = { limit = { $my_lv$ = 19 } create_building = { building = $my_bd$ level = 20 } }
+	# my_lv:20-29, my_bd:21-30
+	else_if = { limit = { $my_lv$ = 20 } create_building = { building = $my_bd$ level = 21 } }
+	else_if = { limit = { $my_lv$ = 21 } create_building = { building = $my_bd$ level = 22 } }
+	else_if = { limit = { $my_lv$ = 22 } create_building = { building = $my_bd$ level = 23 } }
+	else_if = { limit = { $my_lv$ = 23 } create_building = { building = $my_bd$ level = 24 } }
+	else_if = { limit = { $my_lv$ = 24 } create_building = { building = $my_bd$ level = 25 } }
+	else_if = { limit = { $my_lv$ = 25 } create_building = { building = $my_bd$ level = 26 } }
+	else_if = { limit = { $my_lv$ = 26 } create_building = { building = $my_bd$ level = 27 } }
+	else_if = { limit = { $my_lv$ = 27 } create_building = { building = $my_bd$ level = 28 } }
+	else_if = { limit = { $my_lv$ = 28 } create_building = { building = $my_bd$ level = 29 } }
+	else_if = { limit = { $my_lv$ = 29 } create_building = { building = $my_bd$ level = 30 } }
+	# my_lv:30-39, my_bd:31-40
+	else_if = { limit = { $my_lv$ = 30 } create_building = { building = $my_bd$ level = 31 } }
+	else_if = { limit = { $my_lv$ = 31 } create_building = { building = $my_bd$ level = 32 } }
+	else_if = { limit = { $my_lv$ = 32 } create_building = { building = $my_bd$ level = 33 } }
+	else_if = { limit = { $my_lv$ = 33 } create_building = { building = $my_bd$ level = 34 } }
+	else_if = { limit = { $my_lv$ = 34 } create_building = { building = $my_bd$ level = 35 } }
+	else_if = { limit = { $my_lv$ = 35 } create_building = { building = $my_bd$ level = 36 } }
+	else_if = { limit = { $my_lv$ = 36 } create_building = { building = $my_bd$ level = 37 } }
+	else_if = { limit = { $my_lv$ = 37 } create_building = { building = $my_bd$ level = 38 } }
+	else_if = { limit = { $my_lv$ = 38 } create_building = { building = $my_bd$ level = 39 } }
+	else_if = { limit = { $my_lv$ = 39 } create_building = { building = $my_bd$ level = 40 } }
+	# my_lv:40-49, my_bd:41-50
+	else_if = { limit = { $my_lv$ = 40 } create_building = { building = $my_bd$ level = 41 } }
+	else_if = { limit = { $my_lv$ = 41 } create_building = { building = $my_bd$ level = 42 } }
+	else_if = { limit = { $my_lv$ = 42 } create_building = { building = $my_bd$ level = 43 } }
+	else_if = { limit = { $my_lv$ = 43 } create_building = { building = $my_bd$ level = 44 } }
+	else_if = { limit = { $my_lv$ = 44 } create_building = { building = $my_bd$ level = 45 } }
+	else_if = { limit = { $my_lv$ = 45 } create_building = { building = $my_bd$ level = 46 } }
+	else_if = { limit = { $my_lv$ = 46 } create_building = { building = $my_bd$ level = 47 } }
+	else_if = { limit = { $my_lv$ = 47 } create_building = { building = $my_bd$ level = 48 } }
+	else_if = { limit = { $my_lv$ = 48 } create_building = { building = $my_bd$ level = 49 } }
+	else_if = { limit = { $my_lv$ = 49 } create_building = { building = $my_bd$ level = 50 } }
+}
