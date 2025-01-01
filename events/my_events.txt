@@ -6,12 +6,12 @@ my_cheat.1 = {
 	duration = 0
 	title = 作弊事件
 
-	option = {
-		name = 重置_生育法律
-		my_activate_law = {
-			my_law = law_no_childbirth_policy
-		}
-	}
+	# option = {
+	# 	name = 重置_生育法律
+	# 	my_activate_law = {
+	# 		my_law = law_no_childbirth_policy
+	# 	}
+	# }
 
 	option = {
 		name = 强制_禁止工业化
@@ -41,20 +41,31 @@ my_cheat.1 = {
 		}
 	}
 
-	option = {
-		name = 强制_计划生育
-		every_country = {
-			if = {
-				limit = {
-					not = {
-						this = root
+	# option = {
+	# 	name = 强制_计划生育
+	# 	every_country = {
+	# 		if = {
+	# 			limit = {
+	# 				not = {
+	# 					this = root
+	# 				}
+	# 			}
+	# 			my_activate_law = {
+	# 				my_law = law_control_childbirth_1
+	# 			}
+	# 		}
+	# 	}
+
+		option = {
+			name = 移除_拜上帝会
+			every_scope_state  = {
+				if = {
+					limit = {
+						has_modifier = god_worshippers
 					}
-				}
-				my_activate_law = {
-					my_law = law_control_childbirth_1
+					remove_modifier = god_worshippers
 				}
 			}
-		}
 	}
 
 	# option = {
@@ -106,126 +117,125 @@ my_cheat.1 = {
 	# 	}
 	# }
 
-	option = {
-		name = 拆除_建筑
-		every_country = {
-			if = {
-				limit = {
-					not = {
-						this = root
-					}
-				}
-				every_scope_state = {
-					# bg_light_industry 轻工业
-					my_remove_building = { my_building = building_food_industry }				# 食品厂
-					my_remove_building = { my_building = building_textile_mills }				# 纺织厂
-					my_remove_building = { my_building = building_furniture_manufacturies }		# 家具厂
-					my_remove_building = { my_building = building_glassworks }					# 玻璃厂
-					my_remove_building = { my_building = building_tooling_workshops }			# 工艺装备工坊
-					my_remove_building = { my_building = building_paper_mills }					# 造纸厂
+	# option = {
+	# 	name = 拆除_建筑
+	# 	every_country = {
+	# 		if = {
+	# 			limit = {
+	# 				not = {
+	# 					this = root
+	# 				}
+	# 			}
+	# 			every_scope_state = {
+	# 				# bg_light_industry 轻工业
+	# 				my_remove_building = { my_building = building_food_industry }				# 食品厂
+	# 				my_remove_building = { my_building = building_textile_mills }				# 纺织厂
+	# 				my_remove_building = { my_building = building_furniture_manufacturies }		# 家具厂
+	# 				my_remove_building = { my_building = building_glassworks }					# 玻璃厂
+	# 				my_remove_building = { my_building = building_tooling_workshops }			# 工艺装备工坊
+	# 				my_remove_building = { my_building = building_paper_mills }					# 造纸厂
 
-					# bg_heavy_industry 重工业
-					my_remove_building = { my_building = building_chemical_plants }				# 肥料厂
-					my_remove_building = { my_building = building_explosives_factory }			# 炸药厂
-					my_remove_building = { my_building = building_synthetics_plants }			# 化学合成厂
-					my_remove_building = { my_building = building_steel_mills }					# 炼钢厂
-					my_remove_building = { my_building = building_motor_industry }				# 动力机械厂
-					my_remove_building = { my_building = building_shipyards }					# 造船厂
-					my_remove_building = { my_building = building_military_shipyards }			# 军用造船厂
-					my_remove_building = { my_building = building_war_machine_industry }		# 战争机器厂
-					my_remove_building = { my_building = building_electrics_industry }			# 电子厂
-					my_remove_building = { my_building = building_arms_industry }				# 武器厂
-					my_remove_building = { my_building = building_artillery_foundries }			# 火炮厂
-					my_remove_building = { my_building = building_munition_plants }				# 弹药厂
+	# 				# bg_heavy_industry 重工业
+	# 				my_remove_building = { my_building = building_chemical_plants }				# 肥料厂
+	# 				my_remove_building = { my_building = building_explosives_factory }			# 炸药厂
+	# 				my_remove_building = { my_building = building_synthetics_plants }			# 化学合成厂
+	# 				my_remove_building = { my_building = building_steel_mills }					# 炼钢厂
+	# 				my_remove_building = { my_building = building_motor_industry }				# 动力机械厂
+	# 				my_remove_building = { my_building = building_shipyards }					# 造船厂
+	# 				my_remove_building = { my_building = building_military_shipyards }			# 军用造船厂
+	# 				my_remove_building = { my_building = building_war_machine_industry }		# 战争机器厂
+	# 				my_remove_building = { my_building = building_electrics_industry }			# 电子厂
+	# 				my_remove_building = { my_building = building_arms_industry }				# 武器厂
+	# 				my_remove_building = { my_building = building_artillery_foundries }			# 火炮厂
+	# 				my_remove_building = { my_building = building_munition_plants }				# 弹药厂
 
-					# agro 农业建筑
-					my_remove_building = { my_building = building_rye_farm }					# 黑麦农场
-					my_remove_building = { my_building = building_wheat_farm }					# 小麦农场
-					my_remove_building = { my_building = building_rice_farm }					# 水稻农场
-					my_remove_building = { my_building = building_maize_farm }					# 玉米农场
-					my_remove_building = { my_building = building_millet_farm }					# 杂谷农场
-					my_remove_building = { my_building = building_livestock_ranch }				# 畜牧场
+	# 				# agro 农业建筑
+	# 				my_remove_building = { my_building = building_rye_farm }					# 黑麦农场
+	# 				my_remove_building = { my_building = building_wheat_farm }					# 小麦农场
+	# 				my_remove_building = { my_building = building_rice_farm }					# 水稻农场
+	# 				my_remove_building = { my_building = building_maize_farm }					# 玉米农场
+	# 				my_remove_building = { my_building = building_millet_farm }					# 杂谷农场
+	# 				my_remove_building = { my_building = building_livestock_ranch }				# 畜牧场
 
-					# mines 矿物
-					my_remove_building = { my_building = building_coal_mine }					# 煤矿
-					my_remove_building = { my_building = building_iron_mine }					# 铁矿
-					my_remove_building = { my_building = building_lead_mine }					# 铅矿
-					my_remove_building = { my_building = building_sulfur_mine }					# 硫矿
-					my_remove_building = { my_building = building_gold_mine }					# 金矿
-					#my_remove_building = { my_building = building_gold_fields }				# 金矿场
+	# 				# mines 矿物
+	# 				my_remove_building = { my_building = building_coal_mine }					# 煤矿
+	# 				my_remove_building = { my_building = building_iron_mine }					# 铁矿
+	# 				my_remove_building = { my_building = building_lead_mine }					# 铅矿
+	# 				my_remove_building = { my_building = building_sulfur_mine }					# 硫矿
+	# 				my_remove_building = { my_building = building_gold_mine }					# 金矿
+	# 				#my_remove_building = { my_building = building_gold_fields }				# 金矿场
 
-					# plantation 种植园
-					my_remove_building = { my_building = building_coffee_plantation }			# 咖啡种植园
-					my_remove_building = { my_building = building_cotton_plantation }			# 棉花种植园
-					my_remove_building = { my_building = building_dye_plantation }				# 染料作物种植园
-					my_remove_building = { my_building = building_opium_plantation }			# 鸦片种植园
-					my_remove_building = { my_building = building_tea_plantation }				# 茶叶种植园
-					my_remove_building = { my_building = building_tobacco_plantation }			# 烟草种植园
-					my_remove_building = { my_building = building_sugar_plantation }			# 糖料作物种植园
-					my_remove_building = { my_building = building_banana_plantation }			# 香蕉种植园
-					my_remove_building = { my_building = building_silk_plantation }				# 丝绸种植园
-					my_remove_building = { my_building = building_vineyard_plantation }			# 葡萄园
+	# 				# plantation 种植园
+	# 				my_remove_building = { my_building = building_coffee_plantation }			# 咖啡种植园
+	# 				my_remove_building = { my_building = building_cotton_plantation }			# 棉花种植园
+	# 				my_remove_building = { my_building = building_dye_plantation }				# 染料作物种植园
+	# 				my_remove_building = { my_building = building_opium_plantation }			# 鸦片种植园
+	# 				my_remove_building = { my_building = building_tea_plantation }				# 茶叶种植园
+	# 				my_remove_building = { my_building = building_tobacco_plantation }			# 烟草种植园
+	# 				my_remove_building = { my_building = building_sugar_plantation }			# 糖料作物种植园
+	# 				my_remove_building = { my_building = building_banana_plantation }			# 香蕉种植园
+	# 				my_remove_building = { my_building = building_silk_plantation }				# 丝绸种植园
+	# 				my_remove_building = { my_building = building_vineyard_plantation }			# 葡萄园
 
-					# military 军事
-					my_remove_building = { my_building = building_barracks }					# 兵营
-					#my_remove_building = { my_building = building_conscription_center }		# 征兵中心
-					my_remove_building = { my_building = building_naval_base }					# 海军基地
+	# 				# military 军事
+	# 				my_remove_building = { my_building = building_barracks }					# 兵营
+	# 				#my_remove_building = { my_building = building_conscription_center }		# 征兵中心
+	# 				my_remove_building = { my_building = building_naval_base }					# 海军基地
 
-					# urban_center 城镇中心
-					#my_remove_building = { my_building = building_urban_center }				# 城镇中心
-					my_remove_building = { my_building = building_arts_academy }				# 艺术学院
-					my_remove_building = { my_building = building_power_plant }					# 发电厂
+	# 				# urban_center 城镇中心
+	# 				#my_remove_building = { my_building = building_urban_center }				# 城镇中心
+	# 				my_remove_building = { my_building = building_arts_academy }				# 艺术学院
+	# 				my_remove_building = { my_building = building_power_plant }					# 发电厂
 
-					# government 政府建筑
-					my_remove_building = { my_building = building_port }						# 港口
-					my_remove_building = { my_building = building_government_administration }	# 政府行政机构
-					my_remove_building = { my_building = building_university }					# 大学
-					#my_remove_building = { my_building = building_skyscraper }					# 摩天大楼
+	# 				# government 政府建筑
+	# 				my_remove_building = { my_building = building_port }						# 港口
+	# 				my_remove_building = { my_building = building_government_administration }	# 政府行政机构
+	# 				my_remove_building = { my_building = building_university }					# 大学
+	# 				#my_remove_building = { my_building = building_skyscraper }					# 摩天大楼
 
-					# monuments 奇观
+	# 				# monuments 奇观
 
-					# misc_resource 杂项资源建筑
-					my_remove_building = { my_building = building_logging_camp }				# 伐木营地
-					my_remove_building = { my_building = building_rubber_plantation }			# 橡胶种植园
-					my_remove_building = { my_building = building_fishing_wharf }				# 渔业码头
-					my_remove_building = { my_building = building_whaling_station }				# 捕鲸站
-					my_remove_building = { my_building = building_oil_rig }						# 油井
+	# 				# misc_resource 杂项资源建筑
+	# 				my_remove_building = { my_building = building_logging_camp }				# 伐木营地
+	# 				my_remove_building = { my_building = building_rubber_plantation }			# 橡胶种植园
+	# 				my_remove_building = { my_building = building_fishing_wharf }				# 渔业码头
+	# 				my_remove_building = { my_building = building_whaling_station }				# 捕鲸站
+	# 				my_remove_building = { my_building = building_oil_rig }						# 油井
 
-					# canals 运河
+	# 				# canals 运河
 
-					# private_infrastructure 私有基础设施
-					my_remove_building = { my_building = building_railway }						# 铁路
-					#my_remove_building = { my_building = building_trade_center }				# 贸易中心
-					#my_remove_building = { my_building = building_manor_house }				# 庄园宅邸
-					#my_remove_building = { my_building = building_financial_district }			# 金融区
+	# 				# private_infrastructure 私有基础设施
+	# 				my_remove_building = { my_building = building_railway }						# 铁路
+	# 				#my_remove_building = { my_building = building_trade_center }				# 贸易中心
+	# 				#my_remove_building = { my_building = building_manor_house }				# 庄园宅邸
+	# 				#my_remove_building = { my_building = building_financial_district }			# 金融区
 
-					# subsistence 自给建筑
+	# 				# subsistence 自给建筑
 
-					# construction 建造
-					my_remove_building = { my_building = building_construction_sector }			# 建造部门
-				}
-			}
-		}
-	}
+	# 				# construction 建造
+	# 				my_remove_building = { my_building = building_construction_sector }			# 建造部门
+	# 			}
+	# 		}
+	# 	}
+	# }
 
-	option = {
-		name = 拆除_部分建筑
-		every_country = {
-			if = {
-				limit = {
-					not = {
-						this = root
-					}
-				}
-				every_scope_state = {
-					my_remove_building = { my_building = building_vineyard_plantation }			# 葡萄园
-					my_remove_building = { my_building = building_barracks }					# 兵营
-					my_remove_building = { my_building = building_government_administration }	# 政府行政机构
-				}
-			}
-		}
-	}
-
+	# option = {
+	# 	name = 拆除_部分建筑
+	# 	every_country = {
+	# 		if = {
+	# 			limit = {
+	# 				not = {
+	# 					this = root
+	# 				}
+	# 			}
+	# 			every_scope_state = {
+	# 				my_remove_building = { my_building = building_vineyard_plantation }			# 葡萄园
+	# 				my_remove_building = { my_building = building_barracks }					# 兵营
+	# 				my_remove_building = { my_building = building_government_administration }	# 政府行政机构
+	# 			}
+	# 		}
+	# 	}
+	# }
 
 	option = {
 		name = 退出

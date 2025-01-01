@@ -1,83 +1,83 @@
-cheat_建造_港口 = {
-	requires_approval = no
-    should_notify_third_parties = no
-	show_effect_in_tooltip = yes
-	state_selection = second_required
-	second_state_list = second_country
+# cheat_建造_港口 = {
+# 	requires_approval = no
+#     should_notify_third_parties = no
+# 	show_effect_in_tooltip = yes
+# 	state_selection = second_required
+# 	second_state_list = second_country
 
-	groups = {
-		overlord
-	}
+# 	groups = {
+# 		overlord
+# 	}
 
-	potential = {
-		is_player = yes
-		scope:target_country = {
-			is_subject_of = root
-		}
-	}
+# 	potential = {
+# 		is_player = yes
+# 		scope:target_country = {
+# 			is_subject_of = root
+# 		}
+# 	}
 
-	second_state_trigger = {
-		owner = scope:target_country
-		is_coastal = yes
-	}
+# 	second_state_trigger = {
+# 		owner = scope:target_country
+# 		is_coastal = yes
+# 	}
 
-    accept_effect = {
-		scope:second_state = {
-			my_add_building = {
-				my_building = building_port
-			}
-		}
-		root = {
-			add_treasury = -100000
-		}
-    }
+#     accept_effect = {
+# 		scope:second_state = {
+# 			my_add_building = {
+# 				my_building = building_port
+# 			}
+# 		}
+# 		root = {
+# 			add_treasury = -100000
+# 		}
+#     }
 
-    ai = {
-        will_propose = {
-            always = no
-        }
-    }
-}
+#     ai = {
+#         will_propose = {
+#             always = no
+#         }
+#     }
+# }
 
-cheat_建造_行政机构 = {
-	requires_approval = no
-    should_notify_third_parties = no
-	show_effect_in_tooltip = yes
-	state_selection = second_required
-	second_state_list = second_country
+# cheat_建造_行政机构 = {
+# 	requires_approval = no
+#     should_notify_third_parties = no
+# 	show_effect_in_tooltip = yes
+# 	state_selection = second_required
+# 	second_state_list = second_country
 
-	groups = {
-		overlord
-	}
+# 	groups = {
+# 		overlord
+# 	}
 
-	potential = {
-		is_player = yes
-		scope:target_country = {
-			is_subject_of = root
-		}
-	}
+# 	potential = {
+# 		is_player = yes
+# 		scope:target_country = {
+# 			is_subject_of = root
+# 		}
+# 	}
 
-	second_state_trigger = {
-		owner = scope:target_country
-	}
+# 	second_state_trigger = {
+# 		owner = scope:target_country
+# 	}
 
-    accept_effect = {
-		scope:second_state = {
-			my_add_building = {
-				my_building = building_government_administration
-			}
-		}
-		root = {
-			add_treasury = -100000
-		}
-    }
+#     accept_effect = {
+# 		scope:second_state = {
+# 			my_add_building = {
+# 				my_building = building_government_administration
+# 			}
+# 		}
+# 		root = {
+# 			add_treasury = -100000
+# 		}
+#     }
 
-    ai = {
-        will_propose = {
-            always = no
-        }
-    }
-}
+#     ai = {
+#         will_propose = {
+#             always = no
+#         }
+#     }
+# }
 
 # cheat_认可 = {
 # 	requires_approval = no

@@ -1,69 +1,69 @@
-﻿law_no_childbirth_policy = {
-	group = lawgroup_childbirth_policy
-	ai_will_do = {
-		always = yes
-	}
-}
+﻿# law_no_childbirth_policy = {
+# 	group = lawgroup_childbirth_policy
+# 	ai_will_do = {
+# 		always = yes
+# 	}
+# }
 
-# state_birth_rate_mult 省份生育率
-# state_tax_collection_mult 省份税收
+# # state_birth_rate_mult 省份生育率
+# # state_tax_collection_mult 省份税收
 
-#------------------------------鼓励生育------------------------------
+# #------------------------------鼓励生育------------------------------
 
-law_encourage_childbirth_1 = {
-	group = lawgroup_childbirth_policy
-	modifier = {
-		state_birth_rate_mult = 0.1
-	}
-}
+# law_encourage_childbirth_1 = {
+# 	group = lawgroup_childbirth_policy
+# 	modifier = {
+# 		state_birth_rate_mult = 0.1
+# 	}
+# }
 
-law_encourage_childbirth_2 = {
-	group = lawgroup_childbirth_policy
-	modifier = {
-		state_birth_rate_mult = 0.2
-	}
-}
+# law_encourage_childbirth_2 = {
+# 	group = lawgroup_childbirth_policy
+# 	modifier = {
+# 		state_birth_rate_mult = 0.2
+# 	}
+# }
 
-law_encourage_childbirth_3 = {
-	group = lawgroup_childbirth_policy
-	modifier = {
-		state_birth_rate_mult = 0.5
-	}
-}
+# law_encourage_childbirth_3 = {
+# 	group = lawgroup_childbirth_policy
+# 	modifier = {
+# 		state_birth_rate_mult = 0.5
+# 	}
+# }
 
-law_encourage_childbirth_4 = {
-	group = lawgroup_childbirth_policy
-	modifier = {
-		state_birth_rate_mult = 1
-	}
-}
+# law_encourage_childbirth_4 = {
+# 	group = lawgroup_childbirth_policy
+# 	modifier = {
+# 		state_birth_rate_mult = 1
+# 	}
+# }
 
-#------------------------------控制生育------------------------------
+# #------------------------------控制生育------------------------------
 
-law_control_childbirth_1 = {
-	group = lawgroup_childbirth_policy
-	modifier = {
-		state_birth_rate_mult = -0.1
-	}
-}
+# law_control_childbirth_1 = {
+# 	group = lawgroup_childbirth_policy
+# 	modifier = {
+# 		state_birth_rate_mult = -0.1
+# 	}
+# }
 
-law_control_childbirth_2 = {
-	group = lawgroup_childbirth_policy
-	modifier = {
-		state_birth_rate_mult = -0.2
-	}
-}
+# law_control_childbirth_2 = {
+# 	group = lawgroup_childbirth_policy
+# 	modifier = {
+# 		state_birth_rate_mult = -0.2
+# 	}
+# }
 
-law_control_childbirth_3 = {
-	group = lawgroup_childbirth_policy
-	modifier = {
-		state_birth_rate_mult = -0.5
-	}
-}
+# law_control_childbirth_3 = {
+# 	group = lawgroup_childbirth_policy
+# 	modifier = {
+# 		state_birth_rate_mult = -0.5
+# 	}
+# }
 
-law_control_childbirth_4 = {
-	group = lawgroup_childbirth_policy
-	modifier = {
-		state_birth_rate_mult = -1
-	}
-}
+# law_control_childbirth_4 = {
+# 	group = lawgroup_childbirth_policy
+# 	modifier = {
+# 		state_birth_rate_mult = -1
+# 	}
+# }
