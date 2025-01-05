@@ -1,3 +1,27 @@
+cheat_禁运 = {
+	requires_approval = no
+	should_notify_third_parties = yes
+	groups = {
+		overlord
+	}
+	potential = {
+		is_player = yes
+		scope:target_country = {
+			is_subject_of = root
+		}
+		# is_market_reachable_for_trade = scope:target_country.market
+	}
+	pact = {
+		is_embargo = yes
+		is_two_sided_pact = no
+	}
+    ai = {
+        will_propose = {
+            always = no
+        }
+    }
+}
+
 # cheat_建造_港口 = {
 # 	requires_approval = no
 #     should_notify_third_parties = no

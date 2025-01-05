@@ -36,7 +36,7 @@ my_remove_building = {
 	}
 }
 
-# 通过法律
+# 激活法律
 my_activate_law = {
 	if = {
 		limit = {
@@ -45,6 +45,30 @@ my_activate_law = {
 			}
 		}
 		activate_law = law_type:$my_law$
+	}
+}
+
+# 移除修正
+my_remove_modifier = {
+	if = {
+		limit = {
+			not = {
+				has_modifier = $my_modifier$
+			}
+		}
+		remove_modifier = $my_modifier$
+	}
+}
+
+# 设置国家类型
+my_set_country_type = {
+	if = {
+		limit = {
+			not = {
+				is_country_type = $my_country_type$
+			}
+		}
+		set_country_type = $my_country_type$
 	}
 }
 
