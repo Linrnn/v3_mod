@@ -428,3 +428,13 @@
  MAP_INTERACTION_BUILD_BUILDING_PRESET_SAVE_DESC: 0 "保存当前#v预设#!"
  MAP_INTERACTION_BUILD_BUILDING_PRESET_LOAD_DESC: 0 "加载此#v预设#!"
  MAP_INTERACTION_BUILD_BUILDING_PRESET_DELETE_DESC: 0 "#r 删除#!此#v预设#!"
+
+ rule_my_opium_wars:0 "AI发动鸦片战争与无视鸦片禁令倾向调整"
+ setting_my_opium_wars_never:0 "从不"
+ setting_my_opium_wars_never_desc:0 "AI#bold 从不#!在鸦片禁令上让步\n#lore AI 发动鸦片战争:无视鸦片禁令 倾向为 95:0。"
+ setting_my_opium_wars_default:0 "原版"
+ setting_my_opium_wars_default_desc:0 "此mod#bold 不修改#!AI发动鸦片战争的相关内容\n#lore AI 发动鸦片战争:无视鸦片禁令 倾向为 95:5。"
+ setting_my_opium_wars_half:0 "随机"
+ setting_my_opium_wars_half_desc:0 "AI#bold 有一半概率#!在鸦片禁令上让步\n#lore AI 发动鸦片战争:无视鸦片禁令 倾向为 5:5。"
+ setting_my_opium_wars_always:0 "总是"
+ setting_my_opium_wars_always_desc:0 "AI#bold 总是#!在鸦片禁令上让步\n#lore AI 发动鸦片战争:无视鸦片禁令 倾向为 0:5。"
