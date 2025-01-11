@@ -24,58 +24,98 @@ my_cheat.1 = {
 	}
 
 	option = {
+		name = 强制_禁止工业化
+		every_country = {
+			if = {
+				limit = {
+					is_subject_of = root
+				}
+				my_activate_law = {
+					my_law = law_industry_banned
+				}
+			}
+		}
+		ai_chance = {
+			base = 0
+		}
+	}	
+
+	option = {
+		name = 移除_拜上帝会
+		every_scope_state  = {
+			my_remove_modifier = {
+				my_modifier = god_worshippers
+			}
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+
+	option = {
+		name = 认可_附庸
+		every_country = {
+			if = {
+				limit = {
+					is_subject_of = root
+				}
+				my_set_country_type = {
+					my_country_type = recognized
+				}
+			}
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+
+	option = {
+		name = 吞并_松散联邦_先
+		every_country = {
+			if = {
+				limit = {
+					not = {
+						this = root
+					}
+					is_country_type = decentralized		# 松散联邦（即可殖民国家）
+				}
+				root = {
+					annex = prev
+				}
+			}
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+
+	option = {
+		name = 吞并_普通国家_后
+		every_country = {
+			if = {
+				limit = {
+					not = {
+						this = root
+						is_country_type = decentralized
+					}
+				}
+				root = {
+					annex = prev
+				}
+			}
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+
+	option = {
 		name = 退出
 		default_option = yes
 		ai_chance = {
 			base = 100
 		}
 	}
-
-	# option = {
-	# 	name = 强制_禁止工业化
-	# 	every_country = {
-	# 		if = {
-	# 			limit = {
-	# 				is_subject_of = root
-	# 			}
-	# 			my_activate_law = {
-	# 				my_law = law_industry_banned
-	# 			}
-	# 		}
-	# 	}
-	# 	ai_chance = {
-	# 		base = 0
-	# 	}
-	# }
-
-	# option = {
-	# 	name = 移除_拜上帝会
-	# 	every_scope_state  = {
-	# 		my_remove_modifier = {
-	# 			my_modifier = god_worshippers
-	# 		}
-	# 	}
-	# 	ai_chance = {
-	# 		base = 0
-	# 	}
-	# }
-
-	# option = {
-	# 	name = 认可_附庸
-	# 	every_country = {
-	# 		if = {
-	# 			limit = {
-	# 				is_subject_of = root
-	# 			}
-	# 			my_set_country_type = {
-	# 				my_country_type = recognized
-	# 			}
-	# 		}
-	# 	}
-	# 	ai_chance = {
-	# 		base = 0
-	# 	}
-	# }
 
 	# option = {
 	# 	name = 重置_生育法律
@@ -98,46 +138,6 @@ my_cheat.1 = {
 	# 			}
 	# 			my_activate_law = {
 	# 				my_law = law_control_childbirth_1
-	# 			}
-	# 		}
-	# 	}
-	# 	ai_chance = {
-	# 		base = 0
-	# 	}
-	# }
-
-	# option = {
-	# 	name = 吞并_松散联邦_先
-	# 	every_country = {
-	# 		if = {
-	# 			limit = {
-	# 				not = {
-	# 					this = root
-	# 				}
-	# 				is_country_type = decentralized		# 松散联邦（即可殖民国家）
-	# 			}
-	# 			root = {
-	# 				annex = prev
-	# 			}
-	# 		}
-	# 	}
-	# 	ai_chance = {
-	# 		base = 0
-	# 	}
-	# }
-
-	# option = {
-	# 	name = 吞并_普通国家_后
-	# 	every_country = {
-	# 		if = {
-	# 			limit = {
-	# 				not = {
-	# 					this = root
-	# 					is_country_type = decentralized
-	# 				}
-	# 			}
-	# 			root = {
-	# 				annex = prev
 	# 			}
 	# 		}
 	# 	}

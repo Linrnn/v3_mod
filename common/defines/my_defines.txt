@@ -2,9 +2,9 @@
 	# MAX_WEEKLY_CONSTRUCTION_PROGRESS = 100000					# 单个项目每周最大施工进度
 	# MAX_WEEKLY_CONSTRUCTION_ALLOCATION = 100000				# 每周分配给项目的最大施工点
 
-	# PRICE_RANGE = 0.999										# 商品的最小价格为基数*（1-x），最大价格为基数*[1+x），x锁定为[0-1]
-	# BUY_SELL_DIFF_AT_MAX_FACTOR = 10							# 物价供需范围修改为x倍（原版2倍）
-	# TRADE_ROUTE_MAX_LEVEL = 1000								# 贸易路线最高等级
+	PRICE_RANGE = 0.999											# 商品的最小价格为基数*（1-x），最大价格为基数*[1+x），x锁定为[0-1]
+	BUY_SELL_DIFF_AT_MAX_FACTOR = 10							# 物价供需范围修改为x倍（原版2倍）
+	TRADE_ROUTE_MAX_LEVEL = 1000								# 贸易路线最高等级
 
 	# BUILDING_PROFIT_TARGET_TO_RAISE_WAGES = 0.5				# 利润达到（原版0.3）会给工人涨薪
 	# BUILDING_PROFIT_TARGET_TO_LOWER_WAGES = 0.05				# 如果利润率达到或低于此水平，考虑出于SoL或就业原因降低工资（原版0.15），使用 BUILDING_WEEKS_BETWEEN_PAY_CHANGES
@@ -69,4 +69,9 @@ NDiplomacy = {
 NCharacters = {
 	RECRUIT_COMMANDER_NUM_OPTIONS = 5							# 将领候选人
 	RECRUIT_COMMANDER_POOL_SIZE = 10							# 将领候选池
+}
+
+NPowerBlocs = {
+	MAX_PRINCIPLES = 12											# 最大原则数量
+	MAX_MANDATES = 6											# 最大授权数量
 }
