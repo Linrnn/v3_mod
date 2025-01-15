@@ -3,7 +3,7 @@
 	# MAX_WEEKLY_CONSTRUCTION_ALLOCATION = 100000				# 每周分配给项目的最大施工点
 
 	PRICE_RANGE = 0.999											# 商品的最小价格为基数*（1-x），最大价格为基数*[1+x），x锁定为[0-1]
-	BUY_SELL_DIFF_AT_MAX_FACTOR = 10							# 物价供需范围修改为x倍（原版2倍）
+	#BUY_SELL_DIFF_AT_MAX_FACTOR = 10							# 物价供需范围修改为x倍（原版2倍）
 	TRADE_ROUTE_MAX_LEVEL = 1000								# 贸易路线最高等级
 
 	# BUILDING_PROFIT_TARGET_TO_RAISE_WAGES = 0.5				# 利润达到（原版0.3）会给工人涨薪
@@ -74,4 +74,5 @@ NCharacters = {
 NPowerBlocs = {
 	MAX_PRINCIPLES = 12											# 最大原则数量
 	MAX_MANDATES = 6											# 最大授权数量
+	MAX_MANDATE_PROGRESS = 1000									# 授权进度
 }

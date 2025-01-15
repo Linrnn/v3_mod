@@ -1,8 +1,8 @@
-my_opium_wars = {
-	default = my_opium_wars_default
+# my_opium_wars = {
+# 	default = my_opium_wars_default
 
-	my_opium_wars_never = {}
-	my_opium_wars_default = {}
-	my_opium_wars_half = {}
-	my_opium_wars_always = {}
-}
+# 	my_opium_wars_never = {}
+# 	my_opium_wars_default = {}
+# 	my_opium_wars_half = {}
+# 	my_opium_wars_always = {}
+# }

@@ -1,30 +1,119 @@
-cheat_禁运 = {
+cheat_禁运_附属 = {
 	requires_approval = no
+	show_effect_in_tooltip = no
 	should_notify_third_parties = yes
+
 	groups = {
 		overlord
 	}
 	potential = {
 		is_player = yes
+	}
+	possible = {
 		scope:target_country = {
 			is_subject_of = root
 		}
-		# is_market_reachable_for_trade = scope:target_country.market
 	}
 	pact = {
-		is_embargo = yes
+		is_embargo = yes								# 禁运
 		is_two_sided_pact = no
 	}
-    ai = {
-        will_propose = {
-            always = no
-        }
-    }
+	ai = {
+		will_propose = {
+			always = no
+		}
+	}
+}
+
+cheat_压制_附属 = {
+	requires_approval = no
+	show_effect_in_tooltip = no
+	should_notify_third_parties = yes
+
+	groups = {
+		overlord
+	}
+	potential = {
+		is_player = yes
+	}
+	possible = {
+		scope:target_country = {
+			is_subject_of = root
+		}
+	}
+	pact = {
+		second_modifier = {
+			country_liberty_desire_add = -1.0			# 独立倾向
+		}
+	}
+	ai = {
+		will_propose = {
+			always = no
+		}
+	}
+}
+
+cheat_吞并_附庸 = {
+	requires_approval = no
+	show_effect_in_tooltip = no
+	should_notify_third_parties = no
+
+	groups = {
+		overlord
+	}
+	potential = {
+		is_player = yes
+	}
+	possible = {
+		is_revolutionary = no							# 没有革命
+		is_diplomatic_play_committed_participant = no	# 没有参与外交行动（包括战争/博弈）
+		scope:target_country = {
+			is_subject_of = root
+			is_subject_type = subject_type_puppet
+			is_diplomatic_play_committed_participant = no
+		}
+	}
+	accept_effect = {
+		annex = scope:target_country
+	}
+	ai = {
+		will_propose = {
+			always = no
+		}
+	}
+}
+
+cheat_吞并_土著 = {
+	requires_approval = no
+	show_effect_in_tooltip = no
+	should_notify_third_parties = no
+
+	groups = {
+		general
+	}
+	potential = {
+		is_player = yes
+	}
+	possible = {
+		is_revolutionary = no							# 没有革命
+		is_diplomatic_play_committed_participant = no	# 没有参与外交行动（包括战争/博弈）
+		scope:target_country = {
+			is_country_type = decentralized
+		}
+	}
+	accept_effect = {
+		annex = scope:target_country
+	}
+	ai = {
+		will_propose = {
+			always = no
+		}
+	}
 }
 
 # cheat_建造_港口 = {
 # 	requires_approval = no
-#     should_notify_third_parties = no
+# 	should_notify_third_parties = no
 # 	show_effect_in_tooltip = yes
 # 	state_selection = second_required
 # 	second_state_list = second_country
@@ -32,20 +121,17 @@ cheat_禁运 = {
 # 	groups = {
 # 		overlord
 # 	}
-
 # 	potential = {
 # 		is_player = yes
 # 		scope:target_country = {
 # 			is_subject_of = root
 # 		}
 # 	}
-
 # 	second_state_trigger = {
 # 		owner = scope:target_country
 # 		is_coastal = yes
 # 	}
-
-#     accept_effect = {
+# 	accept_effect = {
 # 		scope:second_state = {
 # 			my_add_building = {
 # 				my_building = building_port
@@ -54,18 +140,17 @@ cheat_禁运 = {
 # 		root = {
 # 			add_treasury = -100000
 # 		}
-#     }
-
-#     ai = {
-#         will_propose = {
-#             always = no
-#         }
-#     }
+# 	}
+# 	ai = {
+# 		will_propose = {
+# 			always = no
+# 		}
+# 	}
 # }
 
 # cheat_建造_行政机构 = {
 # 	requires_approval = no
-#     should_notify_third_parties = no
+# 	should_notify_third_parties = no
 # 	show_effect_in_tooltip = yes
 # 	state_selection = second_required
 # 	second_state_list = second_country
@@ -73,19 +158,16 @@ cheat_禁运 = {
 # 	groups = {
 # 		overlord
 # 	}
-
 # 	potential = {
 # 		is_player = yes
 # 		scope:target_country = {
 # 			is_subject_of = root
 # 		}
 # 	}
-
 # 	second_state_trigger = {
 # 		owner = scope:target_country
 # 	}
-
-#     accept_effect = {
+# 	accept_effect = {
 # 		scope:second_state = {
 # 			my_add_building = {
 # 				my_building = building_government_administration
@@ -94,24 +176,22 @@ cheat_禁运 = {
 # 		root = {
 # 			add_treasury = -100000
 # 		}
-#     }
-
-#     ai = {
-#         will_propose = {
-#             always = no
-#         }
-#     }
+# 	}
+# 	ai = {
+# 		will_propose = {
+# 			always = no
+# 		}
+# 	}
 # }
 
 # cheat_认可 = {
 # 	requires_approval = no
-#     should_notify_third_parties = no
+# 	should_notify_third_parties = no
 # 	show_effect_in_tooltip = yes
 
 # 	groups = {
 # 		general
 # 	}
-
 # 	potential = {
 # 		country_rank >= rank_value:great_power
 # 		OR = {
@@ -122,27 +202,24 @@ cheat_禁运 = {
 # 			is_country_type = unrecognized
 # 		}
 # 	}
-
-#     possible = {
-#         is_at_war = no
-#         is_revolutionary = no
+# 	possible = {
+# 		is_at_war = no
+# 		is_revolutionary = no
 # 		country_rank >= rank_value:great_power
 # 		NOT = {
 # 			has_war_with = scope:target_country
 # 		}
 # 	}
-
-#     accept_effect = {
-#         scope:target_country = {
+# 	accept_effect = {
+# 		scope:target_country = {
 # 			set_country_type = recognized
 # 		}
-#     }
-
-#     ai = {
-#         will_propose = {
-#             always = no
-#         }
-#     }
+# 	}
+# 	ai = {
+# 		will_propose = {
+# 			always = no
+# 		}
+# 	}
 # }
 
 # cheat_附庸 = {
@@ -153,7 +230,6 @@ cheat_禁运 = {
 # 	groups = {
 # 		general
 # 	}
-
 # 	potential = {
 # 		is_player = yes
 # 		not = {
@@ -167,41 +243,11 @@ cheat_禁运 = {
 # 			}
 # 		}
 # 	}
-
 # 	accept_effect = {
 # 		scope:target_country = {
 # 			change_subject_type = subject_type_puppet
 # 		}
 # 	}
-
-# 	ai = {
-# 		will_propose = {
-# 			always = no
-# 		}
-# 	}
-# }
-
-# cheat_吞并 = {
-# 	requires_approval = no
-# 	should_notify_third_parties = no
-# 	show_effect_in_tooltip = no
-
-# 	groups = {
-# 		general
-# 	}
-
-# 	potential = {
-# 		is_player = yes
-# 		scope:target_country = {
-# 			is_subject_of = root
-# 			is_subject_type = subject_type_puppet
-# 		}
-# 	}
-
-# 	accept_effect = {
-# 		annex = scope:target_country
-# 	}
-
 # 	ai = {
 # 		will_propose = {
 # 			always = no
