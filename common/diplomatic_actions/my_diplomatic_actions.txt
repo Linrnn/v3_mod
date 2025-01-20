@@ -2,6 +2,7 @@ cheat_禁运_附属 = {
 	requires_approval = no
 	show_effect_in_tooltip = no
 	should_notify_third_parties = yes
+	texture = "gfx/interface/icons/diplomatic_action_icons/unused/customs_union_15.dds"
 
 	groups = {
 		overlord
@@ -29,6 +30,7 @@ cheat_压制_附属 = {
 	requires_approval = no
 	show_effect_in_tooltip = no
 	should_notify_third_parties = yes
+	texture = "gfx/interface/icons/diplomatic_action_icons/da_decrease_autonomy.dds"
 
 	groups = {
 		overlord
@@ -69,8 +71,11 @@ cheat_吞并_附庸 = {
 		is_diplomatic_play_committed_participant = no	# 没有参与外交行动（包括战争/博弈）
 		scope:target_country = {
 			is_subject_of = root
-			is_subject_type = subject_type_puppet
 			is_diplomatic_play_committed_participant = no
+			OR = {
+				is_subject_type = subject_type_puppet	# 附庸国
+				is_subject_type = subject_type_colony	# 殖民领
+			}
 		}
 	}
 	accept_effect = {

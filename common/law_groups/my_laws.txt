@@ -5,7 +5,7 @@
 }
 
 # 生育政策
-# lawgroup_childbirth_policy = {
-# 	law_group_category = human_rights
-# 	base_enactment_days = 1				# 基础制定天数
-# }
+lawgroup_childbirth_policy = {
+	law_group_category = human_rights
+	base_enactment_days = 1				# 基础制定天数
+}

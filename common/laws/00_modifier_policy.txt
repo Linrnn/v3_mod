@@ -1,15 +1,15 @@
 ﻿law_default_modifier_policy = {
 	group = lawgroup_modifier_policy
-	# on_activate = {
-	# 	# 每一个利益集团
-	# 	# every_interest_group = {
-	# 	# 	add_ideology = ideology_my_childbirth_policy		# 增加意识形态
-	# 	# }
-	# }
+	on_activate = {
+		#每一个利益集团
+		every_interest_group = {
+			add_ideology = ideology_my_childbirth_policy		# 增加意识形态
+		}
+	}
 	modifier = {
 		country_diplomatic_play_maneuvers_add = 10000			# 博弈行动力
 		country_max_weekly_construction_progress_add = 10000	# 国家最大每周施工进度
-		country_max_companies_add = 10							# 公司上限
+		# country_max_companies_add = 10						# 公司上限
 		#country_construction_add = -15							# 建造力
 		#country_infamy_decay_mult = 20							# 恶名衰退
 	}

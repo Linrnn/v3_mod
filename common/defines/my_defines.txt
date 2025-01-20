@@ -37,7 +37,9 @@ NDiplomacy = {
 	INFAMY_THRESHOLD_PARIAH = 1000								# 国际弃民阈值
 	BASE_YEARLY_INFAMY_DECAY_RATE = 200							# 恶名衰退（每年）
 
-	DEFAULT_TRUCE_MONTHS = 1									# 停战（持续：月）
+	DEFAULT_TRUCE_MONTHS = 6									# 停战（持续：月）
+	#RECENTLY_CONQUERED_DURATION_MONTHS = 1						# 战争傀儡国家的停战（持续：月）
+	#RECENTLY_LIBERATED_DURATION_MONTHS = 1						# 外交释放国家的停战（持续：月）
 	# WAR_GOAL_HUMILIATION_MONTHS = 1							# 羞辱（持续：月）
 	# EXPEL_DIPLOMATS_MONTHS = 1								# 驱逐外交官（持续：月）
 	# SWAY_OFFER_OBLIGATION_MANEUVERS_COST						# 通过 country_diplomatic_play_maneuvers_add 解决

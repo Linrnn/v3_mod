@@ -1,21 +1,21 @@
-# cheat = {
-# 	is_shown = {
-# 		is_player = yes
-# 	}
-# 	possible = {
-# 		is_player = yes
-# 	}
-# 	when_taken = {
-# 		trigger_event = {
-# 			id = my_cheat.1
-# 			days = 0
-# 			popup = yes
-# 		}
-# 	}
-# 	ai_chance = {
-# 		base = 0
-# 	}
-# }
+cheat = {
+	is_shown = {
+		is_player = yes
+	}
+	possible = {
+		is_player = yes
+	}
+	when_taken = {
+		trigger_event = {
+			id = my_cheat.1
+			days = 0
+			popup = yes
+		}
+	}
+	ai_chance = {
+		base = 0
+	}
+}
 
 # cheat_重置生育法律 = {
 # 	is_shown = {
