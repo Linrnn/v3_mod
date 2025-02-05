@@ -18,27 +18,41 @@
 # }
 
 #==============================以下为原版修正==============================
-# 每级识字率修正
-# country_literacy_rate = {
-# 	# 原版
-# 	country_weekly_innovation_max_add = 150			# 最大创新力
-# 	country_tech_spread_add = 75					# 科技研究速度
-# 	# 新增
-# 	state_birth_rate_mult = -0.2					# 州出生率
-# 	state_dependent_wage_mult = -0.2
-# }
 
-# 随破坏程度而变化
-# state_region_devastation = {
-# 	# 原版
-# 	state_infrastructure_mult = -1.0				# 州基础设施
-# 	state_mortality_mult = 2.0						# 州死亡率
-# 	state_migration_pull_mult = -2.0				# 州移民吸引力
-# 	state_construction_mult = -1.0					# 州建造效率
-# 	# 新增
-# 	state_birth_rate_mult = -1.0					# 州出生率
-#   state_standard_of_living_add = -10				# 州生活水平
-# }
+# 省份破坏程度修正
+state_region_devastation = {
+	# 原版
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
+	state_infrastructure_mult = -1.0				# 州基础设施
+	state_mortality_mult = 2.0						# 州死亡率
+	state_migration_pull_mult = -2.0				# 州移民吸引力
+	state_construction_mult = -1.0					# 州建造效率
+	# 新增
+	state_birth_rate_mult = -1.0					# 州出生率
+}
+
+# 省份污染程度修正
+state_region_pollution_general = {
+	# 原版
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
+	state_migration_pull_mult = -0.25
+	state_harvest_condition_drought_impact_mult = 0.5
+	state_harvest_condition_flood_impact_mult = 0.5
+	state_harvest_condition_wildfire_impact_mult = 0.5
+	state_harvest_condition_heatwave_impact_mult = 0.5
+	# 新增
+	state_birth_rate_mult = -0.4					# 州出生率
+}
+
+# 国家识字率修正
+country_literacy_rate = {
+	# 原版
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
+	country_weekly_innovation_max_add = 150			# 最大创新力
+	country_tech_spread_add = 75					# 科技研究速度
+	# 新增
+	state_birth_rate_mult = -0.2					# 州出生率
+}
 
 #==============================以下为模版修正==============================
 #building_throughput_{good_type}_mult	吞吐量修正
