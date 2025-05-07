@@ -1,153 +1,153 @@
-﻿# unlock_power_bloc_principle_slot_1 = {
-# 	always = yes
-# }
-# unlock_power_bloc_principle_slot_2 = {
-# 	always = yes
-# }
-# unlock_power_bloc_principle_slot_3 = {
+﻿# # unlock_power_bloc_principle_slot_1 = {
+# # 	always = yes
+# # }
+# # unlock_power_bloc_principle_slot_2 = {
+# # 	always = yes
+# # }
+# # unlock_power_bloc_principle_slot_3 = {
+# # 	OR = {
+# # 		hidden_trigger = {
+# # 			used_principle_slots >= 3
+# # 		}
+# # 		AND = {
+# # 			power_bloc_rank <= 15
+# # 			num_power_bloc_members >= 5
+# # 		}
+# # 	}
+# # }
+# # unlock_power_bloc_principle_slot_4 = {
+# # 	OR = {
+# # 		hidden_trigger = {
+# # 			used_principle_slots = 4
+# # 		}
+# # 		AND = {
+# # 			power_bloc_rank <= 15
+# # 			num_power_bloc_members >= 10
+# # 		}
+# # 	}
+# # }
+# unlock_power_bloc_principle_slot_5 = {
 # 	OR = {
 # 		hidden_trigger = {
-# 			used_principle_slots >= 3
+# 			used_principle_slots >= 5
 # 		}
 # 		AND = {
-# 			power_bloc_rank <= 15
-# 			num_power_bloc_members >= 5
+# 			power_bloc_rank <= 10
+# 			num_power_bloc_members >= 15
 # 		}
 # 	}
 # }
-# unlock_power_bloc_principle_slot_4 = {
+# unlock_power_bloc_principle_slot_6 = {
 # 	OR = {
 # 		hidden_trigger = {
-# 			used_principle_slots = 4
+# 			used_principle_slots >= 6
 # 		}
 # 		AND = {
-# 			power_bloc_rank <= 15
-# 			num_power_bloc_members >= 10
+# 			power_bloc_rank <= 10
+# 			num_power_bloc_members >= 20
 # 		}
 # 	}
 # }
-unlock_power_bloc_principle_slot_5 = {
-	OR = {
-		hidden_trigger = {
-			used_principle_slots >= 5
-		}
-		AND = {
-			power_bloc_rank <= 10
-			num_power_bloc_members >= 15
-		}
-	}
-}
-unlock_power_bloc_principle_slot_6 = {
-	OR = {
-		hidden_trigger = {
-			used_principle_slots >= 6
-		}
-		AND = {
-			power_bloc_rank <= 10
-			num_power_bloc_members >= 20
-		}
-	}
-}
-unlock_power_bloc_principle_slot_7 = {
-	OR = {
-		hidden_trigger = {
-			used_principle_slots >= 7
-		}
-		AND = {
-			power_bloc_rank <= 5
-			num_power_bloc_members >= 25
-		}
-	}
-}
-unlock_power_bloc_principle_slot_8 = {
-	OR = {
-		hidden_trigger = {
-			used_principle_slots >= 8
-		}
-		AND = {
-			power_bloc_rank <= 5
-			num_power_bloc_members >= 30
-		}
-	}
-}
-unlock_power_bloc_principle_slot_9 = {
-	OR = {
-		hidden_trigger = {
-			used_principle_slots >= 9
-		}
-		AND = {
-			power_bloc_rank <= 3
-			num_power_bloc_members >= 35
-		}
-	}
-}
-unlock_power_bloc_principle_slot_10 = {
-	OR = {
-		hidden_trigger = {
-			used_principle_slots >= 10
-		}
-		AND = {
-			power_bloc_rank <= 3
-			num_power_bloc_members >= 40
-		}
-	}
-}
-unlock_power_bloc_principle_slot_11 = {
-	OR = {
-		hidden_trigger = {
-			used_principle_slots >= 11
-		}
-		AND = {
-			power_bloc_rank <= 1
-			num_power_bloc_members >= 45
-		}
-	}
-}
-unlock_power_bloc_principle_slot_12 = {
-	OR = {
-		hidden_trigger = {
-			used_principle_slots >= 12
-		}
-		AND = {
-			power_bloc_rank <= 1
-			num_power_bloc_members >= 50
-		}
-	}
-}
+# unlock_power_bloc_principle_slot_7 = {
+# 	OR = {
+# 		hidden_trigger = {
+# 			used_principle_slots >= 7
+# 		}
+# 		AND = {
+# 			power_bloc_rank <= 5
+# 			num_power_bloc_members >= 25
+# 		}
+# 	}
+# }
+# unlock_power_bloc_principle_slot_8 = {
+# 	OR = {
+# 		hidden_trigger = {
+# 			used_principle_slots >= 8
+# 		}
+# 		AND = {
+# 			power_bloc_rank <= 5
+# 			num_power_bloc_members >= 30
+# 		}
+# 	}
+# }
+# unlock_power_bloc_principle_slot_9 = {
+# 	OR = {
+# 		hidden_trigger = {
+# 			used_principle_slots >= 9
+# 		}
+# 		AND = {
+# 			power_bloc_rank <= 3
+# 			num_power_bloc_members >= 35
+# 		}
+# 	}
+# }
+# unlock_power_bloc_principle_slot_10 = {
+# 	OR = {
+# 		hidden_trigger = {
+# 			used_principle_slots >= 10
+# 		}
+# 		AND = {
+# 			power_bloc_rank <= 3
+# 			num_power_bloc_members >= 40
+# 		}
+# 	}
+# }
+# unlock_power_bloc_principle_slot_11 = {
+# 	OR = {
+# 		hidden_trigger = {
+# 			used_principle_slots >= 11
+# 		}
+# 		AND = {
+# 			power_bloc_rank <= 1
+# 			num_power_bloc_members >= 45
+# 		}
+# 	}
+# }
+# unlock_power_bloc_principle_slot_12 = {
+# 	OR = {
+# 		hidden_trigger = {
+# 			used_principle_slots >= 12
+# 		}
+# 		AND = {
+# 			power_bloc_rank <= 1
+# 			num_power_bloc_members >= 50
+# 		}
+# 	}
+# }
 
-# unlock_power_bloc_formation_principle_slot_1 = {
-# 	always = yes
-# }
-# unlock_power_bloc_formation_principle_slot_2 = {
-# 	always = yes
-# }
-# unlock_power_bloc_formation_principle_slot_3 = {
+# # unlock_power_bloc_formation_principle_slot_1 = {
+# # 	always = yes
+# # }
+# # unlock_power_bloc_formation_principle_slot_2 = {
+# # 	always = yes
+# # }
+# # unlock_power_bloc_formation_principle_slot_3 = {
+# # 	always = no
+# # }
+# # unlock_power_bloc_formation_principle_slot_4 = {
+# # 	always = no
+# # }
+# unlock_power_bloc_formation_principle_slot_5 = {
 # 	always = no
 # }
-# unlock_power_bloc_formation_principle_slot_4 = {
+# unlock_power_bloc_formation_principle_slot_6 = {
 # 	always = no
 # }
-unlock_power_bloc_formation_principle_slot_5 = {
-	always = no
-}
-unlock_power_bloc_formation_principle_slot_6 = {
-	always = no
-}
-unlock_power_bloc_formation_principle_slot_7 = {
-	always = no
-}
-unlock_power_bloc_formation_principle_slot_8 = {
-	always = no
-}
-unlock_power_bloc_formation_principle_slot_9 = {
-	always = no
-}
-unlock_power_bloc_formation_principle_slot_10 = {
-	always = no
-}
-unlock_power_bloc_formation_principle_slot_11 = {
-	always = no
-}
-unlock_power_bloc_formation_principle_slot_12 = {
-	always = no
-}
+# unlock_power_bloc_formation_principle_slot_7 = {
+# 	always = no
+# }
+# unlock_power_bloc_formation_principle_slot_8 = {
+# 	always = no
+# }
+# unlock_power_bloc_formation_principle_slot_9 = {
+# 	always = no
+# }
+# unlock_power_bloc_formation_principle_slot_10 = {
+# 	always = no
+# }
+# unlock_power_bloc_formation_principle_slot_11 = {
+# 	always = no
+# }
+# unlock_power_bloc_formation_principle_slot_12 = {
+# 	always = no
+# }

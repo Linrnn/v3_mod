@@ -1,5 +1,5 @@
 ﻿NGame = {
-	END_DATE = "2236.1.1"
+	END_DATE = "2036.1.1"
 }
 
 NEconomy = {
@@ -41,7 +41,7 @@ NDiplomacy = {
 	INFAMY_THRESHOLD_PARIAH = 1000								# 国际弃民阈值
 	BASE_YEARLY_INFAMY_DECAY_RATE = 200							# 恶名衰退（每年）
 
-	DEFAULT_TRUCE_MONTHS = 1									# 停战（持续：月）
+	DEFAULT_TRUCE_MONTHS = 6									# 停战（持续：月）
 	DIPLOMATIC_PLAY_ESCALATION_DAILY = 5						# 外交博弈每日进度
 	# RECENTLY_CONQUERED_DURATION_MONTHS = 1					# 战争傀儡国家的停战（持续：月）
 	# RECENTLY_LIBERATED_DURATION_MONTHS = 1					# 外交释放国家的停战（持续：月）
@@ -51,8 +51,6 @@ NDiplomacy = {
 }
 
 # NWar = {
-# 	MAX_SIMULTANEOUS_BATTLES = 6								# 一个战线的将领数
-
 # 	DEVASTATION_INCREASE_RATE = 0.2								# 每天，随职业水平变化，破坏率增加
 # 	DEVASTATION_FROM_BATTLES = 0.5 								# 对于每场战斗，战争造成的破坏
 
@@ -78,8 +76,8 @@ NCharacters = {
 	RECRUIT_COMMANDER_POOL_SIZE = 10							# 将领候选池
 }
 
-NPowerBlocs = {
-	MAX_PRINCIPLES = 12											# 最大原则数量
-	MAX_MANDATES = 6											# 最大授权数量
-	MAX_MANDATE_PROGRESS = 1000									# 授权进度
-}
+# NPowerBlocs = {
+# 	MAX_PRINCIPLES = 12											# 最大原则数量
+# 	MAX_MANDATES = 6											# 最大授权数量
+# 	MAX_MANDATE_PROGRESS = 1000									# 授权进度
+# }
