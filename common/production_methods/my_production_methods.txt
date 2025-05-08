@@ -1,0 +1,667 @@
+# 酿酒厂 - 直接发酵
+my_handsewn_drink_distillery_industry = {
+	texture = "gfx/interface/icons/production_method_icons/pm_handsewn_drink.dds"
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 5
+		}
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_grain_add = 15
+			goods_output_liquor_add = 35
+		}
+		level_scaled = {
+			building_employment_laborers_add = 4000
+			building_employment_machinists_add = 1750
+		}
+	}
+}
+# 酿酒厂 - 酒精蒸馏
+my_drink_workshops_distillery_industry = {
+	texture = "gfx/interface/icons/production_method_icons/pm_drink_workshops.dds"
+	unlocking_technologies = {
+		lathe
+	}
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_grain_add = 45
+			goods_input_sugar_add = 15
+			goods_output_liquor_add = 80
+		}
+		level_scaled = {
+			building_employment_laborers_add = 3000
+			building_employment_machinists_add = 2500
+			building_employment_shopkeepers_add = 250
+		}
+	}
+}
+# 酿酒厂 - 精酿啤酒
+my_drink_machine_distillery_industry = {
+	texture = "gfx/interface/icons/production_method_icons/pm_drink_machine.dds"
+	unlocking_technologies = {
+		mechanized_workshops
+	}
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 15
+		}
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_grain_add = 75
+			goods_input_fruit_add = 10
+			goods_input_sugar_add = 40
+			goods_output_liquor_add = 150
+		}
+		level_scaled = {
+			building_employment_laborers_add = 2000
+			building_employment_machinists_add = 3000
+			building_employment_clerks_add = 500
+			building_employment_shopkeepers_add = 250
+		}
+	}
+}
+# 酿酒厂 - 伏特加酿造
+my_electric_drink_machine_distillery_industry = {
+	texture = "gfx/interface/icons/production_method_icons/pm_electric_drink_machine.dds"
+	unlocking_technologies = {
+		electrical_capacitors
+	}
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 5
+		}
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_grain_add = 125
+			goods_input_fruit_add = 20
+			goods_input_sugar_add = 70
+			goods_output_liquor_add = 250
+		}
+		level_scaled = {
+			building_employment_laborers_add = 2000
+			building_employment_machinists_add = 2000
+			building_employment_clerks_add = 500
+			building_employment_shopkeepers_add = 1000
+			building_employment_engineers_add = 250
+		}
+	}
+}
+
+# 豪华家具厂 - 手工家具
+my_luxury_handcrafted_furniture = {
+	texture = "gfx/interface/icons/production_method_icons/furniture_handicraft.dds"
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_furniture_add = 4
+			goods_input_hardwood_add = 6
+			goods_output_luxury_furniture_add = 25
+		}
+		level_scaled = {
+			building_employment_laborers_add = 3500
+			building_employment_machinists_add = 2000
+			building_employment_shopkeepers_add = 250
+		}
+	}
+}
+# 豪华家具厂 - 车床加工
+my_luxury_lathe = {
+	texture = "gfx/interface/icons/production_method_icons/lathes.dds"
+	unlocking_technologies = {
+		lathe
+	}
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 15
+		}
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_furniture_add = 20
+			goods_input_tools_add = 10
+			goods_input_hardwood_add = 30
+			goods_output_luxury_furniture_add = 60
+		}
+		level_scaled = {
+			building_employment_laborers_add = 2500
+			building_employment_machinists_add = 2500
+			building_employment_clerks_add = 500
+			building_employment_shopkeepers_add = 250
+		}
+	}
+}
+# 豪华家具厂 - 机械化工坊
+my_luxury_mechanized_workshops = {
+	texture = "gfx/interface/icons/production_method_icons/mechanized_workshops.dds"
+	unlocking_technologies = {
+		mechanized_workshops
+	}
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 5
+		}
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_furniture_add = 120
+			goods_input_tools_add = 10
+			goods_input_hardwood_add = 60
+			goods_output_luxury_furniture_add = 150
+		}
+		level_scaled = {
+			building_employment_laborers_add = 2000
+			building_employment_machinists_add = 2000
+			building_employment_clerks_add = 1000
+			building_employment_shopkeepers_add = 500
+			building_employment_engineers_add = 250
+		}
+	}
+}
+
+# 豪华衣物厂 - 手工衣物
+my_luxury_handsewn_clothes = {
+	texture = "gfx/interface/icons/production_method_icons/handsewn_clothes.dds"
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 5
+		}
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_clothes_add = 5
+			goods_input_silk_add = 5
+			goods_output_luxury_clothes_add = 25
+		}
+		level_scaled = {
+			building_employment_laborers_add = 4000
+			building_employment_machinists_add = 1750
+		}
+	}
+}
+# 豪华衣物厂 - 染料工坊
+my_luxury_dye_workshops = {
+	texture = "gfx/interface/icons/production_method_icons/dye_workshops.dds"
+	unlocking_technologies = {
+		lathe
+	}
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_clothes_add = 25
+			goods_input_silk_add = 10
+			goods_input_dye_add = 5
+			goods_output_luxury_clothes_add = 50
+		}
+		level_scaled = {
+			building_employment_laborers_add = 3000
+			building_employment_machinists_add = 2500
+			building_employment_shopkeepers_add = 250
+		}
+	}
+}
+# 豪华衣物厂 - 缝纫机
+my_luxury_sewing_machines = {
+	texture = "gfx/interface/icons/production_method_icons/sewing_machines.dds"
+	unlocking_technologies = {
+		mechanized_workshops
+	}
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 15
+		}
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_clothes_add = 80
+			goods_input_silk_add = 20
+			goods_input_dye_add = 10
+			goods_input_tools_add = 10
+			goods_output_luxury_clothes_add = 100
+		}
+		level_scaled = {
+			building_employment_laborers_add = 2000
+			building_employment_machinists_add = 3000
+			building_employment_clerks_add = 500
+			building_employment_shopkeepers_add = 250
+		}
+	}
+}
+# 豪华衣物厂 - 电动缝纫机
+my_luxury_electric_sewing_machines = {
+	texture = "gfx/interface/icons/production_method_icons/electric_sewing_machines.dds"
+	required_input_goods = electricity
+	unlocking_technologies = {
+		electrical_capacitors
+	}
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 5
+		}
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_clothes_add = 100
+			goods_input_silk_add = 25
+			goods_input_dye_add = 15
+			goods_input_tools_add = 10
+			goods_input_electricity_add = 20
+			goods_input_rubber_add = 20
+			goods_output_luxury_clothes_add = 150
+		}
+		level_scaled = {
+			building_employment_laborers_add = 2000
+			building_employment_machinists_add = 2000
+			building_employment_clerks_add = 1000
+			building_employment_shopkeepers_add = 500
+			building_employment_engineers_add = 250
+		}
+	}
+}
+
+# 瓷器厂 - 陶瓷
+my_ceramics_porcelain = {
+	texture = "gfx/interface/icons/production_method_icons/ceramics.dds"
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 5
+		}
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_wood_add = 50
+			goods_input_lead_add = 5
+			goods_input_dye_add = 10
+			goods_output_porcelain_add = 40
+		}
+		level_scaled = {
+			building_employment_laborers_add = 3500
+			building_employment_machinists_add = 2000
+			building_employment_shopkeepers_add = 250
+		}
+	}
+}
+# 瓷器厂 - 骨瓷
+my_bone_china_porcelain = {
+	texture = "gfx/interface/icons/production_method_icons/bone_china.dds"
+	unlocking_technologies = {
+		chemical_bleaching
+	}
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_wood_add = 30
+			goods_input_lead_add = 20
+			goods_input_dye_add = 10
+			goods_output_porcelain_add = 60
+		}
+		level_scaled = {
+			building_employment_laborers_add = 2500
+			building_employment_machinists_add = 2500
+			building_employment_clerks_add = 500
+			building_employment_shopkeepers_add = 250
+		}
+	}
+}
+# 瓷器厂 - 现代瓷器
+my_modern_ceramics_porcelain = {
+	texture = "gfx/interface/icons/production_method_icons/pm_modern_ceramics.dds"
+	unlocking_technologies = {
+		aniline
+	}
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 5
+		}
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_coal_add = 40
+			goods_input_lead_add = 50
+			goods_input_dye_add = 30
+			goods_output_porcelain_add = 100
+		}
+		level_scaled = {
+			building_employment_laborers_add = 2000
+			building_employment_machinists_add = 2000
+			building_employment_clerks_add = 1000
+			building_employment_shopkeepers_add = 500
+			building_employment_engineers_add = 250
+		}
+	}
+}
+
+# 无线电厂 - 调制电波
+my_modulation = {
+	texture = "gfx/interface/icons/production_method_icons/pm_modulation.dds"
+	required_input_goods = electricity
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_telephones_add = 10
+			goods_input_electricity_add = 10
+			goods_output_radios_add = 30
+		}
+		level_scaled = {
+			building_employment_laborers_add = 3500
+			building_employment_machinists_add = 2000
+			building_employment_shopkeepers_add = 250
+		}
+	}
+}
+# 无线电厂 - 真空管
+my_vacuum_tubes = {
+	texture = "gfx/interface/icons/production_method_icons/pm_vacuum_tubes.dds"
+	required_input_goods = electricity
+	unlocking_technologies = {
+		radio
+	}
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 15
+		}
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_telephones_add = 30
+			goods_input_lead_add = 5
+			goods_input_tools_add = 5
+			goods_input_electricity_add = 10
+			goods_output_radios_add = 60
+		}
+		level_scaled = {
+			building_employment_laborers_add = 2500
+			building_employment_machinists_add = 2500
+			building_employment_clerks_add = 500
+			building_employment_shopkeepers_add = 250
+		}
+	}
+}
+# 无线电厂 - 晶体管
+my_transistor = {
+	texture = "gfx/interface/icons/production_method_icons/pm_transistor.dds"
+	required_input_goods = electricity
+	unlocking_technologies = {
+		mass_propaganda
+	}
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 5
+		}
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_telephones_add = 70
+			goods_input_rubber_add = 15
+			goods_input_lead_add = 20
+			goods_input_tools_add = 10
+			goods_input_electricity_add = 20
+			goods_output_radios_add = 120
+		}
+		level_scaled = {
+			building_employment_laborers_add = 2000
+			building_employment_machinists_add = 2000
+			building_employment_clerks_add = 1000
+			building_employment_shopkeepers_add = 500
+			building_employment_engineers_add = 250
+		}
+	}
+}
+
+# 硬木厂 - 硬木加工
+my_base_hardwood = {
+	texture = "gfx/interface/icons/production_method_icons/pm_base_hardwood.dds"
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 5
+		}
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_tools_add = 5
+			goods_input_wood_add = 40
+			goods_output_hardwood_add = 50
+		}
+		level_scaled = {
+			building_employment_laborers_add = 3500
+			building_employment_machinists_add = 2000
+			building_employment_shopkeepers_add = 250
+		}
+	}
+}
+# 硬木厂 - 压制硬木
+my_pressed_hardwood = {
+	texture = "gfx/interface/icons/production_method_icons/hardwood_selection.dds"
+	unlocking_technologies = {
+		mechanized_workshops
+	}
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_steel_add = 10
+			goods_input_tools_add = 10
+			goods_input_wood_add = 60
+			goods_output_hardwood_add = 100
+		}
+		level_scaled = {
+			building_employment_laborers_add = 2500
+			building_employment_machinists_add = 2500
+			building_employment_clerks_add = 500
+			building_employment_shopkeepers_add = 250
+		}
+	}
+}
+# 硬木厂 - 电动压木机
+my_electric_hardwood = {
+	texture = "gfx/interface/icons/production_method_icons/increased_hardwood.dds"
+	required_input_goods = electricity
+	unlocking_technologies = {
+		electrical_capacitors
+	}
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 5
+		}
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_steel_add = 20
+			goods_input_tools_add = 10
+			goods_input_wood_add = 100
+			goods_input_electricity_add = 20
+			goods_output_hardwood_add = 150
+		}
+		level_scaled = {
+			building_employment_laborers_add = 2000
+			building_employment_machinists_add = 2000
+			building_employment_clerks_add = 1000
+			building_employment_shopkeepers_add = 500
+			building_employment_engineers_add = 250
+		}
+	}
+}
+
+# 汽车厂 - 蒸汽机
+my_steam_engines_automobiles = {
+	texture = "gfx/interface/icons/production_method_icons/steamworks.dds"
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 5
+		}
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_engines_add = 30
+			goods_input_steel_add = 5
+			goods_input_tools_add = 10
+			goods_input_coal_add = 10
+			goods_output_automobiles_add = 40
+		}
+		level_scaled = {
+			building_employment_laborers_add = 3500
+			building_employment_machinists_add = 2000
+			building_employment_engineers_add = 250
+		}
+	}
+}
+# 汽车厂 - 电动机
+my_electric_engines_automobiles = {
+	texture = "gfx/interface/icons/production_method_icons/electric_engines.dds"
+	required_input_goods = electricity
+	unlocking_technologies = {
+		electric_railway
+	}
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 2
+		}
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_engines_add = 50
+			goods_input_steel_add = 20
+			goods_input_tools_add = 20
+			goods_input_rubber_add = 20
+			goods_input_electricity_add = 30
+			goods_output_automobiles_add = 80
+		}
+		level_scaled = {
+			building_employment_laborers_add = 2500
+			building_employment_machinists_add = 2500
+			building_employment_clerks_add = 500
+			building_employment_engineers_add = 250
+		}
+	}
+}
+# 汽车厂 - 内燃机
+my_diesel_engines_automobiles = {
+	texture = "gfx/interface/icons/production_method_icons/diesel_engines.dds"
+	unlocking_technologies = {
+		compression_ignition
+	}
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_engines_add = 75
+			goods_input_steel_add = 20
+			goods_input_tools_add = 5
+			goods_input_rubber_add = 15
+			goods_input_oil_add = 35
+			goods_output_automobiles_add = 100
+		}
+		level_scaled = {
+			building_employment_laborers_add = 2000
+			building_employment_machinists_add = 2000
+			building_employment_clerks_add = 1000
+			building_employment_engineers_add = 750
+		}
+	}
+}
+
+# 坦克厂 - 坦克生产
+my_base_tanks_industry = {
+	texture = "gfx/interface/icons/production_method_icons/pm_base_tanks_industry.dds"
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_engines_add = 5
+			goods_input_steel_add = 9
+			goods_input_coal_add = 10
+			goods_output_tanks_add = 25
+		}
+		level_scaled = {
+			building_employment_laborers_add = 3500
+			building_employment_machinists_add = 1500
+			building_employment_clerks_add = 500
+			building_employment_engineers_add = 250
+		}
+	}
+}
+# 坦克厂 - 电动机
+my_electric_tanks_industry = {
+	texture = "gfx/interface/icons/production_method_icons/pm_electric_tanks_industry.dds"
+	required_input_goods = electricity
+	unlocking_technologies = {
+		electric_railway
+	}
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 5
+		}
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_engines_add = 10
+			goods_input_steel_add = 18
+			goods_input_electricity_add = 10
+			goods_output_tanks_add = 40
+		}
+		level_scaled = {
+			building_employment_laborers_add = 2500
+			building_employment_machinists_add = 2000
+			building_employment_clerks_add = 1000
+			building_employment_engineers_add = 250
+		}
+	}
+}
+# 坦克厂 - 内燃机
+my_oil_tanks_industry = {
+	texture = "gfx/interface/icons/production_method_icons/pm_oil_tanks_industry.dds"
+	unlocking_technologies = {
+		compression_ignition
+	}
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 15
+		}
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_engines_add = 20
+			goods_input_steel_add = 40
+			goods_input_oil_add = 30
+			goods_output_tanks_add = 80
+		}
+		level_scaled = {
+			building_employment_laborers_add = 2000
+			building_employment_machinists_add = 2000
+			building_employment_clerks_add = 1000
+			building_employment_engineers_add = 750
+		}
+	}
+}

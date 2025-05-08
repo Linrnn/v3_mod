@@ -1,0 +1,190 @@
+# 轻工业 - 酿酒厂
+my_building_distillery_industry = {
+	building_group = bg_light_industry
+	icon = "gfx/interface/icons/building_icons/building_distillery_industry.dds"
+	city_type = city
+	levels_per_mesh = 5
+	ai_nationalization_desire = -0.25 # AI is generally fine with privatizing consumer goods industries
+	required_construction = construction_cost_high
+	ownership_type = self
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_light_industry.dds"
+
+	unlocking_technologies = {
+		baking_powder
+	}
+	production_method_groups = {
+		my_base_distillery_industry
+		pmg_automation_building_food_industry
+	}
+	possible = {
+		owner = {
+			NOT = { has_law = law_type:law_industry_banned }
+		}
+	}
+}
+# 轻工业 - 豪华家具厂
+my_building_luxury_furniture_industry = {
+	building_group = bg_light_industry
+	icon = "gfx/interface/icons/building_icons/building_luxury_furniture_industry.dds"
+	city_type = city
+	levels_per_mesh = 5
+	ai_nationalization_desire = 0.50 # AI is generally fine with privatizing consumer goods industries
+	required_construction = construction_cost_high
+	ownership_type = self
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_light_industry.dds"
+
+	unlocking_technologies = {
+		manufacturies
+	}
+	production_method_groups = {
+		my_base_luxury_furniture_industry
+		pmg_automation_building_furniture_manufacturies
+	}
+	possible = {
+		owner = {
+			NOT = { has_law = law_type:law_industry_banned }
+		}
+	}
+}
+# 轻工业 - 豪华衣物厂
+my_building_luxury_clothes_industry = {
+	building_group = bg_light_industry
+	icon = "gfx/interface/icons/building_icons/building_luxury_clothes_industry.dds"
+	city_type = city
+	levels_per_mesh = 5
+	ai_nationalization_desire = 0.50 # AI is generally fine with privatizing consumer goods industries
+	required_construction = construction_cost_high
+	ownership_type = self
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_light_industry.dds"
+
+	unlocking_technologies = {
+		manufacturies
+	}
+	production_method_groups = {
+		my_base_luxury_clothes_industry
+		pmg_automation_building_textile_mills
+	}
+	possible = {
+		owner = {
+			NOT = { has_law = law_type:law_industry_banned }
+		}
+	}
+}
+# 轻工业 - 瓷器厂
+my_building_porcelain_industry = {
+	building_group = bg_light_industry
+	icon = "gfx/interface/icons/building_icons/building_porcelain_industry.dds"
+	city_type = city
+	levels_per_mesh = 5
+	ai_nationalization_desire = 0.25 # AI is generally fine with privatizing consumer goods industries
+	required_construction = construction_cost_high
+	ownership_type = self
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_light_industry.dds"
+
+	unlocking_technologies = {
+		chemical_bleaching
+	}
+	production_method_groups = {
+		my_base_porcelain_industry
+		pmg_glassblowing
+	}
+	possible = {
+		owner = {
+			NOT = { has_law = law_type:law_industry_banned }
+		}
+	}
+}
+# 轻工业 - 无线电厂
+my_building_radios_industry = {
+	building_group = bg_light_industry
+	icon = "gfx/interface/icons/building_icons/building_radios_industry.dds"
+	city_type = city
+	levels_per_mesh = 5
+	ai_nationalization_desire = 0.25 # AI is generally fine with privatizing consumer goods industries
+	required_construction = construction_cost_high
+	ownership_type = self
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_light_industry.dds"
+
+	unlocking_technologies = {
+		telephone
+	}
+	production_method_groups = {
+		my_base_radios_industry
+	}
+	possible = {
+		owner = {
+			NOT = { has_law = law_type:law_industry_banned }
+		}
+	}
+}
+# 轻工业 - 硬木厂
+my_building_hardwood_industry = {
+	building_group = bg_light_industry
+	icon = "gfx/interface/icons/building_icons/building_hardwood_industry.dds"
+	city_type = city
+	levels_per_mesh = 5
+	ai_nationalization_desire = -0.25 # AI is generally fine with privatizing consumer goods industries
+	required_construction = construction_cost_high
+	ownership_type = self
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_light_industry.dds"
+
+	unlocking_technologies = {
+		lathe
+	}
+	production_method_groups = {
+		my_base_hardwood_industry
+	}
+	possible = {
+		owner = {
+			NOT = { has_law = law_type:law_industry_banned }
+		}
+	}
+}
+
+# 重工业 - 汽车厂
+my_building_automobiles_industry = {
+	building_group = bg_heavy_industry
+	icon = "gfx/interface/icons/building_icons/building_automobiles_industry.dds"
+	city_type = city
+	levels_per_mesh = 5
+	ai_nationalization_desire = 0.25 # AI is generally fine with privatizing consumer goods industries
+	required_construction = construction_cost_high
+	ownership_type = self
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_heavy_industry.dds"
+
+	unlocking_technologies = {
+		electrical_generation
+	}
+	production_method_groups = {
+		my_base_automobiles_industry
+		pmg_automation_building_motor_industry
+	}
+	possible = {
+		owner = {
+			NOT = { has_law = law_type:law_industry_banned }
+		}
+	}
+}
+# 重工业 - 坦克厂
+my_building_tanks_industry = {
+	building_group = bg_heavy_industry
+	icon = "gfx/interface/icons/building_icons/building_tanks_industry.dds"
+	city_type = city
+	levels_per_mesh = 5
+	ai_nationalization_desire = -0.50 # AI is generally fine with privatizing consumer goods industries
+	required_construction = construction_cost_high
+	ownership_type = self
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_harbour.dds"
+
+	unlocking_technologies = {
+		mobile_armor
+	}
+	production_method_groups = {
+		my_base_tanks_industry
+	}
+	possible = {
+		owner = {
+			NOT = { has_law = law_type:law_industry_banned }
+		}
+	}
+}

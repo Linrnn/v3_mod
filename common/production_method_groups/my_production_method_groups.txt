@@ -1,0 +1,75 @@
+# 酿酒厂
+my_base_distillery_industry = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
+	production_methods = {
+		my_handsewn_drink_distillery_industry
+		my_drink_workshops_distillery_industry
+		my_drink_machine_distillery_industry
+		my_electric_drink_machine_distillery_industry
+	}
+}
+# 豪华家具厂
+my_base_luxury_furniture_industry = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
+	production_methods = {
+		my_luxury_handcrafted_furniture
+		my_luxury_lathe
+		my_luxury_mechanized_workshops
+	}
+}
+# 豪华衣物厂
+my_base_luxury_clothes_industry = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		my_luxury_handsewn_clothes
+		my_luxury_dye_workshops
+		my_luxury_sewing_machines
+		my_luxury_electric_sewing_machines
+	}
+}
+# 瓷器厂
+my_base_porcelain_industry = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		my_ceramics_porcelain
+		my_bone_china_porcelain
+		my_modern_ceramics_porcelain
+	}
+}
+# 无线电厂
+my_base_radios_industry = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		my_modulation
+		my_vacuum_tubes
+		my_transistor
+	}
+}
+# 硬木厂
+my_base_hardwood_industry = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		my_base_hardwood
+		my_pressed_hardwood
+		my_electric_hardwood
+	}
+}
+
+# 汽车厂
+my_base_automobiles_industry = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
+	production_methods = {
+		my_steam_engines_automobiles
+		my_electric_engines_automobiles
+		my_diesel_engines_automobiles
+	}
+}
+# 坦克厂
+my_base_tanks_industry = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		my_base_tanks_industry
+		my_electric_tanks_industry
+		my_oil_tanks_industry
+	}
+}

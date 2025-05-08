@@ -88,33 +88,33 @@ cheat_吞并_附庸 = {
 	}
 }
 
-cheat_吞并_土著 = {
-	requires_approval = no
-	show_effect_in_tooltip = no
-	should_notify_third_parties = no
+# cheat_吞并_土著 = {
+# 	requires_approval = no
+# 	show_effect_in_tooltip = no
+# 	should_notify_third_parties = no
 
-	groups = {
-		general
-	}
-	potential = {
-		is_player = yes
-	}
-	possible = {
-		is_revolutionary = no							# 没有革命
-		is_diplomatic_play_committed_participant = no	# 没有参与外交行动（包括战争/博弈）
-		scope:target_country = {
-			is_country_type = decentralized
-		}
-	}
-	accept_effect = {
-		annex = scope:target_country
-	}
-	ai = {
-		will_propose = {
-			always = no
-		}
-	}
-}
+# 	groups = {
+# 		general
+# 	}
+# 	potential = {
+# 		is_player = yes
+# 	}
+# 	possible = {
+# 		is_revolutionary = no							# 没有革命
+# 		is_diplomatic_play_committed_participant = no	# 没有参与外交行动（包括战争/博弈）
+# 		scope:target_country = {
+# 			is_country_type = decentralized
+# 		}
+# 	}
+# 	accept_effect = {
+# 		annex = scope:target_country
+# 	}
+# 	ai = {
+# 		will_propose = {
+# 			always = no
+# 		}
+# 	}
+# }
 
 # cheat_建造_港口 = {
 # 	requires_approval = no
