@@ -1,6 +1,6 @@
 # 酿酒厂 - 直接发酵
 my_handsewn_drink_distillery_industry = {
-	texture = "gfx/interface/icons/production_method_icons/pm_handsewn_drink.dds"
+	texture = "gfx/interface/icons/production_method_icons/crystal_glass.dds"
 	state_modifiers = {
 		workforce_scaled = {
 			state_pollution_generation_add = 5
@@ -19,7 +19,7 @@ my_handsewn_drink_distillery_industry = {
 }
 # 酿酒厂 - 酒精蒸馏
 my_drink_workshops_distillery_industry = {
-	texture = "gfx/interface/icons/production_method_icons/pm_drink_workshops.dds"
+	texture = "gfx/interface/icons/production_method_icons/automated_bottle_blowers.dds"
 	unlocking_technologies = {
 		lathe
 	}
@@ -43,7 +43,7 @@ my_drink_workshops_distillery_industry = {
 }
 # 酿酒厂 - 精酿啤酒
 my_drink_machine_distillery_industry = {
-	texture = "gfx/interface/icons/production_method_icons/pm_drink_machine.dds"
+	texture = "gfx/interface/icons/production_method_icons/pot_stills.dds"
 	unlocking_technologies = {
 		mechanized_workshops
 	}
@@ -69,7 +69,7 @@ my_drink_machine_distillery_industry = {
 }
 # 酿酒厂 - 伏特加酿造
 my_electric_drink_machine_distillery_industry = {
-	texture = "gfx/interface/icons/production_method_icons/pm_electric_drink_machine.dds"
+	texture = "gfx/interface/icons/production_method_icons/patent_stills.dds"
 	unlocking_technologies = {
 		electrical_capacitors
 	}
@@ -324,7 +324,7 @@ my_bone_china_porcelain = {
 }
 # 瓷器厂 - 现代瓷器
 my_modern_ceramics_porcelain = {
-	texture = "gfx/interface/icons/production_method_icons/pm_modern_ceramics.dds"
+	texture = "gfx/interface/icons/production_method_icons/coal_fired_plant.dds"
 	unlocking_technologies = {
 		aniline
 	}
@@ -352,7 +352,7 @@ my_modern_ceramics_porcelain = {
 
 # 无线电厂 - 调制电波
 my_modulation = {
-	texture = "gfx/interface/icons/production_method_icons/pm_modulation.dds"
+	texture = "gfx/interface/icons/production_method_icons/telephone_switchboards.dds"
 	required_input_goods = electricity
 	state_modifiers = {
 		workforce_scaled = {
@@ -374,7 +374,7 @@ my_modulation = {
 }
 # 无线电厂 - 真空管
 my_vacuum_tubes = {
-	texture = "gfx/interface/icons/production_method_icons/pm_vacuum_tubes.dds"
+	texture = "gfx/interface/icons/production_method_icons/radios.dds"
 	required_input_goods = electricity
 	unlocking_technologies = {
 		radio
@@ -402,7 +402,7 @@ my_vacuum_tubes = {
 }
 # 无线电厂 - 晶体管
 my_transistor = {
-	texture = "gfx/interface/icons/production_method_icons/pm_transistor.dds"
+	texture = "gfx/interface/icons/production_method_icons/unused/radio_stations.dds"
 	required_input_goods = electricity
 	unlocking_technologies = {
 		mass_propaganda
@@ -433,7 +433,7 @@ my_transistor = {
 
 # 硬木厂 - 硬木加工
 my_base_hardwood = {
-	texture = "gfx/interface/icons/production_method_icons/pm_base_hardwood.dds"
+	texture = "gfx/interface/icons/production_method_icons/hardwood_selection.dds"
 	state_modifiers = {
 		workforce_scaled = {
 			state_pollution_generation_add = 5
@@ -454,7 +454,7 @@ my_base_hardwood = {
 }
 # 硬木厂 - 压制硬木
 my_pressed_hardwood = {
-	texture = "gfx/interface/icons/production_method_icons/hardwood_selection.dds"
+	texture = "gfx/interface/icons/production_method_icons/increased_hardwood.dds"
 	unlocking_technologies = {
 		mechanized_workshops
 	}
@@ -480,7 +480,7 @@ my_pressed_hardwood = {
 }
 # 硬木厂 - 电动压木机
 my_electric_hardwood = {
-	texture = "gfx/interface/icons/production_method_icons/increased_hardwood.dds"
+	texture = "gfx/interface/icons/production_method_icons/elastics.dds"
 	required_input_goods = electricity
 	unlocking_technologies = {
 		electrical_capacitors
@@ -591,7 +591,7 @@ my_diesel_engines_automobiles = {
 
 # 坦克厂 - 坦克生产
 my_base_tanks_industry = {
-	texture = "gfx/interface/icons/production_method_icons/pm_base_tanks_industry.dds"
+	texture = "gfx/interface/icons/production_method_icons/armored_division.dds"
 	state_modifiers = {
 		workforce_scaled = {
 			state_pollution_generation_add = 10
@@ -614,7 +614,7 @@ my_base_tanks_industry = {
 }
 # 坦克厂 - 电动机
 my_electric_tanks_industry = {
-	texture = "gfx/interface/icons/production_method_icons/pm_electric_tanks_industry.dds"
+	texture = "gfx/interface/icons/production_method_icons/unused/armored_trains.dds"
 	required_input_goods = electricity
 	unlocking_technologies = {
 		electric_railway
@@ -641,7 +641,7 @@ my_electric_tanks_industry = {
 }
 # 坦克厂 - 内燃机
 my_oil_tanks_industry = {
-	texture = "gfx/interface/icons/production_method_icons/pm_oil_tanks_industry.dds"
+	texture = "gfx/interface/icons/production_method_icons/unused/railway_guns.dds"
 	unlocking_technologies = {
 		compression_ignition
 	}

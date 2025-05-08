@@ -14,11 +14,16 @@ my_building_distillery_industry = {
 	}
 	production_method_groups = {
 		my_base_distillery_industry
-		pmg_automation_building_food_industry
 	}
 	possible = {
 		owner = {
 			NOT = { has_law = law_type:law_industry_banned }
+		}
+	}
+	can_build_private = {
+		owner = {
+			is_player = yes
+			is_player = no
 		}
 	}
 }
@@ -45,6 +50,12 @@ my_building_luxury_furniture_industry = {
 			NOT = { has_law = law_type:law_industry_banned }
 		}
 	}
+	can_build_private = {
+		owner = {
+			is_player = yes
+			is_player = no
+		}
+	}
 }
 # 轻工业 - 豪华衣物厂
 my_building_luxury_clothes_industry = {
@@ -67,6 +78,12 @@ my_building_luxury_clothes_industry = {
 	possible = {
 		owner = {
 			NOT = { has_law = law_type:law_industry_banned }
+		}
+	}
+	can_build_private = {
+		owner = {
+			is_player = yes
+			is_player = no
 		}
 	}
 }
@@ -93,6 +110,12 @@ my_building_porcelain_industry = {
 			NOT = { has_law = law_type:law_industry_banned }
 		}
 	}
+	can_build_private = {
+		owner = {
+			is_player = yes
+			is_player = no
+		}
+	}
 }
 # 轻工业 - 无线电厂
 my_building_radios_industry = {
@@ -116,6 +139,12 @@ my_building_radios_industry = {
 			NOT = { has_law = law_type:law_industry_banned }
 		}
 	}
+	can_build_private = {
+		owner = {
+			is_player = yes
+			is_player = no
+		}
+	}
 }
 # 轻工业 - 硬木厂
 my_building_hardwood_industry = {
@@ -137,6 +166,12 @@ my_building_hardwood_industry = {
 	possible = {
 		owner = {
 			NOT = { has_law = law_type:law_industry_banned }
+		}
+	}
+	can_build_private = {
+		owner = {
+			is_player = yes
+			is_player = no
 		}
 	}
 }
@@ -164,6 +199,12 @@ my_building_automobiles_industry = {
 			NOT = { has_law = law_type:law_industry_banned }
 		}
 	}
+	can_build_private = {
+		owner = {
+			is_player = yes
+			is_player = no
+		}
+	}
 }
 # 重工业 - 坦克厂
 my_building_tanks_industry = {
@@ -185,6 +226,12 @@ my_building_tanks_industry = {
 	possible = {
 		owner = {
 			NOT = { has_law = law_type:law_industry_banned }
+		}
+	}
+	can_build_private = {
+		owner = {
+			is_player = yes
+			is_player = no
 		}
 	}
 }

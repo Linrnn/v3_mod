@@ -1,23 +1,25 @@
-cheat_禁运_附属 = {
+cheat_停战 = {
 	requires_approval = no
 	show_effect_in_tooltip = no
-	should_notify_third_parties = yes
-	texture = "gfx/interface/icons/diplomatic_action_icons/unused/customs_union_15.dds"
+	should_notify_third_parties = no
+	texture = "gfx/interface/icons/diplomatic_action_icons/request_recognition.dds"
 
 	groups = {
-		overlord
+		general
 	}
 	potential = {
 		is_player = yes
 	}
 	possible = {
-		scope:target_country = {
-			is_subject_of = root
+		NOT = {
+			has_truce_with = scope:target_country		# 与目标国有停战协议
 		}
 	}
-	pact = {
-		is_embargo = yes								# 禁运
-		is_two_sided_pact = no
+	accept_effect = {
+		create_bidirectional_truce = {
+			country = scope:target_country
+			months = 12
+		}
 	}
 	ai = {
 		will_propose = {
@@ -25,6 +27,35 @@ cheat_禁运_附属 = {
 		}
 	}
 }
+
+
+# cheat_禁运_附属 = {
+# 	requires_approval = no
+# 	show_effect_in_tooltip = no
+# 	should_notify_third_parties = yes
+# 	texture = "gfx/interface/icons/diplomatic_action_icons/unused/customs_union_15.dds"
+
+# 	groups = {
+# 		overlord
+# 	}
+# 	potential = {
+# 		is_player = yes
+# 	}
+# 	possible = {
+# 		scope:target_country = {
+# 			is_subject_of = root
+# 		}
+# 	}
+# 	pact = {
+# 		is_embargo = yes								# 禁运
+# 		is_two_sided_pact = no
+# 	}
+# 	ai = {
+# 		will_propose = {
+# 			always = no
+# 		}
+# 	}
+# }
 
 cheat_压制_附属 = {
 	requires_approval = no
@@ -59,6 +90,7 @@ cheat_吞并_附庸 = {
 	requires_approval = no
 	show_effect_in_tooltip = no
 	should_notify_third_parties = no
+	texture = "gfx/interface/icons/diplomatic_action_icons/take_state.dds"
 
 	groups = {
 		overlord
@@ -69,11 +101,15 @@ cheat_吞并_附庸 = {
 	possible = {
 		is_revolutionary = no							# 没有革命
 		is_diplomatic_play_committed_participant = no	# 没有参与外交行动（包括战争/博弈）
+		NOT = {
+			has_truce_with = scope:target_country		# 与目标国有停战协议
+		}
 		scope:target_country = {
 			is_subject_of = root
 			is_diplomatic_play_committed_participant = no
 			OR = {
-				is_subject_type = subject_type_puppet	# 附庸国
+				is_subject_type = subject_type_vassal	# 附庸国
+				is_subject_type = subject_type_puppet	# 傀儡国
 				is_subject_type = subject_type_colony	# 殖民领
 			}
 		}
