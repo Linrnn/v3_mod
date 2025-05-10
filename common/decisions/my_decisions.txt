@@ -1,3 +1,18 @@
+cheat_修改经济干预 = {
+	is_shown = {
+		is_player = yes
+	}
+	possible = {
+		has_law = law_type:law_interventionism
+	}
+	when_taken = {
+		activate_law = law_type:law_my_oligopoly
+	}
+	ai_chance = {
+		base = 0
+	}
+}
+
 # cheat = {
 # 	is_shown = {
 # 		is_player = yes

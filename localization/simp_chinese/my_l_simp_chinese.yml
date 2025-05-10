@@ -1,6 +1,8 @@
 ﻿l_simp_chinese:
  lawgroup_modifier_policy:0 "修正政策"
  law_default_modifier_policy:0 "默认修正政策"
+ law_my_oligopoly: "寡头资本"
+ law_my_oligopoly_desc: "资本的是资本的，国家的还是资本的，公器私有。"
 
  lawgroup_childbirth_policy:0 "生育政策"
  law_no_childbirth_policy:0 "无生育政策"
