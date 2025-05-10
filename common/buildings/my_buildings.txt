@@ -13,7 +13,7 @@ my_building_distillery_industry = {
 		baking_powder
 	}
 	production_method_groups = {
-		my_base_distillery_industry
+		my_pmg_distillery
 	}
 	possible = {
 		owner = {
@@ -36,8 +36,7 @@ my_building_luxury_furniture_industry = {
 		manufacturies
 	}
 	production_method_groups = {
-		my_base_luxury_furniture_industry
-		pmg_automation_building_furniture_manufacturies
+		my_pmg_luxury_building_furniture_manufacturies
 	}
 	possible = {
 		owner = {
@@ -60,8 +59,7 @@ my_building_luxury_clothes_industry = {
 		manufacturies
 	}
 	production_method_groups = {
-		my_base_luxury_clothes_industry
-		pmg_automation_building_textile_mills
+		my_pmg_luxury_building_textile_mills
 	}
 	possible = {
 		owner = {
@@ -84,8 +82,7 @@ my_building_porcelain_industry = {
 		chemical_bleaching
 	}
 	production_method_groups = {
-		my_base_porcelain_industry
-		pmg_glassblowing
+		my_pmg_luxury_building_glassworks
 	}
 	possible = {
 		owner = {
@@ -108,7 +105,7 @@ my_building_radios_industry = {
 		telephone
 	}
 	production_method_groups = {
-		my_base_radios_industry
+		my_pmg_radios_category
 	}
 	possible = {
 		owner = {
@@ -131,7 +128,7 @@ my_building_hardwood_industry = {
 		lathe
 	}
 	production_method_groups = {
-		my_base_hardwood_industry
+		my_pmg_hardwood
 	}
 	possible = {
 		owner = {
@@ -155,8 +152,7 @@ my_building_automobiles_industry = {
 		electrical_generation
 	}
 	production_method_groups = {
-		my_base_automobiles_industry
-		pmg_automation_building_motor_industry
+		my_pmg_automobile_production
 	}
 	possible = {
 		owner = {
@@ -179,7 +175,7 @@ my_building_tanks_industry = {
 		mobile_armor
 	}
 	production_method_groups = {
-		my_base_tanks_industry
+		my_pmg_tanks
 	}
 	possible = {
 		owner = {

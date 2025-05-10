@@ -1,75 +1,62 @@
-# 酿酒厂
-my_base_distillery_industry = {
+﻿# 酿酒厂
+my_pmg_distillery = {
 	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
 	production_methods = {
-		my_handsewn_drink_distillery_industry
-		my_drink_workshops_distillery_industry
-		my_drink_machine_distillery_industry
-		my_electric_drink_machine_distillery_industry
+		my_pm_pot_stills
+		my_pm_patent_stills
 	}
 }
 # 豪华家具厂
-my_base_luxury_furniture_industry = {
+my_pmg_luxury_building_furniture_manufacturies = {
 	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
 	production_methods = {
-		my_luxury_handcrafted_furniture
-		my_luxury_lathe
-		my_luxury_mechanized_workshops
+		my_pm_luxury_furniture
+		my_pm_precision_tools
 	}
 }
 # 豪华衣物厂
-my_base_luxury_clothes_industry = {
-	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+my_pmg_luxury_building_textile_mills = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
 	production_methods = {
-		my_luxury_handsewn_clothes
-		my_luxury_dye_workshops
-		my_luxury_sewing_machines
-		my_luxury_electric_sewing_machines
+		my_pm_craftsman_sewing
+		my_pm_elastics
 	}
 }
 # 瓷器厂
-my_base_porcelain_industry = {
-	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+my_pmg_luxury_building_glassworks = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
 	production_methods = {
-		my_ceramics_porcelain
-		my_bone_china_porcelain
-		my_modern_ceramics_porcelain
+		my_pm_ceramics
+		my_pm_bone_china
 	}
 }
 # 无线电厂
-my_base_radios_industry = {
-	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+my_pmg_radios_category = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
 	production_methods = {
-		my_modulation
-		my_vacuum_tubes
-		my_transistor
+		my_pm_radios
 	}
 }
 # 硬木厂
-my_base_hardwood_industry = {
-	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+my_pmg_hardwood = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
 	production_methods = {
-		my_base_hardwood
-		my_pressed_hardwood
-		my_electric_hardwood
+		my_pm_hardwood
+		my_pm_increased_hardwood
 	}
 }
 
 # 汽车厂
-my_base_automobiles_industry = {
+my_pmg_automobile_production = {
 	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
 	production_methods = {
-		my_steam_engines_automobiles
-		my_electric_engines_automobiles
-		my_diesel_engines_automobiles
+		my_pm_automobile_production
 	}
 }
 # 坦克厂
-my_base_tanks_industry = {
-	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+my_pmg_tanks = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
 	production_methods = {
-		my_base_tanks_industry
-		my_electric_tanks_industry
-		my_oil_tanks_industry
+		my_pm_tank_production
 	}
 }
