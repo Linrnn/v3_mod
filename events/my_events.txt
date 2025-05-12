@@ -273,6 +273,27 @@ my_cheat.1 = {
 	# }
 }
 
+my_cheat.2 = {
+	type = country_event
+	placement = ROOT
+	hidden = yes
+	duration = 0
+
+	immediate = {
+		if = {
+			limit = {
+				has_law = law_type:law_my_oligopoly
+			}
+			seize_investment_pool = yes
+			trigger_event = {
+				id = my_cheat.2
+				weeks = 2
+			}
+		}
+	}
+}
+
+
 # --------------------------- 原版鸦片战争事件 ---------------------------
 # opium_wars.2 = {
 # 	type = country_event

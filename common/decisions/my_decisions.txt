@@ -1,4 +1,4 @@
-cheat_修改经济干预 = {
+cheat_寡头资本 = {
 	is_shown = {
 		is_player = yes
 	}
@@ -12,6 +12,20 @@ cheat_修改经济干预 = {
 		base = 0
 	}
 }
+
+# cheat_禁止投资 = {
+# 	is_shown = {
+# 		is_player = yes
+# 	}
+# 	when_taken = {
+# 		power_bloc_allow_foreign_investment_lower_rank_bool = true
+# 		country_private_buildings_protected = yes
+# 		country_private_buildings_protected = no
+# 	}
+# 	ai_chance = {
+# 		base = 0
+# 	}
+# }
 
 # cheat = {
 # 	is_shown = {

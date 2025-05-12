@@ -1,0 +1,24 @@
+﻿my_building_owner_trigger_possible = {
+	owner = {
+		NOT = {
+			OR = {
+				has_law = law_type:law_extraction_economy	# 盘剥经济
+				has_law = law_type:law_industry_banned		# 禁止工业
+			}
+		}
+	}
+}
+my_building_owner_trigger_build_private = {
+	owner = {
+		NOT = {
+			has_law = law_type:law_my_oligopoly				# 寡头资本
+		}
+	}
+}
+my_building_owner_trigger_auto_expand = {
+	owner = {
+		NOT = {
+			has_law = law_type:law_my_oligopoly				# 寡头资本
+		}
+	}
+}

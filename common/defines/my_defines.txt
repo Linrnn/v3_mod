@@ -7,7 +7,7 @@ NEconomy = {
 	# MAX_WEEKLY_CONSTRUCTION_ALLOCATION = 100000				# 每周分配给项目的最大施工点
 
 	PRICE_RANGE = 0.999											# 商品的最小价格为基数*（1-x），最大价格为基数*[1+x），x锁定为[0-1]
-	#BUY_SELL_DIFF_AT_MAX_FACTOR = 10							# 物价供需范围修改为x倍（原版2倍）
+	# BUY_SELL_DIFF_AT_MAX_FACTOR = 10							# 物价供需范围修改为x倍（原版2倍）
 	TRADE_ROUTE_MAX_LEVEL = 1000								# 贸易路线最高等级
 
 	# BUILDING_PROFIT_TARGET_TO_RAISE_WAGES = 0.5				# 利润达到（原版0.3）会给工人涨薪
@@ -31,7 +31,6 @@ NEconomy = {
 # 	BATTLE_COMBAT_EFFICIENCY_INFLICTED_CASUALTY_RATIO = 2.0		# 战死率
 
 # 	MIN_MANPOWER_CASUALTY_PER_ROUND = 50						# 每轮最少人力损失
-
 # 	CONVOY_RAIDING_STRENGTH_MULT = 0.1							# 每个车队袭击点的强度 x (num flotillas * ce offense)
 # }
 
@@ -55,12 +54,11 @@ NDiplomacy = {
 # 	DEVASTATION_FROM_BATTLES = 0.5 								# 对于每场战斗，战争造成的破坏
 
 # 	WAR_EXHAUSTION_BASE = 0.2
-
 # 	WAR_EXHAUSTION_KIA_BASE_MULTIPLIER = 0.2					# 伤亡造成的战争疲劳
 # 	WAR_EXHAUSTION_KIA_BATTLES_LOST_MULTIPLIER = 1 				# 当我方 100% 战斗失败时，伤亡造成的厌战程度进一步乘以此
 
 # 	MAX_SIMULTANEOUS_BATTLES = 6                    			# 允许生成最多x场战斗
-# 	#LOCK_PROVINCE_CAPTURE_TO_SINGLE_STATE = yes      			# 如果“yes”，则只会在与战斗省份相同的状态下占领省份
+# 	# LOCK_PROVINCE_CAPTURE_TO_SINGLE_STATE = yes      			# 如果“yes”，则只会在与战斗省份相同的状态下占领省份
 # }
 
 # NPops = {
@@ -68,7 +66,7 @@ NDiplomacy = {
 # 	POP_GROWTH_SOL_CAP = 15										# 生活水平等于x，人口增长最快
 # 	POP_GROWTH_SOL_EQUILIBRIUM = 25								# 生活水平大于x，人口开始减少
 
-# 	#MIGRATION_MAX_EMIGRATION_AS_POPULATION_FRACTION = 0.01		# 每周移民的上限被限制在一个州人口的这一部分
+# 	# MIGRATION_MAX_EMIGRATION_AS_POPULATION_FRACTION = 0.01		# 每周移民的上限被限制在一个州人口的这一部分
 # }
 
 NCharacters = {
