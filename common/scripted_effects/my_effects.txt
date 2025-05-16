@@ -1,3 +1,5 @@
+﻿# https://vic3.paradoxwikis.com/Effect
+
 # 增加建筑
 my_add_building = {
 	if = {
@@ -69,6 +71,18 @@ my_set_country_type = {
 			}
 		}
 		set_country_type = $my_country_type$
+	}
+}
+
+# 投资池 -> 国库
+my_investment_pool_2_treasury = {
+	if = {
+		limit = {
+			investment_pool > $my_cash_num$
+			gold_reserves_limit > gold_reserves
+		}
+		add_investment_pool = -$my_cash_num$
+		add_treasury = $my_cash_num$
 	}
 }
 

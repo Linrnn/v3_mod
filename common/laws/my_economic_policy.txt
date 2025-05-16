@@ -1,31 +1,56 @@
 ﻿# law_interventionism	经济干预
+# law_laissez_faire		自由放任
+# law_command_economy	计划经济
+
 law_my_oligopoly = {
 	group = lawgroup_economic_system
 	icon = "gfx/interface/icons/law_icons/unused/no_income_tax.dds"
 	progressiveness = 50
 
-	disallowing_laws = {
-		law_serfdom
-		law_anarchy
-	}
-	unlocking_technologies = {
-		manufacturies
-	}
-	# on_activate = {
-	# 	seize_investment_pool = yes											# 没收投资池
-	# 	custom_tooltip = {
-	# 		text = enact_law_radical_leftist_economy_warning_desc
-	# 	}	
+	# disallowing_laws = {
+	# 	law_serfdom
+	# 	law_isolationism
+	# 	law_anarchy
 	# }
+	# unlocking_technologies = {
+	# 	manufacturies
+	# 	international_trade
+	# 	central_planning
+	# }
+	on_activate = {
+		seize_investment_pool = yes
+		custom_tooltip = {
+			text = enact_law_radical_leftist_economy_warning_desc
+		}	
+	}
 	modifier = {
+		# country_disable_nationalization_bool = no							# 禁用国有化
+		# country_disable_privatization_bool = yes							# 禁用私有化
 		# country_force_privatization_bool = yes							# 强制私有化
-		# country_disable_privatization_bool = no							# 禁用私有化
-		# country_disable_investment_pool_bool = no							# 禁用投资池（公司除外）
+		# country_company_pay_to_establish_bool = yes						# 通过购买成立公司
 		# country_disable_nationalization_without_compensation_bool = no	# 禁用无偿国有化
-		country_private_construction_allocation_mult = 0.8					# 私人建筑分配
-		building_nationalization_investment_return_add = 0.5				# 国有化投资返还
-		country_government_dividends_reinvestment_add = 0.5					# 政府分红再投资
-		country_government_dividends_efficiency_add = 0.25					# 政府分分红效率
+		# country_loan_interest_rate_mult = -0.25							# 贷款利率
+		# country_government_dividends_reinvestment_add = 0.25				# 政府分红再投资
+		# country_leverage_resistance_mult = 0.25							# 影响抗性
+		# country_bureaucrats_pol_str_mult = 0.25							# 官僚政治力量
+		# state_shopkeepers_investment_pool_efficiency_mult = 0.25			# 店主投资池贡献效率
+		# state_capitalists_investment_pool_efficiency_mult = 0.25			# 资本家投资池贡献效率
+		# state_farmers_investment_pool_efficiency_mult = 0.25				# 农民投资池贡献效率
+		# state_clergymen_investment_pool_efficiency_mult = 0.25			# 神职人员投资池贡献效率
+		# state_aristocrats_investment_pool_efficiency_mult = 0.25			# 贵族投资池贡献效率
+		# 经济干预
+		# country_max_companies_add = 1										# 公司上限
+		# country_private_construction_allocation_mult = 0.2				# 私人建筑分配
+		# country_government_dividends_efficiency_add = 0.25				# 政府分红效率
+		# building_nationalization_investment_return_add = 0.5				# 国有化投资返还
+		# 计划经济
+		country_disable_investment_pool_bool = yes							# 禁用投资池（公司除外）
+		country_max_companies_add = 1										# 公司上限
+		country_authority_mult = 0.25										# 权威力
+		building_nationalization_cost_mult = -0.8							# 国有化补偿金
+		building_nationalization_radicals_mult = -0.5						# 国有化的激进派
+		country_government_dividends_efficiency_add = 0.4					# 政府分红效率
+		country_private_construction_allocation_mult = 0.2					# 私人建筑分配
 	}
 	ai_will_do = {
 		always = no

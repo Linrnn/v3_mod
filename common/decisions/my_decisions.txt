@@ -1,10 +1,14 @@
-cheat_寡头资本 = {
+﻿cheat_寡头资本 = {
 	is_shown = {
 		is_player = yes
+		has_law = law_type:law_interventionism		# 经济干预
 	}
-	possible = {
-		has_law = law_type:law_interventionism
-	}
+	# possible = {
+	# 	OR = {
+	# 		has_law = law_type:law_interventionism	# 经济干预
+	# 		has_law = law_type:law_laissez_faire	# 自由放任
+	# 	}
+	# }
 	when_taken = {
 		activate_law = law_type:law_my_oligopoly
 	}
@@ -12,6 +16,58 @@ cheat_寡头资本 = {
 		base = 0
 	}
 }
+
+# cheat_经济干预 = {
+# 	is_shown = {
+# 		is_player = yes
+# 	}
+# 	possible = {
+# 		not = {
+# 			has_law = law_type:law_interventionism
+# 		}
+# 	}
+# 	when_taken = {
+# 		activate_law = law_type:law_interventionism
+# 	}
+# 	ai_chance = {
+# 		base = 0
+# 	}
+# }
+
+# cheat_计划经济 = {
+# 	is_shown = {
+# 		is_player = yes
+# 	}
+# 	possible = {
+# 		not = {
+# 			has_law = law_type:law_command_economy
+# 		}
+# 	}
+# 	when_taken = {
+# 		activate_law = law_type:law_command_economy
+# 	}
+# 	ai_chance = {
+# 		base = 0
+# 	}
+# }
+
+# cheat_没收投资池 = {
+# 	is_shown = {
+# 		is_player = yes
+# 	}
+# 	possible = {
+# 		has_law = law_type:law_my_oligopoly
+# 		custom_tooltip = {
+# 			text = enact_law_radical_leftist_economy_warning_desc
+# 		}
+# 	}
+# 	when_taken = {
+# 		seize_investment_pool = yes
+# 	}
+# 	ai_chance = {
+# 		base = 0
+# 	}
+# }
 
 # cheat_禁止投资 = {
 # 	is_shown = {

@@ -1,8 +1,9 @@
-﻿namespace = my_cheat
+﻿# https://vic3.paradoxwikis.com/Event_modding
+namespace = my_cheat
 
 my_cheat.1 = {
 	type = country_event
-	placement = root
+	placement = ROOT
 	duration = 0
 	title = 作弊事件
 
@@ -284,15 +285,50 @@ my_cheat.2 = {
 			limit = {
 				has_law = law_type:law_my_oligopoly
 			}
-			seize_investment_pool = yes
+			seize_investment_pool = yes		# 没收投资池
 			trigger_event = {
 				id = my_cheat.2
-				weeks = 2
+				weeks = 4
 			}
 		}
 	}
 }
 
+# my_cheat.3 = {
+# 	type = country_event
+# 	placement = ROOT
+# 	duration = 0
+# 	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+# 	title = 投资池
+# 	cooldown = {
+# 		# months = 6
+# 		weeks = 1
+# 	}
+# 	event_image = {
+# 		video = "africa_animism"	# game\gfx\event_pictures
+# 	}
+# 	trigger = {
+# 		has_law = law_type:law_my_oligopoly
+# 	}
+
+# 	option = {
+# 		name = 征用
+# 		my_investment_pool_2_treasury = { my_cash_num = 1000000000 }	# 1B
+# 		my_investment_pool_2_treasury = { my_cash_num = 100000000 }		# 100M
+# 		my_investment_pool_2_treasury = { my_cash_num = 10000000 }		# 10M
+# 		my_investment_pool_2_treasury = { my_cash_num = 1000000 }		# 1M
+# 		ai_chance = {
+# 			base = 0
+# 		}
+# 	}
+# 	option = {
+# 		name = 退出
+# 		default_option = yes
+# 		ai_chance = {
+# 			base = 100
+# 		}
+# 	}
+# }
 
 # --------------------------- 原版鸦片战争事件 ---------------------------
 # opium_wars.2 = {

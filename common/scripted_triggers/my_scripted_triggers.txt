@@ -15,10 +15,3 @@ my_building_owner_trigger_build_private = {
 		}
 	}
 }
-my_building_owner_trigger_auto_expand = {
-	owner = {
-		NOT = {
-			has_law = law_type:law_my_oligopoly				# 寡头资本
-		}
-	}
-}
