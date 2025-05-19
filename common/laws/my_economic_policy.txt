@@ -1,4 +1,5 @@
-﻿# law_interventionism	经济干预
+﻿# https://vic3.paradoxwikis.com/Law_modding
+# law_interventionism	经济干预
 # law_laissez_faire		自由放任
 # law_command_economy	计划经济
 

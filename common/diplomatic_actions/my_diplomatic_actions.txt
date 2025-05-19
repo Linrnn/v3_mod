@@ -1,3 +1,5 @@
+# https://vic3.paradoxwikis.com/Diplomacy_modding
+
 cheat_停战 = {
 	requires_approval = no
 	show_effect_in_tooltip = no
@@ -28,6 +30,104 @@ cheat_停战 = {
 	}
 }
 
+cheat_关系_改善 = {
+	requires_approval = no
+	show_effect_in_tooltip = no
+	should_notify_third_parties = no
+	texture = "gfx/interface/icons/diplomatic_action_icons/request_recognition.dds"
+
+	groups = {
+		general
+	}
+	potential = {
+		is_player = yes
+	}
+	accept_effect = {
+		set_relations = {
+			country = scope:target_country
+			value = 100
+		}
+		scope:target_country = {
+			set_relations = {
+				country = root
+				value = 100
+			}
+		}
+	}
+	ai = {
+		will_propose = {
+			always = no
+		}
+	}
+}
+
+cheat_关系_破坏 = {
+	requires_approval = no
+	show_effect_in_tooltip = no
+	should_notify_third_parties = no
+	texture = "gfx/interface/icons/diplomatic_action_icons/request_recognition.dds"
+
+	groups = {
+		general
+	}
+	potential = {
+		is_player = yes
+	}
+	accept_effect = {
+		set_relations = {
+			country = scope:target_country
+			value = 0
+		}
+		scope:target_country = {
+			set_relations = {
+				country = root
+				value = 0
+			}
+		}
+	}
+	ai = {
+		will_propose = {
+			always = no
+		}
+	}
+}
+
+# cheat_支持度 = {
+# 	requires_approval = no
+# 	show_effect_in_tooltip = no
+# 	should_notify_third_parties = no
+# 	texture = "gfx/interface/icons/diplomatic_action_icons/request_recognition.dds"
+
+# 	groups = {
+# 		general
+# 	}
+# 	potential = {
+# 		is_player = yes
+# 	}
+# 	accept_effect = {
+# 		scope:target_country = {
+# 			every_interest_group = {
+# 				if = {
+# 					limit = {
+# 						not = {
+# 							has_modifier = my_interest_group_approval_add
+# 						}
+# 					}
+# 					add_modifier = {
+# 						name = my_interest_group_approval_add
+# 						# multiplier = 40
+# 						months = 12
+# 					}
+# 				}
+# 			}
+# 		}
+# 	}
+# 	ai = {
+# 		will_propose = {
+# 			always = no
+# 		}
+# 	}
+# }
 
 # cheat_禁运_附属 = {
 # 	requires_approval = no
@@ -93,17 +193,17 @@ cheat_吞并_附庸 = {
 	texture = "gfx/interface/icons/diplomatic_action_icons/take_state.dds"
 
 	groups = {
-		overlord
+		general
 	}
 	potential = {
 		is_player = yes
 	}
 	possible = {
-		is_revolutionary = no							# 没有革命
-		is_diplomatic_play_committed_participant = no	# 没有参与外交行动（包括战争/博弈）
-		NOT = {
-			has_truce_with = scope:target_country		# 与目标国有停战协议
-		}
+		is_revolutionary = no								# 没有革命
+		is_diplomatic_play_committed_participant = no		# 没有参与外交行动（包括战争/博弈）
+		# NOT = {
+		# 	has_truce_with = scope:target_country			# 与目标国有停战协议
+		# }
 		scope:target_country = {
 			is_subject_of = root
 			is_diplomatic_play_committed_participant = no
@@ -124,23 +224,17 @@ cheat_吞并_附庸 = {
 	}
 }
 
-# cheat_吞并_土著 = {
+# cheat_吞并_无限制 = {
 # 	requires_approval = no
 # 	show_effect_in_tooltip = no
 # 	should_notify_third_parties = no
+# 	texture = "gfx/interface/icons/diplomatic_action_icons/take_state.dds"
 
 # 	groups = {
 # 		general
 # 	}
 # 	potential = {
 # 		is_player = yes
-# 	}
-# 	possible = {
-# 		is_revolutionary = no							# 没有革命
-# 		is_diplomatic_play_committed_participant = no	# 没有参与外交行动（包括战争/博弈）
-# 		scope:target_country = {
-# 			is_country_type = decentralized
-# 		}
 # 	}
 # 	accept_effect = {
 # 		annex = scope:target_country
@@ -151,6 +245,34 @@ cheat_吞并_附庸 = {
 # 		}
 # 	}
 # }
+
+cheat_吞并_土著 = {
+	requires_approval = no
+	show_effect_in_tooltip = no
+	should_notify_third_parties = no
+
+	groups = {
+		general
+	}
+	potential = {
+		is_player = yes
+	}
+	possible = {
+		is_revolutionary = no							# 没有革命
+		is_diplomatic_play_committed_participant = no	# 没有参与外交行动（包括战争/博弈）
+		scope:target_country = {
+			is_country_type = decentralized
+		}
+	}
+	accept_effect = {
+		annex = scope:target_country
+	}
+	ai = {
+		will_propose = {
+			always = no
+		}
+	}
+}
 
 # cheat_建造_港口 = {
 # 	requires_approval = no

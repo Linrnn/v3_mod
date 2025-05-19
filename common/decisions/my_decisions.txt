@@ -1,4 +1,19 @@
-﻿cheat_寡头资本 = {
+﻿# https://vic3.paradoxwikis.com/Decision_modding
+
+# cheat_移除殖民标记 = {
+# 	is_shown = {
+# 		is_player = yes
+# 		has_variable = newly_formed_colonial_nation_var
+# 	}
+# 	when_taken = {
+# 		remove_variable = newly_formed_colonial_nation_var
+# 	}
+# 	ai_chance = {
+# 		base = 0
+# 	}
+# }
+
+cheat_寡头资本 = {
 	is_shown = {
 		is_player = yes
 		has_law = law_type:law_interventionism		# 经济干预

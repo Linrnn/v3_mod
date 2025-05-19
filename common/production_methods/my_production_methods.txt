@@ -58,10 +58,6 @@ my_pm_precision_tools = {
 	unlocking_technologies = {
 		mechanical_tools
 	}
-	unlocking_production_methods = {
-		pm_lathe
-		pm_mechanized_workshops
-	}
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_hardwood_add = 55
@@ -93,10 +89,6 @@ my_pm_elastics = {
 
 	unlocking_technologies = {
 		vulcanization
-	}
-	unlocking_production_methods = {
-		pm_sewing_machines
-		pm_electric_sewing_machines
 	}
 	building_modifiers = {
 		workforce_scaled = {
@@ -130,10 +122,6 @@ my_pm_bone_china = {
 
 	unlocking_technologies = {
 		chemical_bleaching
-	}
-	unlocking_production_methods = {
-		pm_crystal_glass
-		pm_houseware_plastics
 	}
 	building_modifiers = {
 		workforce_scaled = {
@@ -184,10 +172,6 @@ my_pm_hardwood = {
 my_pm_increased_hardwood = {
 	texture = "gfx/interface/icons/production_method_icons/increased_hardwood.dds"
 
-	unlocking_production_methods = {
-		pm_saw_mills
-		pm_electric_saw_mills
-	}
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_wood_add = 40

@@ -54,9 +54,7 @@ my_activate_law = {
 my_remove_modifier = {
 	if = {
 		limit = {
-			not = {
-				has_modifier = $my_modifier$
-			}
+			has_modifier = $my_modifier$
 		}
 		remove_modifier = $my_modifier$
 	}
