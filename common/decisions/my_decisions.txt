@@ -13,19 +13,36 @@
 # 	}
 # }
 
-cheat_寡头资本 = {
+# cheat_寡头资本 = {
+# 	is_shown = {
+# 		is_player = yes
+# 		has_law = law_type:law_interventionism		# 经济干预
+# 	}
+# 	# possible = {
+# 	# 	OR = {
+# 	# 		has_law = law_type:law_interventionism	# 经济干预
+# 	# 		has_law = law_type:law_laissez_faire	# 自由放任
+# 	# 	}
+# 	# }
+# 	when_taken = {
+# 		activate_law = law_type:law_my_oligopoly
+# 	}
+# 	ai_chance = {
+# 		base = 0
+# 	}
+# }
+
+cheat_修正 = {
 	is_shown = {
 		is_player = yes
-		has_law = law_type:law_interventionism		# 经济干预
 	}
-	# possible = {
-	# 	OR = {
-	# 		has_law = law_type:law_interventionism	# 经济干预
-	# 		has_law = law_type:law_laissez_faire	# 自由放任
-	# 	}
-	# }
+	possible = {
+		NOT = {
+			has_modifier = my_cheat_modifier
+		}
+	}
 	when_taken = {
-		activate_law = law_type:law_my_oligopoly
+		add_modifier = my_cheat_modifier
 	}
 	ai_chance = {
 		base = 0
@@ -222,7 +239,7 @@ cheat_寡头资本 = {
 # 					not = {
 # 						this = root
 # 					}
-# 					is_country_type = decentralized
+# 					is_country_type = decentralized		# 松散联邦（即可殖民国家）
 # 				}
 # 				root = {
 # 					annex = prev
@@ -258,6 +275,29 @@ cheat_寡头资本 = {
 # 		base = 0
 # 	}
 # }
+
+cheat_吞并国家 = {
+	possible = {
+		is_player = yes
+	}
+	when_taken = {
+		every_country = {
+			if = {
+				limit = {
+					not = {
+						this = root
+					}
+				}
+				root = {
+					annex = prev
+				}
+			}
+		}
+	}
+	ai_chance = {
+		base = 0
+	}
+}
 
 # cheat_设置修正_1 = {
 # 	is_shown = {
