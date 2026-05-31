@@ -347,45 +347,47 @@
 # 	}
 # }
 
-# cheat_认可 = {
-# 	requires_approval = no
-# 	should_notify_third_parties = no
-# 	show_effect_in_tooltip = yes
+cheat_认可_附庸 = {
+	requires_approval = no
+	should_notify_third_parties = no
+	show_effect_in_tooltip = yes
 
-# 	groups = {
-# 		general
-# 	}
-# 	potential = {
-# 		country_rank >= rank_value:great_power
-# 		OR = {
-# 			is_country_type = recognized
-# 			is_country_type = colonial
-# 		}
-# 		scope:target_country = {
-# 			is_country_type = unrecognized
-# 		}
-# 	}
-# 	possible = {
-# 		is_at_war = no
-# 		is_revolutionary = no
-# 		country_rank >= rank_value:great_power
-# 		NOT = {
-# 			has_war_with = scope:target_country
-# 		}
-# 	}
-# 	accept_effect = {
-# 		scope:target_country = {
-# 			set_country_type = recognized
-# 		}
-# 	}
-# 	ai = {
-# 		will_propose = {
-# 			always = no
-# 		}
-# 	}
-# }
+	groups = {
+		general
+	}
+	potential = {
+		is_player = yes
+		country_rank >= rank_value:great_power
+		OR = {
+			is_country_type = recognized
+			is_country_type = colonial
+		}
+		scope:target_country = {
+			is_country_type = unrecognized
+			is_subject_of = root
+		}
+	}
+	possible = {
+		is_at_war = no
+		is_revolutionary = no
+		country_rank >= rank_value:great_power
+		NOT = {
+			has_war_with = scope:target_country
+		}
+	}
+	accept_effect = {
+		scope:target_country = {
+			set_country_type = recognized
+		}
+	}
+	ai = {
+		will_propose = {
+			always = no
+		}
+	}
+}
 
-# cheat_附庸 = {
+# cheat_转让_附庸 = {
 # 	requires_approval = no
 # 	should_notify_third_parties = no
 # 	show_effect_in_tooltip = no
@@ -401,15 +403,16 @@
 # 		scope:target_country = {
 # 			is_subject_of = root
 # 			not = {
+#                 is_direct_subject_of = root
 # 				is_country_type = decentralized
-# 				is_subject_type = subject_type_puppet	# 傀儡国
 # 			}
 # 		}
 # 	}
 # 	accept_effect = {
-# 		scope:target_country = {
-# 			change_subject_type = subject_type_puppet
-# 		}
+# 		# scope:target_country = {
+# 		# 	change_subject_type = subject_type_puppet
+# 		# }
+# 		transfer_subject = scope:target_country
 # 	}
 # 	ai = {
 # 		will_propose = {
