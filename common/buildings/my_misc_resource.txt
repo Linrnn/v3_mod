@@ -1,0 +1,76 @@
+﻿# 参考mod：可控制的私人建设 Controllable Private Construction
+
+# 伐木营地
+INJECT_OR_CREATE:building_logging_camp = {
+	can_build_government = {
+		zw_trigger_gov_investment = {
+			building_1 = building_logging_camp
+			bgs_1 = agriculture
+		}
+	}
+	can_build_private = {
+		zw_trigger_autonom_investment_resource = {
+			building_1 = building_logging_camp
+		}
+	}
+}
+
+# 橡胶种植园
+INJECT_OR_CREATE:building_rubber_plantation = {
+	can_build_government = {
+		zw_trigger_gov_investment = {
+			building_1 = building_rubber_plantation
+			bgs_1 = agriculture
+		}
+	}
+	can_build_private = {
+		zw_trigger_autonom_investment_resource = {
+			building_1 = building_rubber_plantation
+		}
+	}
+}
+
+# 渔业码头
+INJECT_OR_CREATE:building_fishing_wharf = {
+	can_build_government = {
+		zw_trigger_gov_investment = {
+			building_1 = building_fishing_wharf
+			bgs_1 = agriculture
+		}
+	}
+	can_build_private = {
+		zw_trigger_autonom_investment_resource = {
+			building_1 = building_fishing_wharf
+		}
+	}
+}
+
+# 捕鲸站
+INJECT_OR_CREATE:buildingwhaling_station = {
+	can_build_government =_ {
+		zw_trigger_gov_investment = {
+			building_1 = building_whaling_station
+			bgs_1 = agriculture
+		}
+	}
+	can_build_private = {
+		zw_trigger_autonom_investment_resource = {
+			building_1 = building_whaling_station
+		}
+	}
+}
+
+# 油井
+INJECT_OR_CREATE:building_oil_rig = {
+	can_build_government = {
+		zw_trigger_gov_investment = {
+			building_1 = building_oil_rig
+			bgs_1 = agriculture
+		}
+	}
+	can_build_private = {
+		zw_trigger_autonom_investment_resource = {
+			building_1 = building_oil_rig
+		}
+	}
+}

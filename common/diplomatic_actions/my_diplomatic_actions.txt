@@ -1,34 +1,34 @@
 # https://vic3.paradoxwikis.com/Diplomacy_modding
 
-# cheat_停战 = {
-# 	requires_approval = no
-# 	show_effect_in_tooltip = no
-# 	should_notify_third_parties = no
-# 	texture = "gfx/interface/icons/diplomatic_action_icons/request_recognition.dds"
+cheat_停战 = {
+	requires_approval = no
+	show_effect_in_tooltip = no
+	should_notify_third_parties = no
+	texture = "gfx/interface/icons/diplomatic_action_icons/request_recognition.dds"
 
-# 	groups = {
-# 		general
-# 	}
-# 	potential = {
-# 		is_player = yes
-# 	}
-# 	possible = {
-# 		NOT = {
-# 			has_truce_with = scope:target_country		# 与目标国有停战协议
-# 		}
-# 	}
-# 	accept_effect = {
-# 		create_bidirectional_truce = {
-# 			country = scope:target_country
-# 			months = 12
-# 		}
-# 	}
-# 	ai = {
-# 		will_propose = {
-# 			always = no
-# 		}
-# 	}
-# }
+	groups = {
+		general
+	}
+	potential = {
+		is_player = yes
+	}
+	possible = {
+		NOT = {
+			has_truce_with = scope:target_country		# 与目标国有停战协议
+		}
+	}
+	accept_effect = {
+		create_bidirectional_truce = {
+			country = scope:target_country
+			months = 12
+		}
+	}
+	ai = {
+		will_propose = {
+			always = no
+		}
+	}
+}
 
 # cheat_关系_改善 = {
 # 	requires_approval = no
@@ -186,43 +186,43 @@
 # 	}
 # }
 
-# cheat_吞并_附庸 = {
-# 	requires_approval = no
-# 	show_effect_in_tooltip = no
-# 	should_notify_third_parties = no
-# 	texture = "gfx/interface/icons/diplomatic_action_icons/take_state.dds"
+cheat_吞并_附庸 = {
+	requires_approval = no
+	show_effect_in_tooltip = no
+	should_notify_third_parties = no
+	texture = "gfx/interface/icons/diplomatic_action_icons/take_state.dds"
 
-# 	groups = {
-# 		general
-# 	}
-# 	potential = {
-# 		is_player = yes
-# 	}
-# 	possible = {
-# 		is_revolutionary = no								# 没有革命
-# 		is_diplomatic_play_committed_participant = no		# 没有参与外交行动（包括战争/博弈）
-# 		# NOT = {
-# 		# 	has_truce_with = scope:target_country			# 与目标国有停战协议
-# 		# }
-# 		scope:target_country = {
-# 			is_subject_of = root
-# 			is_diplomatic_play_committed_participant = no
-# 			OR = {
-# 				is_subject_type = subject_type_vassal	# 附庸国
-# 				is_subject_type = subject_type_puppet	# 傀儡国
-# 				is_subject_type = subject_type_colony	# 殖民领
-# 			}
-# 		}
-# 	}
-# 	accept_effect = {
-# 		annex = scope:target_country
-# 	}
-# 	ai = {
-# 		will_propose = {
-# 			always = no
-# 		}
-# 	}
-# }
+	groups = {
+		overlord
+	}
+	potential = {
+		is_player = yes
+	}
+	possible = {
+		is_revolutionary = no								# 没有革命
+		is_diplomatic_play_committed_participant = no		# 没有参与外交行动（包括战争/博弈）
+		# NOT = {
+		# 	has_truce_with = scope:target_country			# 与目标国有停战协议
+		# }
+		scope:target_country = {
+			is_subject_of = root
+			is_diplomatic_play_committed_participant = no
+			OR = {
+				is_subject_type = subject_type_vassal	# 附庸国
+				is_subject_type = subject_type_puppet	# 傀儡国
+				is_subject_type = subject_type_colony	# 殖民领
+			}
+		}
+	}
+	accept_effect = {
+		annex = scope:target_country
+	}
+	ai = {
+		will_propose = {
+			always = no
+		}
+	}
+}
 
 # cheat_吞并_无限制 = {
 # 	requires_approval = no
@@ -347,7 +347,7 @@
 # 	}
 # }
 
-cheat_认可_附庸 = {
+cheat_认可_国家 = {
 	requires_approval = no
 	should_notify_third_parties = no
 	show_effect_in_tooltip = yes
@@ -364,7 +364,7 @@ cheat_认可_附庸 = {
 		}
 		scope:target_country = {
 			is_country_type = unrecognized
-			is_subject_of = root
+			# is_subject_of = root
 		}
 	}
 	possible = {
@@ -387,36 +387,36 @@ cheat_认可_附庸 = {
 	}
 }
 
-# cheat_转让_附庸 = {
-# 	requires_approval = no
-# 	should_notify_third_parties = no
-# 	show_effect_in_tooltip = no
+cheat_转让_附庸 = {
+	requires_approval = no
+	should_notify_third_parties = no
+	show_effect_in_tooltip = no
 
-# 	groups = {
-# 		general
-# 	}
-# 	potential = {
-# 		is_player = yes
-# 		not = {
-# 			is_country_type = decentralized
-# 		}
-# 		scope:target_country = {
-# 			is_subject_of = root
-# 			not = {
-#                 is_direct_subject_of = root
-# 				is_country_type = decentralized
-# 			}
-# 		}
-# 	}
-# 	accept_effect = {
-# 		# scope:target_country = {
-# 		# 	change_subject_type = subject_type_puppet
-# 		# }
-# 		transfer_subject = scope:target_country
-# 	}
-# 	ai = {
-# 		will_propose = {
-# 			always = no
-# 		}
-# 	}
-# }
+	groups = {
+		overlord
+	}
+	potential = {
+		is_player = yes
+		not = {
+			is_country_type = decentralized
+		}
+		scope:target_country = {
+			is_subject_of = root
+			not = {
+                is_direct_subject_of = root
+				is_country_type = decentralized
+			}
+		}
+	}
+	accept_effect = {
+		# scope:target_country = {
+		# 	change_subject_type = subject_type_puppet
+		# }
+		transfer_subject = scope:target_country
+	}
+	ai = {
+		will_propose = {
+			always = no
+		}
+	}
+}

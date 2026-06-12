@@ -8,10 +8,75 @@
 		}
 	}
 }
+
 my_building_owner_trigger_build_private = {
 	owner = {
 		NOT = {
 			has_law = law_type:law_my_oligopoly				# 寡头资本
 		}
+	}
+}
+
+my_trigger_subsidized_building_types = {					# 可以受补贴的建筑类型
+	OR = {
+		# industry 工业
+		is_building_type = building_food_industry			# 食品厂
+		is_building_type = building_textile_mill			# 纺织厂
+		is_building_type = building_furniture_manufactory	# 家具制造厂
+		is_building_type = building_glassworks				# 玻璃厂
+		is_building_type = building_tooling_workshop		# 工艺装备工坊
+		is_building_type = building_paper_mill				# 造纸厂
+		is_building_type = building_chemical_plant			# 肥料厂
+		is_building_type = building_explosives_factory		# 炸药厂
+		is_building_type = building_synthetics_plant		# 化学合成厂
+		is_building_type = building_steel_mill				# 炼钢厂
+		is_building_type = building_motor_industry			# 动力机械厂
+		is_building_type = building_shipyard				# 造船厂
+		is_building_type = building_automotive_industry		# 汽车厂
+		is_building_type = building_electrics_industry		# 电子厂
+		is_building_type = building_arms_industry			# 武器厂
+		is_building_type = building_artillery_foundry		# 火炮铸造厂
+		is_building_type = building_munition_plant			# 弹药厂
+		# agro 农业
+		is_building_type = building_rye_farm				# 黑麦农场
+		is_building_type = building_wheat_farm				# 小麦农场
+		is_building_type = building_rice_farm				# 水稻农场
+		is_building_type = building_maize_farm				# 玉米农场
+		is_building_type = building_millet_farm				# 杂谷农场
+		is_building_type = building_livestock_ranch			# 畜牧场
+		is_building_type = building_vineyard				# 葡萄园
+		# mines 矿业
+		is_building_type = building_coal_mine				# 煤矿
+		is_building_type = building_iron_mine				# 铁矿
+		is_building_type = building_lead_mine				# 铅矿
+		is_building_type = building_sulfur_mine				# 硫矿
+		is_building_type = building_gold_mine				# 金矿
+		is_building_type = building_gold_field				# 金矿场
+		# plantations 种植园
+		is_building_type = building_coffee_plantation		# 咖啡种植园
+		is_building_type = building_cotton_plantation		# 棉花种植园
+		is_building_type = building_dye_plantation			# 染料作物种植园
+		is_building_type = building_opium_plantation		# 鸦片种植园
+		is_building_type = building_tea_plantation			# 茶叶种植园
+		is_building_type = building_tobacco_plantation		# 烟草种植园
+		is_building_type = building_sugar_plantation		# 糖料作物种植园
+		is_building_type = building_banana_plantation		# 香蕉种植园
+		is_building_type = building_silk_plantation			# 丝绸种植园
+		# urban_center 城镇中心
+		# is_building_type = building_urban_center			# 城镇中心
+		is_building_type = building_art_academy				# 艺术学院
+		is_building_type = building_power_plant				# 发电厂
+		# misc_resource 杂项资源
+		is_building_type = building_logging_camp			# 伐木营地
+		is_building_type = building_rubber_plantation		# 橡胶种植园
+		is_building_type = building_fishing_wharf			# 渔业码头
+		is_building_type = building_whaling_station			# 捕鲸站
+		is_building_type = building_oil_rig					# 油井
+		# private_infrastructure 私人基础设施
+		# is_building_type = building_port					# 港口
+		is_building_type = building_railway					# 铁路
+		# is_building_type = building_trade_center			# 贸易中心
+		# is_building_type = building_manor_house			# 庄园宅邸
+		# is_building_type = building_financial_district	# 金融区
 	}
 }

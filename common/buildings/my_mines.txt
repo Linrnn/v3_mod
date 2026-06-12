@@ -1,0 +1,76 @@
+﻿# 参考mod：可控制的私人建设 Controllable Private Construction
+
+# 煤矿
+INJECT_OR_CREATE:building_coal_mine = {
+	can_build_government = {
+		zw_trigger_gov_investment = {
+			building_1 = building_coal_mine
+			bgs_1 = industry
+		}
+	}
+	can_build_private = {
+		zw_trigger_autonom_investment_manufacture = {
+			building_1 = building_coal_mine
+		}
+	}
+}
+
+# 铁矿
+INJECT_OR_CREATE:building_iron_mine = {
+	can_build_government = {
+		zw_trigger_gov_investment = {
+			building_1 = building_iron_mine
+			bgs_1 = industry
+		}
+	}
+	can_build_private = {
+		zw_trigger_autonom_investment_manufacture = {
+			building_1 = building_iron_mine
+		}
+	}
+ }
+
+# 铅矿
+INJECT_OR_CREATE:building_lead_mine = {
+	can_build_government = {
+		zw_trigger_gov_investment = {
+			building_1 = building_lead_mine
+			bgs_1 = industry
+		}
+	}
+	can_build_private = {
+		zw_trigger_autonom_investment_manufacture = {
+			building_1 = building_lead_mine
+		}
+	}
+ }
+
+# 硫矿
+INJECT_OR_CREATE:building_sulfur_mine = {
+	can_build_government = {
+		zw_trigger_gov_investment = {
+			building_1 = building_sulfur_mine
+			bgs_1 = industry
+		}
+	}
+	can_build_private = {
+		zw_trigger_autonom_investment_manufacture = {
+			building_1 = building_sulfur_mine
+		}
+	}
+ }
+
+# 金矿
+INJECT_OR_CREATE:building_gold_mine = {
+	can_build_government = {
+		zw_trigger_gov_investment = {
+			building_1 = building_gold_mine
+			bgs_1 = industry
+		}
+	}
+	can_build_private = {
+		zw_trigger_autonom_investment_manufacture = {
+			building_1 = building_gold_mine
+		}
+	}
+}

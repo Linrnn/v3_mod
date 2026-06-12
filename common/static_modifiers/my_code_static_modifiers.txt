@@ -7,9 +7,10 @@ my_cheat_modifier = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
 	country_diplomatic_play_maneuvers_add = 1000			# 博弈行动力
 	country_max_weekly_construction_progress_add = 100		# 每周最大建造进度
-	country_liberty_desire_of_subjects_add = -1				# 所有附庸的每周独立倾向
+	country_liberty_desire_of_subjects_add = -2				# 所有附庸的每周独立倾向
 	country_max_companies_add = 10							# 公司上限
 	country_free_charters_add = 60							# 特许经营权上限
+	# country_disable_nationalization_bool = no				# 禁用国有化
 	#country_construction_add = -4							# 建造力
 	#country_infamy_decay_mult = 20							# 恶名衰退
 }
@@ -30,38 +31,38 @@ my_cheat_modifier = {
 #==============================以下为原版修正==============================
 
 # 省份破坏程度修正
-state_region_devastation = {
+INJECT_OR_CREATE:state_region_devastation = {
 	# 原版
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
-	state_infrastructure_mult = -1.0				# 州基础设施
-	state_mortality_mult = 1.0						# 州死亡率
-	state_migration_pull_mult = -2.0				# 州移民吸引力
-	state_construction_mult = -0.5					# 州建造效率
-	building_throughput_add = -0.25
-	state_devastation_decay_mult = 3.0
+	# icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
+	# state_infrastructure_mult = -1.0				# 州基础设施
+	# state_mortality_mult = 1.0					# 州死亡率
+	# state_migration_pull_mult = -2.0				# 州移民吸引力
+	# state_construction_mult = -0.5				# 州建造效率
+	# building_throughput_add = -0.25
+	# state_devastation_decay_mult = 3.0
 	# 新增
 	state_birth_rate_mult = -1.0					# 州出生率
 }
 
 # 省份污染程度修正
-state_region_pollution_general = {
+INJECT_OR_CREATE:state_region_pollution_general = {
 	# 原版
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
-	state_migration_pull_mult = -0.25
-	state_harvest_condition_drought_impact_mult = 0.5
-	state_harvest_condition_flood_impact_mult = 0.5
-	state_harvest_condition_wildfire_impact_mult = 0.5
-	state_harvest_condition_heatwave_impact_mult = 0.5
+	# icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
+	# state_migration_pull_mult = -0.25
+	# state_harvest_condition_drought_impact_mult = 0.5
+	# state_harvest_condition_flood_impact_mult = 0.5
+	# state_harvest_condition_wildfire_impact_mult = 0.5
+	# state_harvest_condition_heatwave_impact_mult = 0.5
 	# 新增
 	state_birth_rate_mult = -0.4					# 州出生率
 }
 
 # 国家识字率修正
-country_literacy_rate = {
+INJECT_OR_CREATE:country_literacy_rate = {
 	# 原版
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
-	country_weekly_innovation_max_add = 150			# 最大创新力
-	country_tech_spread_add = 75					# 科技研究速度
+	# country_weekly_innovation_max_add = 150		# 最大创新力
+	# country_tech_spread_add = 75					# 科技研究速度
 	# 新增
 	state_birth_rate_mult = -0.2					# 州出生率
 }
