@@ -1,5 +1,185 @@
 ﻿# https://vic3.paradoxwikis.com/Decision_modding
 
+cheat_修正 = {
+	possible = {
+		is_player = yes
+		NOT = {
+			has_modifier = my_cheat_modifier
+		}
+	}
+	when_taken = {
+		add_modifier = my_cheat_modifier
+	}
+	ai_chance = {
+		value = 0
+	}
+}
+
+cheat_移除_建筑 = {
+	possible = {
+		is_player = yes
+	}
+	when_taken = {
+		every_country = {
+			if = {
+				limit = {
+ 					not = {
+						this = root
+					}
+				}
+				every_scope_state = {
+					# industry 工业
+					my_remove_building = { my_building = building_food_industry }			# 食品厂
+					my_remove_building = { my_building = building_textile_mill }			# 纺织厂
+					my_remove_building = { my_building = building_furniture_manufactory }	# 家具制造厂
+					my_remove_building = { my_building = building_glassworks }				# 玻璃厂
+					my_remove_building = { my_building = building_tooling_workshop }		# 工艺装备工坊
+					my_remove_building = { my_building = building_paper_mill }				# 造纸厂
+					my_remove_building = { my_building = building_chemical_plant }			# 肥料厂
+					my_remove_building = { my_building = building_explosives_factory }		# 炸药厂
+					my_remove_building = { my_building = building_synthetics_plant }		# 化学合成厂
+					my_remove_building = { my_building = building_steel_mill }				# 炼钢厂
+					my_remove_building = { my_building = building_motor_industry }			# 动力机械厂
+					my_remove_building = { my_building = building_shipyard }				# 造船厂
+					my_remove_building = { my_building = building_automotive_industry }		# 汽车厂
+					my_remove_building = { my_building = building_electrics_industry }		# 电子厂
+					my_remove_building = { my_building = building_arms_industry }			# 武器厂
+					my_remove_building = { my_building = building_artillery_foundry }		# 火炮铸造厂
+					my_remove_building = { my_building = building_munition_plant }			# 弹药厂
+					# agro 农业
+					my_remove_building = { my_building = building_rye_farm }				# 黑麦农场
+					my_remove_building = { my_building = building_wheat_farm }				# 小麦农场
+					my_remove_building = { my_building = building_rice_farm }				# 水稻农场
+					my_remove_building = { my_building = building_maize_farm }				# 玉米农场
+					my_remove_building = { my_building = building_millet_farm }				# 杂谷农场
+					my_remove_building = { my_building = building_livestock_ranch }			# 畜牧场
+					my_remove_building = { my_building = building_vineyard }				# 葡萄园
+					# mines 矿业
+					my_remove_building = { my_building = building_coal_mine }				# 煤矿
+					my_remove_building = { my_building = building_iron_mine }				# 铁矿
+					my_remove_building = { my_building = building_lead_mine }				# 铅矿
+					my_remove_building = { my_building = building_sulfur_mine }				# 硫矿
+					my_remove_building = { my_building = building_gold_mine }				# 金矿
+					# my_remove_building = { my_building = building_gold_field }			# 金矿场
+					# plantations 种植园
+					my_remove_building = { my_building = building_coffee_plantation }		# 咖啡种植园
+					my_remove_building = { my_building = building_cotton_plantation }		# 棉花种植园
+					my_remove_building = { my_building = building_dye_plantation }			# 染料作物种植园
+					my_remove_building = { my_building = building_opium_plantation }		# 鸦片种植园
+					my_remove_building = { my_building = building_tea_plantation }			# 茶叶种植园
+					my_remove_building = { my_building = building_tobacco_plantation }		# 烟草种植园
+					my_remove_building = { my_building = building_sugar_plantation }		# 糖料作物种植园
+					my_remove_building = { my_building = building_banana_plantation }		# 香蕉种植园
+					my_remove_building = { my_building = building_silk_plantation }			# 丝绸种植园
+					# urban_center 城镇中心
+					# my_remove_building = { my_building = building_urban_center }			# 城镇中心
+					my_remove_building = { my_building = building_art_academy }				# 艺术学院
+					my_remove_building = { my_building = building_power_plant }				# 发电厂
+					# misc_resource 杂项资源
+					my_remove_building = { my_building = building_logging_camp }			# 伐木营地
+					my_remove_building = { my_building = building_rubber_plantation }		# 橡胶种植园
+					my_remove_building = { my_building = building_fishing_wharf }			# 渔业码头
+					my_remove_building = { my_building = building_whaling_station }			# 捕鲸站
+					my_remove_building = { my_building = building_oil_rig }					# 油井
+					# private_infrastructure 私人基础设施
+					# my_remove_building = { my_building = building_port }					# 港口
+					my_remove_building = { my_building = building_railway }					# 铁路
+					my_remove_building = { my_building = building_trade_center }			# 贸易中心
+					# my_remove_building = { my_building = building_manor_house }			# 庄园宅邸
+					# my_remove_building = { my_building = building_financial_district }	# 金融区
+				}
+			}
+		}
+	}
+	ai_chance = {
+		value = 0
+	}
+}
+
+cheat_强制_补贴 = {
+	possible = {
+		is_player = no
+		is_subject = yes
+		top_overlord = {
+			is_player = yes
+		}
+		any_scope_building = {
+			my_trigger_subsidized_building_types = yes
+			is_subsidized = no		# 未受补贴
+		}
+	}
+	when_taken = {
+		every_scope_building = {
+			limit = {
+				my_trigger_subsidized_building_types = yes
+				is_subsidized = no	# 未受补贴
+			}
+			set_subsidized = yes	# 开启补贴
+		}
+	}
+	ai_chance = {
+		value = 100
+	}
+}
+
+cheat_立法_推进 = {
+	possible = {
+		is_player = yes
+		enacting_any_law = yes	# 正在立法
+	}
+	when_taken = {
+		add_enactment_modifier = {
+			name = my_cheat_law_modifier
+		}
+	}
+	ai_chance = {
+		value = 0
+	}
+}
+
+cheat_吞并松散联邦_先 = {
+	possible = {
+		is_player = yes
+	}
+	when_taken = {
+		every_decentralized_country = {
+			if = {
+				root = {
+					annex = prev
+				}
+			}
+		}
+	}
+	ai_chance = {
+		value = 0
+	}
+}
+
+cheat_吞并普通国家_后 = {
+	possible = {
+		is_player = yes
+	}
+	when_taken = {
+		every_country = {
+			if = {
+				limit = {
+					is_subject = no
+					not = {
+						this = root
+						is_country_type = decentralized		# 松散联邦（即可殖民国家）
+					}
+				}
+				root = {
+					annex = prev
+				}
+			}
+		}
+	}
+	ai_chance = {
+		value = 0
+	}
+}
+
 # cheat_移除殖民标记 = {
 # 	is_shown = {
 # 		is_player = yes
@@ -31,23 +211,6 @@
 # 		value = 0
 # 	}
 # }
-
-cheat_修正 = {
-	is_shown = {
-		is_player = yes
-	}
-	possible = {
-		NOT = {
-			has_modifier = my_cheat_modifier
-		}
-	}
-	when_taken = {
-		add_modifier = my_cheat_modifier
-	}
-	ai_chance = {
-		value = 0
-	}
-}
 
 # cheat_经济干预 = {
 # 	is_shown = {
@@ -228,49 +391,6 @@ cheat_修正 = {
 # 	}
 # }
 
-# cheat_吞并松散联邦_先 = {
-# 	possible = {
-# 		is_player = yes
-# 	}
-# 	when_taken = {
-# 		every_decentralized_country = {
-# 			if = {
-# 				root = {
-# 					annex = prev
-# 				}
-# 			}
-# 		}
-# 	}
-# 	ai_chance = {
-# 		value = 0
-# 	}
-# }
-
-# cheat_吞并普通国家_后 = {
-# 	possible = {
-# 		is_player = yes
-# 	}
-# 	when_taken = {
-# 		every_country = {
-# 			if = {
-# 				limit = {
-# 					is_subject = no
-# 					not = {
-# 						this = root
-# 						is_country_type = decentralized		# 松散联邦（即可殖民国家）
-# 					}
-# 				}
-# 				root = {
-# 					annex = prev
-# 				}
-# 			}
-# 		}
-# 	}
-# 	ai_chance = {
-# 		value = 0
-# 	}
-# }
-
 # cheat_附庸_国家 = {
 # 	possible = {
 # 		is_player = yes
@@ -372,110 +492,3 @@ cheat_修正 = {
 # 		value = 0
 # 	}
 # }
-
-cheat_移除建筑 = {
-	possible = {
-		is_player = yes
-	}
-	when_taken = {
-		every_country = {
-			if = {
-				limit = {
- 					not = {
-						this = root
-					}
-				}
-				every_scope_state = {
-					# industry 工业
-					my_remove_building = { my_building = building_food_industry }			# 食品厂
-					my_remove_building = { my_building = building_textile_mill }			# 纺织厂
-					my_remove_building = { my_building = building_furniture_manufactory }	# 家具制造厂
-					my_remove_building = { my_building = building_glassworks }				# 玻璃厂
-					my_remove_building = { my_building = building_tooling_workshop }		# 工艺装备工坊
-					my_remove_building = { my_building = building_paper_mill }				# 造纸厂
-					my_remove_building = { my_building = building_chemical_plant }			# 肥料厂
-					my_remove_building = { my_building = building_explosives_factory }		# 炸药厂
-					my_remove_building = { my_building = building_synthetics_plant }		# 化学合成厂
-					my_remove_building = { my_building = building_steel_mill }				# 炼钢厂
-					my_remove_building = { my_building = building_motor_industry }			# 动力机械厂
-					my_remove_building = { my_building = building_shipyard }				# 造船厂
-					my_remove_building = { my_building = building_automotive_industry }		# 汽车厂
-					my_remove_building = { my_building = building_electrics_industry }		# 电子厂
-					my_remove_building = { my_building = building_arms_industry }			# 武器厂
-					my_remove_building = { my_building = building_artillery_foundry }		# 火炮铸造厂
-					my_remove_building = { my_building = building_munition_plant }			# 弹药厂
-					# agro 农业
-					my_remove_building = { my_building = building_rye_farm }				# 黑麦农场
-					my_remove_building = { my_building = building_wheat_farm }				# 小麦农场
-					my_remove_building = { my_building = building_rice_farm }				# 水稻农场
-					my_remove_building = { my_building = building_maize_farm }				# 玉米农场
-					my_remove_building = { my_building = building_millet_farm }				# 杂谷农场
-					my_remove_building = { my_building = building_livestock_ranch }			# 畜牧场
-					my_remove_building = { my_building = building_vineyard }				# 葡萄园
-					# mines 矿业
-					my_remove_building = { my_building = building_coal_mine }				# 煤矿
-					my_remove_building = { my_building = building_iron_mine }				# 铁矿
-					my_remove_building = { my_building = building_lead_mine }				# 铅矿
-					my_remove_building = { my_building = building_sulfur_mine }				# 硫矿
-					my_remove_building = { my_building = building_gold_mine }				# 金矿
-					# my_remove_building = { my_building = building_gold_field }			# 金矿场
-					# plantations 种植园
-					my_remove_building = { my_building = building_coffee_plantation }		# 咖啡种植园
-					my_remove_building = { my_building = building_cotton_plantation }		# 棉花种植园
-					my_remove_building = { my_building = building_dye_plantation }			# 染料作物种植园
-					my_remove_building = { my_building = building_opium_plantation }		# 鸦片种植园
-					my_remove_building = { my_building = building_tea_plantation }			# 茶叶种植园
-					my_remove_building = { my_building = building_tobacco_plantation }		# 烟草种植园
-					my_remove_building = { my_building = building_sugar_plantation }		# 糖料作物种植园
-					my_remove_building = { my_building = building_banana_plantation }		# 香蕉种植园
-					my_remove_building = { my_building = building_silk_plantation }			# 丝绸种植园
-					# urban_center 城镇中心
-					# my_remove_building = { my_building = building_urban_center }			# 城镇中心
-					my_remove_building = { my_building = building_art_academy }				# 艺术学院
-					my_remove_building = { my_building = building_power_plant }				# 发电厂
-					# misc_resource 杂项资源
-					my_remove_building = { my_building = building_logging_camp }			# 伐木营地
-					my_remove_building = { my_building = building_rubber_plantation }		# 橡胶种植园
-					my_remove_building = { my_building = building_fishing_wharf }			# 渔业码头
-					my_remove_building = { my_building = building_whaling_station }			# 捕鲸站
-					my_remove_building = { my_building = building_oil_rig }					# 油井
-					# private_infrastructure 私人基础设施
-					# my_remove_building = { my_building = building_port }					# 港口
-					my_remove_building = { my_building = building_railway }					# 铁路
-					my_remove_building = { my_building = building_trade_center }			# 贸易中心
-					# my_remove_building = { my_building = building_manor_house }			# 庄园宅邸
-					# my_remove_building = { my_building = building_financial_district }	# 金融区
-				}
-			}
-		}
-	}
-	ai_chance = {
-		value = 0
-	}
-}
-
-cheat_强制补贴 = {
-	possible = {
-		is_player = no
-		is_subject = yes
-		top_overlord = {
-			is_player = yes
-		}
-		any_scope_building = {
-			my_trigger_subsidized_building_types = yes
-			is_subsidized = no		# 未受补贴
-		}
-	}
-	when_taken = {
-		every_scope_building = {
-			limit = {
-				my_trigger_subsidized_building_types = yes
-				is_subsidized = no	# 未受补贴
-			}
-			set_subsidized = yes	# 开启补贴
-		}
-	}
-	ai_chance = {
-		value = 100
-	}
-}

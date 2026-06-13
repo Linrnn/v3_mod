@@ -5,14 +5,23 @@ my_interest_group_approval_add = {
 
 my_cheat_modifier = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	country_authority_add = 1000							# 威权力
+	country_influence_add = 1000							# 影响力
 	country_diplomatic_play_maneuvers_add = 1000			# 博弈行动力
 	country_max_weekly_construction_progress_add = 100		# 每周最大建造进度
 	country_liberty_desire_of_subjects_add = -2				# 所有附庸的每周独立倾向
 	country_max_companies_add = 10							# 公司上限
 	country_free_charters_add = 60							# 特许经营权上限
+	# country_diplomatic_reputation_add = 1000				# 外交声誉
 	# country_disable_nationalization_bool = no				# 禁用国有化
 	#country_construction_add = -4							# 建造力
 	#country_infamy_decay_mult = 20							# 恶名衰退
+}
+
+my_cheat_law_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	country_law_enactment_success_add = 0.1					# 立法成功率
+	country_law_enactment_time_mult = -0.1					# 立法时间
 }
 
 # my_asset_output_modifier = {

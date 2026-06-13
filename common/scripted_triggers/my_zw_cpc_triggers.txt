@@ -1,8 +1,19 @@
 ﻿# 参考mod：可控制的私人建设 Controllable Private Construction
 my_trigger_alloc_build = {
-	OR = {
-		owner = { is_player = yes }
-		scope:investor_country = { is_player = yes }
+	# owner = {
+	# 	my_trigger_alloc_build_one = yes
+	# }
+	scope:investor_country = {
+		OR = {
+			is_subject = no
+			is_player = yes
+			AND = {
+				is_subject = yes
+				top_overlord = {
+					is_player = no
+				}
+			}
+		}
 	}
 }
 

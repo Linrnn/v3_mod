@@ -46,7 +46,7 @@ INJECT_OR_CREATE:building_fishing_wharf = {
 }
 
 # 捕鲸站
-INJECT_OR_CREATE:buildingwhaling_station = {
+INJECT_OR_CREATE:building_whaling_station = {
 	can_build_government =_ {
 		zw_trigger_gov_investment = {
 			building_1 = building_whaling_station
