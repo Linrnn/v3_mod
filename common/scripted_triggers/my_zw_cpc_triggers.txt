@@ -1,375 +1,375 @@
-﻿# 参考mod：可控制的私人建设 Controllable Private Construction
-my_trigger_alloc_build = {
-	# owner = {
-	# 	my_trigger_alloc_build_one = yes
-	# }
-	scope:investor_country = {
-		OR = {
-			is_subject = no
-			is_player = yes
-			AND = {
-				is_subject = yes
-				top_overlord = {
-					is_player = no
-				}
-			}
-		}
-	}
-}
+﻿# # 参考mod：可控制的私人建设 Controllable Private Construction
+# my_trigger_alloc_build = {
+# 	# owner = {
+# 	# 	my_trigger_alloc_build_one = yes
+# 	# }
+# 	scope:investor_country = {
+# 		OR = {
+# 			is_subject = no
+# 			is_player = yes
+# 			AND = {
+# 				is_subject = yes
+# 				top_overlord = {
+# 					is_player = no
+# 				}
+# 			}
+# 		}
+# 	}
+# }
 
-# 政府建造
-zw_trigger_gov_investment = {
-	my_trigger_alloc_build = yes
-	trigger_if = {
-		limit = {
-			owner = { has_variable = zw_var_intervene_investment_from_abroad_$bgs_1$ }
-			NOT = { owner = scope:investor_country }
-		}
-		custom_tooltip = {
-			text = zw_text_intervene_gov_investment_from_abroad
-			has_building = $building_1$
-		}
-	}
-}
+# # 政府建造
+# zw_trigger_gov_investment = {
+# 	my_trigger_alloc_build = yes
+# 	trigger_if = {
+# 		limit = {
+# 			owner = { has_variable = zw_var_intervene_investment_from_abroad_$bgs_1$ }
+# 			NOT = { owner = scope:investor_country }
+# 		}
+# 		custom_tooltip = {
+# 			text = zw_text_intervene_gov_investment_from_abroad
+# 			has_building = $building_1$
+# 		}
+# 	}
+# }
 
-# 私人建造 制造业和城镇设施
-zw_trigger_autonom_investment_manufacture = {
-	my_trigger_alloc_build = yes
-	# player's state
-	trigger_if = {
-		limit = {
-			owner = { is_player = yes }
-		}
-		# case 1: domestic investment
-		trigger_if = {
-			limit = {
-				owner = scope:investor_country
-			}
-			# trigger 1: incorporation
-			trigger_if = {
-				limit = {
-					owner = { has_variable = zw_var_auto_invest_incorporated_states_only }
-				}
-				is_incorporated = yes
-			}
-			# trigger 2: existing buildings only (manufacture, agro, resource, infrastructure)
-			trigger_if = {
-				limit = {
-					owner = { has_variable = zw_var_auto_invest_existing_buildings_only_manufacture }
-				}
-				# trigger 2.1 existing building types
-				b:$building_1$ ?= {
-					# trigger 2.2 existing building profit conditions
-					zw_trigger_profit_conditions = yes
-				}
-			}
-			# trigger 3: restricted building type (unused)
-			# trigger 4: decree
-			NOT = { has_decree = decree_zw_no_state_private_investment }
-		}
-		# case 2: investment from abroad (industry, agriculture)
-		trigger_else_if = {
-			limit = {
-				owner = { has_variable = zw_var_intervene_investment_from_abroad_industry }
-			}
-			has_building = $building_1$
-		}
-	}
-	# case 3: investment in foreign countries (manufacture, agro, resource, infrastructure)
-	trigger_if = {
-		limit = {
-			scope:investor_country = {
-				has_variable = zw_var_no_foreign_private_investment_manufacture
-			}
-		}
-		owner = scope:investor_country
-	}
-}
+# # 私人建造 制造业和城镇设施
+# zw_trigger_autonom_investment_manufacture = {
+# 	my_trigger_alloc_build = yes
+# 	# player's state
+# 	trigger_if = {
+# 		limit = {
+# 			owner = { is_player = yes }
+# 		}
+# 		# case 1: domestic investment
+# 		trigger_if = {
+# 			limit = {
+# 				owner = scope:investor_country
+# 			}
+# 			# trigger 1: incorporation
+# 			trigger_if = {
+# 				limit = {
+# 					owner = { has_variable = zw_var_auto_invest_incorporated_states_only }
+# 				}
+# 				is_incorporated = yes
+# 			}
+# 			# trigger 2: existing buildings only (manufacture, agro, resource, infrastructure)
+# 			trigger_if = {
+# 				limit = {
+# 					owner = { has_variable = zw_var_auto_invest_existing_buildings_only_manufacture }
+# 				}
+# 				# trigger 2.1 existing building types
+# 				b:$building_1$ ?= {
+# 					# trigger 2.2 existing building profit conditions
+# 					zw_trigger_profit_conditions = yes
+# 				}
+# 			}
+# 			# trigger 3: restricted building type (unused)
+# 			# trigger 4: decree
+# 			NOT = { has_decree = decree_zw_no_state_private_investment }
+# 		}
+# 		# case 2: investment from abroad (industry, agriculture)
+# 		trigger_else_if = {
+# 			limit = {
+# 				owner = { has_variable = zw_var_intervene_investment_from_abroad_industry }
+# 			}
+# 			has_building = $building_1$
+# 		}
+# 	}
+# 	# case 3: investment in foreign countries (manufacture, agro, resource, infrastructure)
+# 	trigger_if = {
+# 		limit = {
+# 			scope:investor_country = {
+# 				has_variable = zw_var_no_foreign_private_investment_manufacture
+# 			}
+# 		}
+# 		owner = scope:investor_country
+# 	}
+# }
 
-# 私人建造 农业和牧场
-zw_trigger_autonom_investment_agro = {
-	my_trigger_alloc_build = yes
-	# player's state
-	trigger_if = {
-		limit = {
-			owner = { is_player = yes }
-		}
-		# case 1: domestic investment
-		trigger_if = {
-			limit = {
-				owner = scope:investor_country
-			}
-			# trigger 1: incorporation
-			trigger_if = {
-				limit = {
-					owner = { has_variable = zw_var_auto_invest_incorporated_states_only }
-				}
-				is_incorporated = yes
-			}
-			# trigger 2: existing buildings only (manufacture, agro, resource, infrastructure)
-			trigger_if = {
-				limit = {
-					owner = { has_variable = zw_var_auto_invest_existing_buildings_only_agro }
-				}
-				# trigger 2.1 existing building types
-				b:$building_1$ ?= {
-					# trigger 2.2 existing building profit conditions
-					zw_trigger_profit_conditions = yes
-				}
-			}
-			# trigger 3: restricted building type (unused)
-			# trigger 4: decree
-			NOT = { has_decree = decree_zw_no_state_private_investment }
-		}
-		# case 2: investment from abroad (industry, agriculture)
-		trigger_else_if = {
-			limit = {
-				owner = { has_variable = zw_var_intervene_investment_from_abroad_agriculture }
-			}
-			has_building = $building_1$
-		}
-	}
-	# case 3: investment in foreign countries (manufacture, agro, resource, infrastructure)
-	trigger_if = {
-		limit = {
-			scope:investor_country = {
-				has_variable = zw_var_no_foreign_private_investment_agro
-			}
-		}
-		owner = scope:investor_country
-	}
-}
+# # 私人建造 农业和牧场
+# zw_trigger_autonom_investment_agro = {
+# 	my_trigger_alloc_build = yes
+# 	# player's state
+# 	trigger_if = {
+# 		limit = {
+# 			owner = { is_player = yes }
+# 		}
+# 		# case 1: domestic investment
+# 		trigger_if = {
+# 			limit = {
+# 				owner = scope:investor_country
+# 			}
+# 			# trigger 1: incorporation
+# 			trigger_if = {
+# 				limit = {
+# 					owner = { has_variable = zw_var_auto_invest_incorporated_states_only }
+# 				}
+# 				is_incorporated = yes
+# 			}
+# 			# trigger 2: existing buildings only (manufacture, agro, resource, infrastructure)
+# 			trigger_if = {
+# 				limit = {
+# 					owner = { has_variable = zw_var_auto_invest_existing_buildings_only_agro }
+# 				}
+# 				# trigger 2.1 existing building types
+# 				b:$building_1$ ?= {
+# 					# trigger 2.2 existing building profit conditions
+# 					zw_trigger_profit_conditions = yes
+# 				}
+# 			}
+# 			# trigger 3: restricted building type (unused)
+# 			# trigger 4: decree
+# 			NOT = { has_decree = decree_zw_no_state_private_investment }
+# 		}
+# 		# case 2: investment from abroad (industry, agriculture)
+# 		trigger_else_if = {
+# 			limit = {
+# 				owner = { has_variable = zw_var_intervene_investment_from_abroad_agriculture }
+# 			}
+# 			has_building = $building_1$
+# 		}
+# 	}
+# 	# case 3: investment in foreign countries (manufacture, agro, resource, infrastructure)
+# 	trigger_if = {
+# 		limit = {
+# 			scope:investor_country = {
+# 				has_variable = zw_var_no_foreign_private_investment_agro
+# 			}
+# 		}
+# 		owner = scope:investor_country
+# 	}
+# }
 
-# 私人建造 资源产业
-zw_trigger_autonom_investment_resource = {
-	my_trigger_alloc_build = yes
-	# player's state
-	trigger_if = {
-		limit = {
-			owner = { is_player = yes }
-		}
-		# case 1: domestic investment
-		trigger_if = {
-			limit = {
-				owner = scope:investor_country
-			}
-			# trigger 1: incorporation
-			trigger_if = {
-				limit = {
-					owner = { has_variable = zw_var_auto_invest_incorporated_states_only }
-				}
-				is_incorporated = yes
-			}
-			# trigger 2: existing buildings only (manufacture, agro, resource, infrastructure)
-			trigger_if = {
-				limit = {
-					owner = { has_variable = zw_var_auto_invest_existing_buildings_only_resource }
-				}
-				# trigger 2.1 existing building types
-				b:$building_1$ ?= {
-					# trigger 2.2 existing building profit conditions
-					zw_trigger_profit_conditions = yes
-				}
-			}
-			# trigger 3: restricted building type (unused)
-			# trigger 4: decree
-			NOT = { has_decree = decree_zw_no_state_private_investment }
-		}
-		# case 2: investment from abroad (industry, agriculture) (unused)
-	}
-	# case 3: investment in foreign countries (manufacture, agro, resource, infrastructure)
-	trigger_if = {
-		limit = {
-			scope:investor_country = {
-				has_variable = zw_var_no_foreign_private_investment_resource
-			}
-		}
-		owner = scope:investor_country
-	}
-}
+# # 私人建造 资源产业
+# zw_trigger_autonom_investment_resource = {
+# 	my_trigger_alloc_build = yes
+# 	# player's state
+# 	trigger_if = {
+# 		limit = {
+# 			owner = { is_player = yes }
+# 		}
+# 		# case 1: domestic investment
+# 		trigger_if = {
+# 			limit = {
+# 				owner = scope:investor_country
+# 			}
+# 			# trigger 1: incorporation
+# 			trigger_if = {
+# 				limit = {
+# 					owner = { has_variable = zw_var_auto_invest_incorporated_states_only }
+# 				}
+# 				is_incorporated = yes
+# 			}
+# 			# trigger 2: existing buildings only (manufacture, agro, resource, infrastructure)
+# 			trigger_if = {
+# 				limit = {
+# 					owner = { has_variable = zw_var_auto_invest_existing_buildings_only_resource }
+# 				}
+# 				# trigger 2.1 existing building types
+# 				b:$building_1$ ?= {
+# 					# trigger 2.2 existing building profit conditions
+# 					zw_trigger_profit_conditions = yes
+# 				}
+# 			}
+# 			# trigger 3: restricted building type (unused)
+# 			# trigger 4: decree
+# 			NOT = { has_decree = decree_zw_no_state_private_investment }
+# 		}
+# 		# case 2: investment from abroad (industry, agriculture) (unused)
+# 	}
+# 	# case 3: investment in foreign countries (manufacture, agro, resource, infrastructure)
+# 	trigger_if = {
+# 		limit = {
+# 			scope:investor_country = {
+# 				has_variable = zw_var_no_foreign_private_investment_resource
+# 			}
+# 		}
+# 		owner = scope:investor_country
+# 	}
+# }
 
-# 私人建造 私有基础设施
-zw_trigger_autonom_investment_infrastructure = {
-	my_trigger_alloc_build = yes
-	# player's state
-	trigger_if = {
-		limit = {
-			owner = { is_player = yes }
-		}
-		# case 1: domestic investment
-		trigger_if = {
-			limit = {
-				owner = scope:investor_country
-			}
-			# trigger 1: incorporation
-			trigger_if = {
-				limit = {
-					owner = { has_variable = zw_var_auto_invest_incorporated_states_only }
-				}
-				is_incorporated = yes
-			}
-			# trigger 2: existing buildings only (manufacture, agro, resource, infrastructure)
-			trigger_if = {
-				limit = {
-					owner = { has_variable = zw_var_auto_invest_existing_buildings_only_infrastructure }
-				}
-				# trigger 2.1 existing building types
-				b:$building_1$ ?= {
-					# trigger 2.2 existing building profit conditions
-					zw_trigger_profit_conditions = yes
-				}
-			}
-			# trigger 3: restricted building type (unused)
-			# trigger 4: decree
-			NOT = { has_decree = decree_zw_no_state_private_investment }
-		}
-		# case 2: investment from abroad (industry, agriculture)
-		trigger_else_if = {
-			limit = {
-				owner = { has_variable = zw_var_intervene_investment_from_abroad_industry }
-			}
-			has_building = $building_1$
-		}
-	}
-	# case 3: investment in foreign countries (manufacture, agro, resource, infrastructure)
-	trigger_if = {
-		limit = { 
-			scope:investor_country = {
-				has_variable = zw_var_no_foreign_private_investment_infrastructure
-			}
-		}
-		owner = scope:investor_country
-	}
-}
+# # 私人建造 私有基础设施
+# zw_trigger_autonom_investment_infrastructure = {
+# 	my_trigger_alloc_build = yes
+# 	# player's state
+# 	trigger_if = {
+# 		limit = {
+# 			owner = { is_player = yes }
+# 		}
+# 		# case 1: domestic investment
+# 		trigger_if = {
+# 			limit = {
+# 				owner = scope:investor_country
+# 			}
+# 			# trigger 1: incorporation
+# 			trigger_if = {
+# 				limit = {
+# 					owner = { has_variable = zw_var_auto_invest_incorporated_states_only }
+# 				}
+# 				is_incorporated = yes
+# 			}
+# 			# trigger 2: existing buildings only (manufacture, agro, resource, infrastructure)
+# 			trigger_if = {
+# 				limit = {
+# 					owner = { has_variable = zw_var_auto_invest_existing_buildings_only_infrastructure }
+# 				}
+# 				# trigger 2.1 existing building types
+# 				b:$building_1$ ?= {
+# 					# trigger 2.2 existing building profit conditions
+# 					zw_trigger_profit_conditions = yes
+# 				}
+# 			}
+# 			# trigger 3: restricted building type (unused)
+# 			# trigger 4: decree
+# 			NOT = { has_decree = decree_zw_no_state_private_investment }
+# 		}
+# 		# case 2: investment from abroad (industry, agriculture)
+# 		trigger_else_if = {
+# 			limit = {
+# 				owner = { has_variable = zw_var_intervene_investment_from_abroad_industry }
+# 			}
+# 			has_building = $building_1$
+# 		}
+# 	}
+# 	# case 3: investment in foreign countries (manufacture, agro, resource, infrastructure)
+# 	trigger_if = {
+# 		limit = { 
+# 			scope:investor_country = {
+# 				has_variable = zw_var_no_foreign_private_investment_infrastructure
+# 			}
+# 		}
+# 		owner = scope:investor_country
+# 	}
+# }
 
-# 私人建造 铁路
-zw_trigger_autonom_investment_infrastructure_railway = {
-	my_trigger_alloc_build = yes
-	# player's state
-	trigger_if = {
-		limit = {
-			owner = { is_player = yes }
-		}
-		# case 1: domestic investment
-		trigger_if = {
-			limit = {
-				owner = scope:investor_country
-			}
-			# trigger 1: incorporation
-			trigger_if = {
-				limit = {
-					owner = { has_variable = zw_var_auto_invest_incorporated_states_only }
-				}
-				is_incorporated = yes
-			}
-			# trigger 2: existing buildings only (manufacture, agro, resource, infrastructure)
-			trigger_if = {
-				limit = {
-					owner = { has_variable = zw_var_auto_invest_existing_buildings_only_infrastructure }
-				}
-				# trigger 2.1 existing building types
-				b:$building_1$ ?= {
-					# trigger 2.2 existing building profit conditions
-					zw_trigger_profit_conditions_railway = yes
-				}
-			}
-			# trigger 3: restricted building type (unused)
-			# trigger 4: decree
-			NOT = { has_decree = decree_zw_no_state_private_investment }
-		}
-		# case 2: investment from abroad (industry, agriculture)
-		trigger_else_if = {
-			limit = {
-				owner = { has_variable = zw_var_intervene_investment_from_abroad_industry }
-			}
-			has_building = $building_1$
-		}
-	}
-	# case 3: investment in foreign countries (manufacture, agro, resource, infrastructure)
-	trigger_if = {
-		limit = {
-			scope:investor_country = {
-				has_variable = zw_var_no_foreign_private_investment_infrastructure
-			}
-		}
-		owner = scope:investor_country
-	}
-}
+# # 私人建造 铁路
+# zw_trigger_autonom_investment_infrastructure_railway = {
+# 	my_trigger_alloc_build = yes
+# 	# player's state
+# 	trigger_if = {
+# 		limit = {
+# 			owner = { is_player = yes }
+# 		}
+# 		# case 1: domestic investment
+# 		trigger_if = {
+# 			limit = {
+# 				owner = scope:investor_country
+# 			}
+# 			# trigger 1: incorporation
+# 			trigger_if = {
+# 				limit = {
+# 					owner = { has_variable = zw_var_auto_invest_incorporated_states_only }
+# 				}
+# 				is_incorporated = yes
+# 			}
+# 			# trigger 2: existing buildings only (manufacture, agro, resource, infrastructure)
+# 			trigger_if = {
+# 				limit = {
+# 					owner = { has_variable = zw_var_auto_invest_existing_buildings_only_infrastructure }
+# 				}
+# 				# trigger 2.1 existing building types
+# 				b:$building_1$ ?= {
+# 					# trigger 2.2 existing building profit conditions
+# 					zw_trigger_profit_conditions_railway = yes
+# 				}
+# 			}
+# 			# trigger 3: restricted building type (unused)
+# 			# trigger 4: decree
+# 			NOT = { has_decree = decree_zw_no_state_private_investment }
+# 		}
+# 		# case 2: investment from abroad (industry, agriculture)
+# 		trigger_else_if = {
+# 			limit = {
+# 				owner = { has_variable = zw_var_intervene_investment_from_abroad_industry }
+# 			}
+# 			has_building = $building_1$
+# 		}
+# 	}
+# 	# case 3: investment in foreign countries (manufacture, agro, resource, infrastructure)
+# 	trigger_if = {
+# 		limit = {
+# 			scope:investor_country = {
+# 				has_variable = zw_var_no_foreign_private_investment_infrastructure
+# 			}
+# 		}
+# 		owner = scope:investor_country
+# 	}
+# }
 
-# 自动拓展
-zw_trigger_auto_expand_building_arms_industry = {
-	my_trigger_alloc_build = yes
-	occupancy >= 0.95
-	OR = {
-		is_subsidized = yes
-		weekly_profit > 0
-	}
-	trigger_if = {
-		limit = {
-			owner = {
-				any_military_formation = { is_mobilized = yes }
-			}
-		}
-		market = {
-			mg:small_arms = { market_goods_pricier >= 0.25 }
-		}
-	}
-	trigger_else = {
-		market = {
-			mg:small_arms = { market_goods_pricier > 0 }
-		}
-	}
-	state.market_access >= 1
-}
+# # 自动拓展
+# zw_trigger_auto_expand_building_arms_industry = {
+# 	my_trigger_alloc_build = yes
+# 	occupancy >= 0.95
+# 	OR = {
+# 		is_subsidized = yes
+# 		weekly_profit > 0
+# 	}
+# 	trigger_if = {
+# 		limit = {
+# 			owner = {
+# 				any_military_formation = { is_mobilized = yes }
+# 			}
+# 		}
+# 		market = {
+# 			mg:small_arms = { market_goods_pricier >= 0.25 }
+# 		}
+# 	}
+# 	trigger_else = {
+# 		market = {
+# 			mg:small_arms = { market_goods_pricier > 0 }
+# 		}
+# 	}
+# 	state.market_access >= 1
+# }
 
-# 自动拓展
-zw_trigger_auto_expand_building_artillery_foundry = {
-	my_trigger_alloc_build = yes
-	occupancy >= 0.95
-	OR = {
-		is_subsidized = yes
-		weekly_profit > 0
-	}
-	trigger_if = {
-		limit = {
-			owner = {
-				any_military_formation = { is_mobilized = yes }
-			}
-		}
-		market = {
-			mg:artillery = { market_goods_pricier >= 0.25 }
-		}
-	}
-	trigger_else = {
-		market = {
-			mg:artillery = { market_goods_pricier > 0 }
-		}
-	}
-	state.market_access >= 1
-}
+# # 自动拓展
+# zw_trigger_auto_expand_building_artillery_foundry = {
+# 	my_trigger_alloc_build = yes
+# 	occupancy >= 0.95
+# 	OR = {
+# 		is_subsidized = yes
+# 		weekly_profit > 0
+# 	}
+# 	trigger_if = {
+# 		limit = {
+# 			owner = {
+# 				any_military_formation = { is_mobilized = yes }
+# 			}
+# 		}
+# 		market = {
+# 			mg:artillery = { market_goods_pricier >= 0.25 }
+# 		}
+# 	}
+# 	trigger_else = {
+# 		market = {
+# 			mg:artillery = { market_goods_pricier > 0 }
+# 		}
+# 	}
+# 	state.market_access >= 1
+# }
 
-# 自动拓展
-zw_trigger_auto_expand_building_munition_plant = {
-	my_trigger_alloc_build = yes
-	occupancy >= 0.95
-	OR = {
-		is_subsidized = yes
-		weekly_profit > 0
-	}
-	trigger_if = {
-		limit = {
-			owner = {
-				any_military_formation = { is_mobilized = yes }
-			}
-		}
-		market = {
-			mg:ammunition = { market_goods_pricier >= 0.25 }
-		}
-	}
-	trigger_else = {
-		market = {
-			mg:ammunition = { market_goods_pricier > 0 }
-		}
-	}
-	state.market_access >= 1
-}
+# # 自动拓展
+# zw_trigger_auto_expand_building_munition_plant = {
+# 	my_trigger_alloc_build = yes
+# 	occupancy >= 0.95
+# 	OR = {
+# 		is_subsidized = yes
+# 		weekly_profit > 0
+# 	}
+# 	trigger_if = {
+# 		limit = {
+# 			owner = {
+# 				any_military_formation = { is_mobilized = yes }
+# 			}
+# 		}
+# 		market = {
+# 			mg:ammunition = { market_goods_pricier >= 0.25 }
+# 		}
+# 	}
+# 	trigger_else = {
+# 		market = {
+# 			mg:ammunition = { market_goods_pricier > 0 }
+# 		}
+# 	}
+# 	state.market_access >= 1
+# }

@@ -52,9 +52,10 @@ cheat_吞并_附庸 = {
 			is_subject_of = root
 			is_diplomatic_play_committed_participant = no
 			OR = {
-				is_subject_type = subject_type_vassal	# 附庸国
-				is_subject_type = subject_type_puppet	# 傀儡国
-				is_subject_type = subject_type_colony	# 殖民领
+				is_subject_type = subject_type_vassal		# 附庸国
+				is_subject_type = subject_type_puppet		# 傀儡国
+				is_subject_type = subject_type_colony		# 殖民领
+				is_subject_type = subject_type_crown_land	# 王室领地
 			}
 		}
 	}
@@ -114,7 +115,7 @@ cheat_转让_附庸 = {
 	show_effect_in_tooltip = no
 
 	groups = {
-		overlord
+		general
 	}
 	potential = {
 		is_player = yes

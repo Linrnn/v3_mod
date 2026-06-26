@@ -8,7 +8,7 @@ NEconomy = {
 
 	PRICE_RANGE = 0.999											# 商品的最小价格为基数*（1-x），最大价格为基数*[1+x），x锁定为[0-1]
 	# BUY_SELL_DIFF_AT_MAX_FACTOR = 10							# 物价供需范围修改为x倍（原版2倍）
-	TRADE_ROUTE_MAX_LEVEL = 1000								# 贸易路线最高等级
+	# TRADE_ROUTE_MAX_LEVEL = 1000								# 贸易路线最高等级
 
 	# BUILDING_PROFIT_TARGET_TO_RAISE_WAGES = 0.5				# 利润达到（原版0.3）会给工人涨薪
 	# BUILDING_PROFIT_TARGET_TO_LOWER_WAGES = 0.05				# 如果利润率达到或低于此水平，考虑出于SoL或就业原因降低工资（原版0.15），使用 BUILDING_WEEKS_BETWEEN_PAY_CHANGES
@@ -19,10 +19,10 @@ NEconomy = {
 	# MIN_RAISE_TO_HIRE = 0.2									# 跳槽需要的涨薪幅度（原版0.1）
 	# MAX_WAGE_STEP_CHANGE = 0.01					   	 		# 工资率每周最多变化幅度（原版0.1）
 
-	COUNTRY_GDP_MODIFIER_MAX_MULTIPLIER = 200000000				# GDP铸币税取消上限，1.3版本蠢驴把GDP铸币税的上限砍到了200k，即GDP到200M铸币税就不再增长了。本mod将GDP乘数上限调整到200B，约等于取消了铸币税的上限设定。
+	# COUNTRY_GDP_MODIFIER_MAX_MULTIPLIER = 200000000			# GDP铸币税取消上限，1.3版本蠢驴把GDP铸币税的上限砍到了200k，即GDP到200M铸币税就不再增长了。本mod将GDP乘数上限调整到200B，约等于取消了铸币税的上限设定。
 
-	COMPANY_ON_ESTABLISH_COOLDOWN_MONTHS = 1					# 建立公司X个月后，才能解散公司
-	COMPANY_ON_DISBAND_COOLDOWN_MONTHS = 1						# 解散公司X个月后，才能重建公司
+	# COMPANY_ON_ESTABLISH_COOLDOWN_MONTHS = 1					# 建立公司X个月后，才能解散公司
+	# COMPANY_ON_DISBAND_COOLDOWN_MONTHS = 1					# 解散公司X个月后，才能重建公司
 }
 
 # NMilitary = {
@@ -66,13 +66,13 @@ NDiplomacy = {
 # 	POP_GROWTH_SOL_CAP = 15										# 生活水平等于x，人口增长最快
 # 	POP_GROWTH_SOL_EQUILIBRIUM = 25								# 生活水平大于x，人口开始减少
 
-# 	# MIGRATION_MAX_EMIGRATION_AS_POPULATION_FRACTION = 0.01		# 每周移民的上限被限制在一个州人口的这一部分
+# 	# MIGRATION_MAX_EMIGRATION_AS_POPULATION_FRACTION = 0.01	# 每周移民的上限被限制在一个州人口的这一部分
 # }
 
-NCharacters = {
-	RECRUIT_COMMANDER_NUM_OPTIONS = 5							# 将领候选人
-	RECRUIT_COMMANDER_POOL_SIZE = 10							# 将领候选池
-}
+# NCharacters = {
+# 	RECRUIT_COMMANDER_NUM_OPTIONS = 5							# 将领候选人
+# 	RECRUIT_COMMANDER_POOL_SIZE = 10							# 将领候选池
+# }
 
 # NPowerBlocs = {
 # 	MAX_PRINCIPLES = 12											# 最大原则数量

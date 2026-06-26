@@ -6,111 +6,302 @@ my_cheat.1 = {
 	placement = ROOT
 	duration = 0
 	title = 作弊事件
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+	event_image = {
+		video = "europenorthamerica_springtime_of_nations"
+	}
 
-	option = {
-		name = 强制_计划经济
-		every_country = {
-			if = {
-				limit = {
-					this = root
-				}
-				my_activate_law = {
-					my_law = law_command_economy
+	option = { # 修正
+		name = 修正
+		if = {
+			limit = {
+				NOT = {
+					has_modifier = my_cheat_modifier
 				}
 			}
+			add_modifier = my_cheat_modifier
+		}
+		trigger_event = {
+			id = my_cheat.1
+			days = 0
+			popup = yes
 		}
 		ai_chance = {
 			base = 0
 		}
 	}
 
-	option = {
-		name = 强制_禁止工业化
-		every_country = {
-			if = {
-				limit = {
-					is_subject_of = root
-				}
-				my_activate_law = {
-					my_law = law_industry_banned
-				}
+	option = { # 转移 投资池
+		name = 转移_投资池
+		if = {
+			limit = {
+				investment_pool > 1000000
 			}
+			add_investment_pool = -1000000
+			add_treasury = 1000000
+		}
+		trigger_event = {
+			id = my_cheat.1
+			days = 0
+			popup = yes
 		}
 		ai_chance = {
 			base = 0
 		}
-	}	
+	}
 
-	option = {
+	option = { # 移除 拜上帝会
 		name = 移除_拜上帝会
 		every_scope_state  = {
 			my_remove_modifier = {
 				my_modifier = god_worshippers
 			}
 		}
+		trigger_event = {
+			id = my_cheat.1
+			days = 0
+			popup = yes
+		}
 		ai_chance = {
 			base = 0
 		}
 	}
 
-	option = {
-		name = 认可_附庸
-		every_country = {
-			if = {
-				limit = {
-					is_subject_of = root
-				}
-				my_set_country_type = {
-					my_country_type = recognized
+	option = { # 立法 推进
+		name = 立法_推进
+		if = {
+			limit = {
+				enacting_any_law = yes	# 正在立法
+			}
+			when_taken = {
+				add_enactment_modifier = {
+					name = my_cheat_law_modifier
 				}
 			}
 		}
+		trigger_event = {
+			id = my_cheat.1
+			days = 0
+			popup = yes
+		}
 		ai_chance = {
 			base = 0
 		}
 	}
 
-	option = {
-		name = 吞并_松散联邦_先
+	option = { # 移除 建筑
+		name = 移除_建筑
 		every_country = {
 			if = {
 				limit = {
-					not = {
-						this = root
+ 					NOT = {
+						THIS = ROOT
 					}
-					is_country_type = decentralized		# 松散联邦（即可殖民国家）
 				}
-				root = {
-					annex = prev
+				every_scope_state = {
+					# industry 工业
+					my_remove_building = { my_building = building_food_industry }			# 食品厂
+					my_remove_building = { my_building = building_textile_mill }			# 纺织厂
+					my_remove_building = { my_building = building_furniture_manufactory }	# 家具制造厂
+					my_remove_building = { my_building = building_glassworks }				# 玻璃厂
+					my_remove_building = { my_building = building_tooling_workshop }		# 工艺装备工坊
+					my_remove_building = { my_building = building_paper_mill }				# 造纸厂
+					my_remove_building = { my_building = building_chemical_plant }			# 肥料厂
+					my_remove_building = { my_building = building_explosives_factory }		# 炸药厂
+					my_remove_building = { my_building = building_synthetics_plant }		# 化学合成厂
+					my_remove_building = { my_building = building_steel_mill }				# 炼钢厂
+					my_remove_building = { my_building = building_motor_industry }			# 动力机械厂
+					my_remove_building = { my_building = building_shipyard }				# 造船厂
+					my_remove_building = { my_building = building_automotive_industry }		# 汽车厂
+					my_remove_building = { my_building = building_electrics_industry }		# 电子厂
+					my_remove_building = { my_building = building_arms_industry }			# 武器厂
+					my_remove_building = { my_building = building_artillery_foundry }		# 火炮铸造厂
+					my_remove_building = { my_building = building_munition_plant }			# 弹药厂
+					# agro 农业
+					my_remove_building = { my_building = building_rye_farm }				# 黑麦农场
+					my_remove_building = { my_building = building_wheat_farm }				# 小麦农场
+					my_remove_building = { my_building = building_rice_farm }				# 水稻农场
+					my_remove_building = { my_building = building_maize_farm }				# 玉米农场
+					my_remove_building = { my_building = building_millet_farm }				# 杂谷农场
+					my_remove_building = { my_building = building_livestock_ranch }			# 畜牧场
+					my_remove_building = { my_building = building_vineyard }				# 葡萄园
+					# mines 矿业
+					my_remove_building = { my_building = building_coal_mine }				# 煤矿
+					my_remove_building = { my_building = building_iron_mine }				# 铁矿
+					my_remove_building = { my_building = building_lead_mine }				# 铅矿
+					my_remove_building = { my_building = building_sulfur_mine }				# 硫矿
+					my_remove_building = { my_building = building_gold_mine }				# 金矿
+					# my_remove_building = { my_building = building_gold_field }			# 金矿场
+					# plantations 种植园
+					my_remove_building = { my_building = building_coffee_plantation }		# 咖啡种植园
+					my_remove_building = { my_building = building_cotton_plantation }		# 棉花种植园
+					my_remove_building = { my_building = building_dye_plantation }			# 染料作物种植园
+					my_remove_building = { my_building = building_opium_plantation }		# 鸦片种植园
+					my_remove_building = { my_building = building_tea_plantation }			# 茶叶种植园
+					my_remove_building = { my_building = building_tobacco_plantation }		# 烟草种植园
+					my_remove_building = { my_building = building_sugar_plantation }		# 糖料作物种植园
+					my_remove_building = { my_building = building_banana_plantation }		# 香蕉种植园
+					my_remove_building = { my_building = building_silk_plantation }			# 丝绸种植园
+					# urban_center 城镇中心
+					# my_remove_building = { my_building = building_urban_center }			# 城镇中心
+					my_remove_building = { my_building = building_art_academy }				# 艺术学院
+					my_remove_building = { my_building = building_power_plant }				# 发电厂
+					# misc_resource 杂项资源
+					my_remove_building = { my_building = building_logging_camp }			# 伐木营地
+					my_remove_building = { my_building = building_rubber_plantation }		# 橡胶种植园
+					my_remove_building = { my_building = building_fishing_wharf }			# 渔业码头
+					my_remove_building = { my_building = building_whaling_station }			# 捕鲸站
+					my_remove_building = { my_building = building_oil_rig }					# 油井
+					# private_infrastructure 私人基础设施
+					# my_remove_building = { my_building = building_port }					# 港口
+					my_remove_building = { my_building = building_railway }					# 铁路
+					my_remove_building = { my_building = building_trade_center }			# 贸易中心
+					# my_remove_building = { my_building = building_manor_house }			# 庄园宅邸
+					# my_remove_building = { my_building = building_financial_district }	# 金融区
 				}
 			}
+		}
+		trigger_event = {
+			id = my_cheat.1
+			days = 0
+			popup = yes
 		}
 		ai_chance = {
 			base = 0
 		}
 	}
 
-	option = {
+	option = { # 重置 生育法律
+		name = 重置_生育法律
+		my_activate_law = {
+			my_law = law_no_childbirth_policy
+		}
+		trigger_event = {
+			id = my_cheat.1
+			days = 0
+			popup = yes
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+
+	option = { # 减少 独立倾向
+		name = 减少_独立倾向
+		every_direct_subject = { # 直接附庸
+		# every_subject_of_subject 直接附庸 + 间接附庸
+			if = {
+				limit = {
+					liberty_desire > 25
+				}
+				add_liberty_desire = -25
+			}
+		}
+		trigger_event = {
+			id = my_cheat.1
+			days = 0
+			popup = yes
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+
+	option = { # 认可 附庸
+		name = 认可_附庸
+		every_direct_subject = { # 直接附庸
+		# every_subject_of_subject 直接附庸 + 间接附庸
+			my_set_country_type = {
+				my_country_type = recognized
+			}
+		}
+		trigger_event = {
+			id = my_cheat.1
+			days = 0
+			popup = yes
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+
+	option = { # 吞并 松散联邦
+		name = 吞并_松散联邦_先
+		every_decentralized_country = {
+			ROOT = {
+				annex = PREV
+			}
+		}
+		trigger_event = {
+			id = my_cheat.1
+			days = 0
+			popup = yes
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+
+	option = { # 吞并 普通国家
 		name = 吞并_普通国家_后
 		every_country = {
 			if = {
 				limit = {
-					not = {
-						this = root
-						is_country_type = decentralized
+					is_subject = no
+					NOT = {
+						this = ROOT
+						is_country_type = decentralized		# 松散联邦（即可殖民国家）
 					}
 				}
-				root = {
-					annex = prev
+				ROOT = {
+					annex = PREV
 				}
 			}
+		}
+		trigger_event = {
+			id = my_cheat.1
+			days = 0
+			popup = yes
 		}
 		ai_chance = {
 			base = 0
 		}
 	}
 
-	option = {
+	option = { # 理想 版图
+		name = 理想_版图
+		# 非洲 african_strategic_regions
+		my_annex_owner_effext = { strategic_region_value = sr:region_nile_basin			country_value = c:EGY 	enable_set_state_owner = yes }	# 尼罗河流域	埃及
+		my_annex_owner_effext = { strategic_region_value = sr:region_north_africa		country_value = c:TUN 	enable_set_state_owner = yes }	# 北非			突尼斯
+		my_annex_owner_effext = { strategic_region_value = sr:region_west_africa		country_value = c:SOK	enable_set_state_owner = yes }	# 西非			索科托
+		my_annex_owner_effext = { strategic_region_value = sr:region_equatorial_africa	country_value = c:KON	enable_set_state_owner = yes }	# 赤道非洲		刚果
+		my_annex_owner_effext = { strategic_region_value = sr:region_southern_africa	country_value = c:SAF	enable_set_state_owner = yes }	# 南非			开普（南非）
+		my_annex_owner_effext = { strategic_region_value = sr:region_east_africa		country_value = c:SHW	enable_set_state_owner = yes }	# 东非			绍阿（埃塞俄比亚）
+		# 东亚 east_asia_strategic_regions
+		my_annex_owner_effext = { strategic_region_value = sr:region_indochina			country_value = c:SIA	enable_set_state_owner = yes }	# 印度支那		暹罗（泰国）
+		my_annex_owner_effext = { strategic_region_value = sr:region_indonesia			country_value = c:DEI	enable_set_state_owner = yes }	# 印度尼西亚	东印度
+		my_annex_owner_effext = { strategic_region_value = sr:region_south_china		country_value = c:CHI	enable_set_state_owner = yes }	# 华南			大清（中国）
+		my_annex_owner_effext = { strategic_region_value = sr:region_north_china		country_value = c:CHI	enable_set_state_owner = yes }	# 华北			大清（中国）
+		my_release_country    = { tag_value = SIB  										origin_value = RUS  	capital_value = STATE_TOMSK  }	# 创建国家		西伯利亚
+		my_annex_owner_effext = { strategic_region_value = sr:region_siberia			country_value = c:SIB	enable_set_state_owner = yes }	# 西伯利亚		西伯利亚
+		my_owner_effext =       { country_value = c:SIB									change_state_value = s:STATE_CHUKOTKA                }	# 楚科奇		西伯利亚
+		my_owner_effext =       { country_value = c:SIB									change_state_value = s:STATE_KAMCHATKA               }	# 勘察加		西伯利亚
+		my_owner_effext =       { country_value = c:SIB									change_state_value = s:STATE_OKHOTSK                 }	# 霍尔次克		西伯利亚
+		my_annex_owner_effext = { strategic_region_value = sr:region_northeast_asia		country_value = c:JAP	enable_set_state_owner = no  }	# 东北亚		幕府（日本）
+		my_owner_effext =       { country_value = c:JAP									change_state_value = s:STATE_SAKHALIN                }	# 哈萨林		幕府（日本）
+		my_annex_owner_effext = { strategic_region_value = sr:region_oceania			country_value = c:NSW	enable_set_state_owner = yes }	# 大洋洲		新南威尔士（澳大利亚）
+		# 结束
+		trigger_event = {
+			id = my_cheat.1
+			days = 0
+			popup = yes
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+
+	option = { # 退出
 		name = 退出
 		default_option = yes
 		ai_chance = {
@@ -118,17 +309,61 @@ my_cheat.1 = {
 		}
 	}
 
-	# option = {
-	# 	name = 重置_生育法律
-	# 	my_activate_law = {
-	# 		my_law = law_no_childbirth_policy
+	# option = { # 意识形态
+	# 	name = 意识形态
+	# 	every_interest_group = {
+	# 		add_ideology = ideology_my_childbirth_policy		# 增加意识形态
+	# 	}
+	# 	trigger_event = {
+	# 		id = my_cheat.1
+	# 		days = 0
+	# 		popup = yes
 	# 	}
 	# 	ai_chance = {
 	# 		base = 0
 	# 	}
 	# }
 
-	# option = {
+	# option = { # 禁止工业化
+	# 	name = 强制_禁止工业化
+	# 	every_direct_subject = {
+	# 		my_activate_law = {
+	# 			my_law = law_industry_banned
+	# 		}
+	# 	}
+	# 	trigger_event = {
+	# 		id = my_cheat.1
+	# 		days = 0
+	# 		popup = yes
+	# 	}
+	# 	ai_chance = {
+	# 		base = 0
+	# 	}
+	# }	
+
+	# option = { # 计划经济
+	# 	name = 强制_计划经济
+	# 	every_country = {
+	# 		if = {
+	# 			limit = {
+	# 				this = root
+	# 			}
+	# 			my_activate_law = {
+	# 				my_law = law_command_economy
+	# 			}
+	# 		}
+	# 	}
+	# 	trigger_event = {
+	# 		id = my_cheat.1
+	# 		days = 0
+	# 		popup = yes
+	# 	}
+	# 	ai_chance = {
+	# 		base = 0
+	# 	}
+	# }
+
+	# option = { # 计划生育
 	# 	name = 强制_计划生育
 	# 	every_country = {
 	# 		if = {
@@ -142,110 +377,10 @@ my_cheat.1 = {
 	# 			}
 	# 		}
 	# 	}
-	# 	ai_chance = {
-	# 		base = 0
-	# 	}
-	# }
-
-	# option = {
-	# 	name = 拆除_建筑
-	# 	every_country = {
-	# 		if = {
-	# 			limit = {
-	# 				not = {
-	# 					this = root
-	# 				}
-	# 			}
-	# 			every_scope_state = {
-	# 				# bg_light_industry 轻工业
-	# 				my_remove_building = { my_building = building_food_industry }				# 食品厂
-	# 				my_remove_building = { my_building = building_textile_mills }				# 纺织厂
-	# 				my_remove_building = { my_building = building_furniture_manufacturies }		# 家具厂
-	# 				my_remove_building = { my_building = building_glassworks }					# 玻璃厂
-	# 				my_remove_building = { my_building = building_tooling_workshops }			# 工艺装备工坊
-	# 				my_remove_building = { my_building = building_paper_mills }					# 造纸厂
-
-	# 				# bg_heavy_industry 重工业
-	# 				my_remove_building = { my_building = building_chemical_plants }				# 肥料厂
-	# 				my_remove_building = { my_building = building_explosives_factory }			# 炸药厂
-	# 				my_remove_building = { my_building = building_synthetics_plants }			# 化学合成厂
-	# 				my_remove_building = { my_building = building_steel_mills }					# 炼钢厂
-	# 				my_remove_building = { my_building = building_motor_industry }				# 动力机械厂
-	# 				my_remove_building = { my_building = building_shipyards }					# 造船厂
-	# 				my_remove_building = { my_building = building_military_shipyards }			# 军用造船厂
-	# 				my_remove_building = { my_building = building_war_machine_industry }		# 战争机器厂
-	# 				my_remove_building = { my_building = building_electrics_industry }			# 电子厂
-	# 				my_remove_building = { my_building = building_arms_industry }				# 武器厂
-	# 				my_remove_building = { my_building = building_artillery_foundries }			# 火炮厂
-	# 				my_remove_building = { my_building = building_munition_plants }				# 弹药厂
-
-	# 				# agro 农业建筑
-	# 				my_remove_building = { my_building = building_rye_farm }					# 黑麦农场
-	# 				my_remove_building = { my_building = building_wheat_farm }					# 小麦农场
-	# 				my_remove_building = { my_building = building_rice_farm }					# 水稻农场
-	# 				my_remove_building = { my_building = building_maize_farm }					# 玉米农场
-	# 				my_remove_building = { my_building = building_millet_farm }					# 杂谷农场
-	# 				my_remove_building = { my_building = building_livestock_ranch }				# 畜牧场
-
-	# 				# mines 矿物
-	# 				my_remove_building = { my_building = building_coal_mine }					# 煤矿
-	# 				my_remove_building = { my_building = building_iron_mine }					# 铁矿
-	# 				my_remove_building = { my_building = building_lead_mine }					# 铅矿
-	# 				my_remove_building = { my_building = building_sulfur_mine }					# 硫矿
-	# 				my_remove_building = { my_building = building_gold_mine }					# 金矿
-	# 				#my_remove_building = { my_building = building_gold_fields }				# 金矿场
-
-	# 				# plantation 种植园
-	# 				my_remove_building = { my_building = building_coffee_plantation }			# 咖啡种植园
-	# 				my_remove_building = { my_building = building_cotton_plantation }			# 棉花种植园
-	# 				my_remove_building = { my_building = building_dye_plantation }				# 染料作物种植园
-	# 				my_remove_building = { my_building = building_opium_plantation }			# 鸦片种植园
-	# 				my_remove_building = { my_building = building_tea_plantation }				# 茶叶种植园
-	# 				my_remove_building = { my_building = building_tobacco_plantation }			# 烟草种植园
-	# 				my_remove_building = { my_building = building_sugar_plantation }			# 糖料作物种植园
-	# 				my_remove_building = { my_building = building_banana_plantation }			# 香蕉种植园
-	# 				my_remove_building = { my_building = building_silk_plantation }				# 丝绸种植园
-	# 				my_remove_building = { my_building = building_vineyard_plantation }			# 葡萄园
-
-	# 				# military 军事
-	# 				my_remove_building = { my_building = building_barracks }					# 兵营
-	# 				#my_remove_building = { my_building = building_conscription_center }		# 征兵中心
-	# 				my_remove_building = { my_building = building_naval_base }					# 海军基地
-
-	# 				# urban_center 城镇中心
-	# 				#my_remove_building = { my_building = building_urban_center }				# 城镇中心
-	# 				my_remove_building = { my_building = building_arts_academy }				# 艺术学院
-	# 				my_remove_building = { my_building = building_power_plant }					# 发电厂
-
-	# 				# government 政府建筑
-	# 				my_remove_building = { my_building = building_port }						# 港口
-	# 				my_remove_building = { my_building = building_government_administration }	# 政府行政机构
-	# 				my_remove_building = { my_building = building_university }					# 大学
-	# 				#my_remove_building = { my_building = building_skyscraper }					# 摩天大楼
-
-	# 				# monuments 奇观
-
-	# 				# misc_resource 杂项资源建筑
-	# 				my_remove_building = { my_building = building_logging_camp }				# 伐木营地
-	# 				my_remove_building = { my_building = building_rubber_plantation }			# 橡胶种植园
-	# 				my_remove_building = { my_building = building_fishing_wharf }				# 渔业码头
-	# 				my_remove_building = { my_building = building_whaling_station }				# 捕鲸站
-	# 				my_remove_building = { my_building = building_oil_rig }						# 油井
-
-	# 				# canals 运河
-
-	# 				# private_infrastructure 私有基础设施
-	# 				my_remove_building = { my_building = building_railway }						# 铁路
-	# 				#my_remove_building = { my_building = building_trade_center }				# 贸易中心
-	# 				#my_remove_building = { my_building = building_manor_house }				# 庄园宅邸
-	# 				#my_remove_building = { my_building = building_financial_district }			# 金融区
-
-	# 				# subsistence 自给建筑
-
-	# 				# construction 建造
-	# 				my_remove_building = { my_building = building_construction_sector }			# 建造部门
-	# 			}
-	# 		}
+	# 	trigger_event = {
+	# 		id = my_cheat.1
+	# 		days = 0
+	# 		popup = yes
 	# 	}
 	# 	ai_chance = {
 	# 		base = 0
@@ -279,6 +414,10 @@ my_cheat.2 = {
 	placement = ROOT
 	hidden = yes
 	duration = 0
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+	event_image = {
+		video = "europenorthamerica_springtime_of_nations"
+	}
 
 	immediate = {
 		if = {
@@ -298,7 +437,10 @@ my_cheat.2 = {
 # 	type = country_event
 # 	placement = ROOT
 # 	duration = 0
-# 	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+#	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+#	event_image = {
+#		video = "europenorthamerica_springtime_of_nations"
+#	}
 # 	title = 投资池
 # 	cooldown = {
 # 		# months = 6

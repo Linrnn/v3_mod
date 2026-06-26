@@ -142,3 +142,90 @@ my_add_one_building = {
 	else_if = { limit = { $my_lv$ = 48 } create_building = { building = $my_bd$ level = 49 } }
 	else_if = { limit = { $my_lv$ = 49 } create_building = { building = $my_bd$ level = 50 } }
 }
+
+# 创建国家
+my_release_country = {
+	if = {
+		limit = {
+			NOT = {
+				exists = c:$tag_value$
+			}
+			exists = c:$origin_value$
+		}
+		c:$origin_value$ = {
+			every_scope_state = {
+				if = {
+					limit = {
+						state_region = s:$capital_value$
+					}
+					save_scope_as = $capital_value$_state
+				}
+			}
+		}
+		create_country = {
+			tag = $tag_value$
+			origin = c:$origin_value$
+			state = scope:$capital_value$_state
+		}
+	}
+}
+
+# 吞并国家 省份归属
+my_annex_owner_effext = {
+	$strategic_region_value$ = {
+		every_scope_country = {
+			if = {
+				limit = {
+					exists = $country_value$
+					THIS != $country_value$
+					NOT = {
+						THIS = {
+							is_country_type = decentralized		# 松散联邦（即可殖民国家）
+						}
+					}
+				}
+				if = {
+					limit = {
+						capital.region = $strategic_region_value$
+					}					
+					$country_value$ = {
+						annex = PREV
+					}
+				}
+				else_if = {
+					every_scope_state = {
+						if = {
+							limit = {
+								$enable_set_state_owner$ = yes
+								region = $strategic_region_value$
+							}
+							set_state_owner = $country_value$
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# 省份归属
+my_owner_effext = {
+	if = {
+		limit = {
+			exists = $country_value$
+		}
+		every_state = {
+			if = {
+				limit = {
+					state_region = $change_state_value$
+					owner = {
+						NOT = {
+							is_country_type = decentralized		# 松散联邦（即可殖民国家）
+						}
+					}
+				}
+				set_state_owner = $country_value$
+			}
+		}
+	}
+}
