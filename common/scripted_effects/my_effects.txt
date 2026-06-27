@@ -143,65 +143,159 @@ my_add_one_building = {
 	else_if = { limit = { $my_lv$ = 49 } create_building = { building = $my_bd$ level = 50 } }
 }
 
-# 创建国家
-my_release_country = {
+# 释放国家
+my_release_effect = {
 	if = {
 		limit = {
 			NOT = {
-				exists = c:$tag_value$
+				exists = c:$c_tag$
 			}
-			exists = c:$origin_value$
+			exists = $o_tag$
 		}
-		c:$origin_value$ = {
+		$o_tag$ = {
 			every_scope_state = {
 				if = {
 					limit = {
-						state_region = s:$capital_value$
+						state_region = $s_value$
 					}
-					save_scope_as = $capital_value$_state
+					save_temporary_scope_as = capital_value_state
 				}
 			}
 		}
 		create_country = {
-			tag = $tag_value$
-			origin = c:$origin_value$
-			state = scope:$capital_value$_state
+			tag = $c_tag$
+			origin = $o_tag$
+			state = scope:capital_value_state
 		}
+        clear_saved_scope = capital_value_state
 	}
 }
 
 # 吞并国家 省份归属
-my_annex_owner_effext = {
-	$strategic_region_value$ = {
-		every_scope_country = {
-			if = {
-				limit = {
-					exists = $country_value$
-					THIS != $country_value$
-					NOT = {
-						THIS = {
-							is_country_type = decentralized		# 松散联邦（即可殖民国家）
-						}
-					}
-				}
+my_annex_owner_effect = {
+	if = {
+		limit = {
+			exists = $c_tag$
+			$open_annex$ != 5
+		}
+		$sr_value$ = {
+			every_scope_country = {
 				if = {
 					limit = {
-						capital.region = $strategic_region_value$
-					}					
-					$country_value$ = {
-						annex = PREV
-					}
-				}
-				else_if = {
-					every_scope_state = {
-						if = {
-							limit = {
-								$enable_set_state_owner$ = yes
-								region = $strategic_region_value$
+						THIS != $c_tag$
+						NOT = {
+							THIS = {
+								is_country_type = decentralized		# 松散联邦（即可殖民国家）
 							}
-							set_state_owner = $country_value$
 						}
 					}
+					if = {		# 吞并 capital 在 $sr_value$ 的 country
+						limit = {
+							$open_annex$ != 0
+							OR = {
+								capital.region = $sr_value$
+								$open_annex$ = 4
+							}
+						}
+						if = {
+							limit = {
+								OR = {
+									AND = {
+										$open_annex$ = 1
+									}
+									AND = {
+										$open_annex$ = 2
+										capital.state_region = {
+											any_scope_state = {
+												owner = $c_tag$
+											}
+										}
+									}
+									AND = {
+										OR = {
+											$open_annex$ = 3
+											$open_annex$ = 4
+										}
+										any_scope_state = {
+											region = $sr_value$
+											state_region = {
+												any_scope_state = {
+													owner = $c_tag$
+												}
+											}
+										}
+									}
+								}
+							}
+							$c_tag$ = {
+								annex = PREV
+							}
+						}
+					}
+					else_if = {	# 吞并不属于自己的 state
+						limit = {
+							$open_owner_1$ != 0
+						}
+						every_scope_state = {
+							if = {
+								limit = {
+									region = $sr_value$
+								}
+								set_state_owner = $c_tag$
+							}
+						}
+					}
+					else_if = {	# 补全被其他 country 占领的 state_region
+						limit = {
+							$open_owner_2$ != 0
+						}
+						every_scope_state = {
+							owner.capital.region = {
+								save_temporary_scope_as = state_owner_capital_strategic_region
+							}
+							if = {
+								limit = {
+									state_region = {
+										any_scope_state = {
+											region = $sr_value$
+											OR = {
+												AND = {
+													$open_owner_2$ = 1
+													owner = $c_tag$
+												}
+												AND = {
+													$open_owner_2$ = 2
+													OR = {
+														owner = $c_tag$
+														owner.capital.region = $sr_value$
+													}
+												}
+												AND = {
+													$open_owner_2$ = 3
+													owner = $c_tag$
+													scope:state_owner_capital_strategic_region != $sr_value$
+												}
+											}
+										}
+									}
+								}
+								set_state_owner = $c_tag$
+							}
+        					clear_saved_scope = state_owner_capital_strategic_region
+						}
+					}
+				}
+			}
+		}
+	}
+	else_if = {					# 吞并附庸
+		limit = {
+			$open_annex$ = 5
+		}
+		$c_tag$ = {
+			every_direct_subject = { # 直接附庸
+				$c_tag$ = {
+					annex = PREV
 				}
 			}
 		}
@@ -209,23 +303,77 @@ my_annex_owner_effext = {
 }
 
 # 省份归属
-my_owner_effext = {
+my_owner_effect = {
 	if = {
 		limit = {
-			exists = $country_value$
+			exists = $c_tag$
 		}
 		every_state = {
 			if = {
 				limit = {
-					state_region = $change_state_value$
-					owner = {
-						NOT = {
+					state_region = $s_value$
+					NOT = {
+						owner = $c_tag$
+						owner = {
 							is_country_type = decentralized		# 松散联邦（即可殖民国家）
 						}
 					}
 				}
-				set_state_owner = $country_value$
+				set_state_owner = $c_tag$
 			}
+		}
+	}
+}
+
+# 吞并国家
+my_annex_effect = {
+	if = {
+		limit = {
+			exists = $annex_tag$
+			exists = $be_annex_tag$
+			$annex_tag$ != $be_annex_tag$
+		}
+		$annex_tag$ = {
+			annex = $be_annex_tag$
+		}
+	}
+}
+
+# 设置都城
+my_set_capital_effect = {
+	if = {
+		limit = {
+			exists = $c_tag$
+		}
+		$c_tag$ = {
+			if = {
+				limit = {
+					capital.state_region != s:$s_value$
+				}
+				set_capital = $s_value$
+			}
+		}
+	}
+}
+
+# 修改附庸类型
+my_change_subject_type_effect = {
+	if = {
+		limit = {
+			exists = $c_tag$
+			$c_tag$ = {
+				is_subject = yes
+				top_overlord = {
+					is_player = yes
+				}
+				NOT = {
+					is_subject_type = $st_value$
+				}
+			}
+		}
+		$c_tag$ = {
+			change_subject_type = $st_value$
+			add_treasury = 0
 		}
 	}
 }

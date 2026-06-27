@@ -1,6 +1,5 @@
 ﻿INJECT_OR_CREATE:subject_type_protectorate = {
-	# 原版值为yes
-	overlord_must_be_higher_rank = no	# 宗主国等级必须更高
+	overlord_must_be_higher_rank = no	# 宗主国等级必须更高，原版值为yes
 
 	valid_subject_ranks = {
 		# 以下mod新增

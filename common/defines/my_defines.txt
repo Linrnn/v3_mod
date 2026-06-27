@@ -34,20 +34,20 @@ NEconomy = {
 # 	CONVOY_RAIDING_STRENGTH_MULT = 0.1							# 每个车队袭击点的强度 x (num flotillas * ce offense)
 # }
 
-NDiplomacy = {
-	INFAMY_THRESHOLD_INFAMOUS = 250								# 声名狼藉阈值
-	INFAMY_THRESHOLD_NOTORIOUS = 500							# 臭名昭著阈值
-	INFAMY_THRESHOLD_PARIAH = 1000								# 国际弃民阈值
-	BASE_YEARLY_INFAMY_DECAY_RATE = 100							# 恶名衰退（每年）
+# NDiplomacy = {
+# 	INFAMY_THRESHOLD_INFAMOUS = 250								# 声名狼藉阈值
+# 	INFAMY_THRESHOLD_NOTORIOUS = 500							# 臭名昭著阈值
+# 	INFAMY_THRESHOLD_PARIAH = 1000								# 国际弃民阈值
+# 	BASE_YEARLY_INFAMY_DECAY_RATE = 100							# 恶名衰退（每年）
 
-	# DEFAULT_TRUCE_MONTHS = 6									# 停战（持续：月）
-	# DIPLOMATIC_PLAY_ESCALATION_DAILY = 5						# 外交博弈每日进度
-	# RECENTLY_CONQUERED_DURATION_MONTHS = 1					# 战争傀儡国家的停战（持续：月）
-	# RECENTLY_LIBERATED_DURATION_MONTHS = 1					# 外交释放国家的停战（持续：月）
-	# WAR_GOAL_HUMILIATION_MONTHS = 1							# 羞辱（持续：月）
-	# EXPEL_DIPLOMATS_MONTHS = 1								# 驱逐外交官（持续：月）
-	# SWAY_OFFER_OBLIGATION_MANEUVERS_COST						# 通过 country_diplomatic_play_maneuvers_add 解决
-}
+# 	DEFAULT_TRUCE_MONTHS = 6									# 停战（持续：月）
+# 	DIPLOMATIC_PLAY_ESCALATION_DAILY = 5						# 外交博弈每日进度
+# 	RECENTLY_CONQUERED_DURATION_MONTHS = 1						# 战争傀儡国家的停战（持续：月）
+# 	RECENTLY_LIBERATED_DURATION_MONTHS = 1						# 外交释放国家的停战（持续：月）
+# 	WAR_GOAL_HUMILIATION_MONTHS = 1								# 羞辱（持续：月）
+# 	EXPEL_DIPLOMATS_MONTHS = 1									# 驱逐外交官（持续：月）
+# 	SWAY_OFFER_OBLIGATION_MANEUVERS_COST						# 通过 country_diplomatic_play_maneuvers_add 解决
+# }
 
 # NWar = {
 # 	DEVASTATION_INCREASE_RATE = 0.2								# 每天，随职业水平变化，破坏率增加
@@ -69,10 +69,10 @@ NDiplomacy = {
 # 	# MIGRATION_MAX_EMIGRATION_AS_POPULATION_FRACTION = 0.01	# 每周移民的上限被限制在一个州人口的这一部分
 # }
 
-# NCharacters = {
-# 	RECRUIT_COMMANDER_NUM_OPTIONS = 5							# 将领候选人
-# 	RECRUIT_COMMANDER_POOL_SIZE = 10							# 将领候选池
-# }
+NCharacters = {
+	RECRUIT_COMMANDER_NUM_OPTIONS = 5							# 将领候选人
+	RECRUIT_COMMANDER_POOL_SIZE = 10							# 将领候选池
+}
 
 # NPowerBlocs = {
 # 	MAX_PRINCIPLES = 12											# 最大原则数量

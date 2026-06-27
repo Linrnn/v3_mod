@@ -11,8 +11,8 @@ my_cheat.1 = {
 		video = "europenorthamerica_springtime_of_nations"
 	}
 
-	option = { # 修正
-		name = 修正
+	option = { # 通用 修正
+		name = 通用_修正
 		if = {
 			limit = {
 				NOT = {
@@ -20,6 +20,45 @@ my_cheat.1 = {
 				}
 			}
 			add_modifier = my_cheat_modifier
+		}
+		trigger_event = {
+			id = my_cheat.1
+			days = 0
+			popup = yes
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+
+	option = { # 军事 修正
+		name = 军事_修正
+		if = {
+			limit = {
+				has_modifier = my_cheat_military_drill_modifier
+			}
+			remove_modifier = my_cheat_military_drill_modifier
+		}
+		else = {
+			add_modifier = my_cheat_military_drill_modifier
+		}
+		trigger_event = {
+			id = my_cheat.1
+			days = 0
+			popup = yes
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+
+	option = { # 移除 殖民宣称 CD，参考：common\diplomatic_actions\56_stake_colonial_claim.txt
+		name = 移除_殖民宣称_CD
+		if = {
+			limit = {
+				has_variable = da_stake_colonial_claim_cooldown
+			}
+			remove_variable = da_stake_colonial_claim_cooldown
 		}
 		trigger_event = {
 			id = my_cheat.1
@@ -73,10 +112,8 @@ my_cheat.1 = {
 			limit = {
 				enacting_any_law = yes	# 正在立法
 			}
-			when_taken = {
-				add_enactment_modifier = {
-					name = my_cheat_law_modifier
-				}
+			add_enactment_modifier = {
+				name = my_cheat_law_modifier
 			}
 		}
 		trigger_event = {
@@ -171,30 +208,15 @@ my_cheat.1 = {
 		}
 	}
 
-	option = { # 重置 生育法律
-		name = 重置_生育法律
-		my_activate_law = {
-			my_law = law_no_childbirth_policy
-		}
-		trigger_event = {
-			id = my_cheat.1
-			days = 0
-			popup = yes
-		}
-		ai_chance = {
-			base = 0
-		}
-	}
-
 	option = { # 减少 独立倾向
 		name = 减少_独立倾向
-		every_direct_subject = { # 直接附庸
 		# every_subject_of_subject 直接附庸 + 间接附庸
+		every_direct_subject = { # 直接附庸
 			if = {
 				limit = {
-					liberty_desire > 25
+					liberty_desire > 20
 				}
-				add_liberty_desire = -25
+				add_liberty_desire = -20
 			}
 		}
 		trigger_event = {
@@ -207,10 +229,27 @@ my_cheat.1 = {
 		}
 	}
 
+	option = { # 转成 殖民领
+		name = 转成_殖民领
+		my_change_subject_type_effect = { c_tag = c:DEI st_value = subject_type_colony } # 东印度		殖民领
+		my_change_subject_type_effect = { c_tag = c:BIC st_value = subject_type_colony } # 印度			殖民领
+		my_change_subject_type_effect = { c_tag = c:SAF st_value = subject_type_colony } # 南非			殖民领
+		my_change_subject_type_effect = { c_tag = c:ONT st_value = subject_type_colony } # 安大略		殖民领
+		my_change_subject_type_effect = { c_tag = c:NSW st_value = subject_type_colony } # 新南威尔士	殖民领
+		trigger_event = {
+			id = my_cheat.1
+			days = 0
+			popup = yes
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+
 	option = { # 认可 附庸
 		name = 认可_附庸
-		every_direct_subject = { # 直接附庸
 		# every_subject_of_subject 直接附庸 + 间接附庸
+		every_direct_subject = { # 直接附庸
 			my_set_country_type = {
 				my_country_type = recognized
 			}
@@ -271,25 +310,157 @@ my_cheat.1 = {
 	option = { # 理想 版图
 		name = 理想_版图
 		# 非洲 african_strategic_regions
-		my_annex_owner_effext = { strategic_region_value = sr:region_nile_basin			country_value = c:EGY 	enable_set_state_owner = yes }	# 尼罗河流域	埃及
-		my_annex_owner_effext = { strategic_region_value = sr:region_north_africa		country_value = c:TUN 	enable_set_state_owner = yes }	# 北非			突尼斯
-		my_annex_owner_effext = { strategic_region_value = sr:region_west_africa		country_value = c:SOK	enable_set_state_owner = yes }	# 西非			索科托
-		my_annex_owner_effext = { strategic_region_value = sr:region_equatorial_africa	country_value = c:KON	enable_set_state_owner = yes }	# 赤道非洲		刚果
-		my_annex_owner_effext = { strategic_region_value = sr:region_southern_africa	country_value = c:SAF	enable_set_state_owner = yes }	# 南非			开普（南非）
-		my_annex_owner_effext = { strategic_region_value = sr:region_east_africa		country_value = c:SHW	enable_set_state_owner = yes }	# 东非			绍阿（埃塞俄比亚）
+		my_annex_owner_effect = { sr_value = sr:region_nile_basin			c_tag = c:EGY	open_annex = 1	open_owner_1 = 1	open_owner_2 = 0 } # 尼罗河流域	埃及
+		my_annex_owner_effect = { sr_value = sr:region_north_africa			c_tag = c:TUN	open_annex = 1	open_owner_1 = 1	open_owner_2 = 0 } # 北非		突尼斯
+		my_annex_owner_effect = { sr_value = sr:region_west_africa			c_tag = c:SOK	open_annex = 1	open_owner_1 = 1	open_owner_2 = 0 } # 西非		索科托
+		my_annex_owner_effect = { sr_value = sr:region_equatorial_africa	c_tag = c:KON	open_annex = 1	open_owner_1 = 1	open_owner_2 = 0 } # 赤道非洲	刚果
+		my_annex_owner_effect = { sr_value = sr:region_southern_africa		c_tag = c:SAF	open_annex = 1	open_owner_1 = 1	open_owner_2 = 0 } # 南非		开普（南非）
+		my_annex_owner_effect = { sr_value = sr:region_east_africa			c_tag = c:SHW	open_annex = 1	open_owner_1 = 1	open_owner_2 = 0 } # 东非		绍阿（埃塞俄比亚）
 		# 东亚 east_asia_strategic_regions
-		my_annex_owner_effext = { strategic_region_value = sr:region_indochina			country_value = c:SIA	enable_set_state_owner = yes }	# 印度支那		暹罗（泰国）
-		my_annex_owner_effext = { strategic_region_value = sr:region_indonesia			country_value = c:DEI	enable_set_state_owner = yes }	# 印度尼西亚	东印度
-		my_annex_owner_effext = { strategic_region_value = sr:region_south_china		country_value = c:CHI	enable_set_state_owner = yes }	# 华南			大清（中国）
-		my_annex_owner_effext = { strategic_region_value = sr:region_north_china		country_value = c:CHI	enable_set_state_owner = yes }	# 华北			大清（中国）
-		my_release_country    = { tag_value = SIB  										origin_value = RUS  	capital_value = STATE_TOMSK  }	# 创建国家		西伯利亚
-		my_annex_owner_effext = { strategic_region_value = sr:region_siberia			country_value = c:SIB	enable_set_state_owner = yes }	# 西伯利亚		西伯利亚
-		my_owner_effext =       { country_value = c:SIB									change_state_value = s:STATE_CHUKOTKA                }	# 楚科奇		西伯利亚
-		my_owner_effext =       { country_value = c:SIB									change_state_value = s:STATE_KAMCHATKA               }	# 勘察加		西伯利亚
-		my_owner_effext =       { country_value = c:SIB									change_state_value = s:STATE_OKHOTSK                 }	# 霍尔次克		西伯利亚
-		my_annex_owner_effext = { strategic_region_value = sr:region_northeast_asia		country_value = c:JAP	enable_set_state_owner = no  }	# 东北亚		幕府（日本）
-		my_owner_effext =       { country_value = c:JAP									change_state_value = s:STATE_SAKHALIN                }	# 哈萨林		幕府（日本）
-		my_annex_owner_effext = { strategic_region_value = sr:region_oceania			country_value = c:NSW	enable_set_state_owner = yes }	# 大洋洲		新南威尔士（澳大利亚）
+		my_annex_owner_effect = { sr_value = sr:region_indochina			c_tag = c:SIA	open_annex = 1	open_owner_1 = 1	open_owner_2 = 0 } # 印度支那	暹罗
+		my_annex_owner_effect = { sr_value = sr:region_indonesia			c_tag = c:DEI	open_annex = 1	open_owner_1 = 1	open_owner_2 = 0 } # 印度尼西亚	东印度
+		# 大清
+		my_annex_owner_effect = { sr_value = sr:region_south_china			c_tag = c:CHI	open_annex = 1	open_owner_1 = 1	open_owner_2 = 0 } # 华南		大清
+		my_annex_owner_effect = { sr_value = sr:region_north_china			c_tag = c:CHI	open_annex = 1	open_owner_1 = 1	open_owner_2 = 0 } # 华北		大清
+		my_annex_owner_effect = { sr_value = sr:region_central_asia			c_tag = c:CHI	open_annex = 0	open_owner_1 = 0	open_owner_2 = 1 } # 中亚		大清
+		my_annex_owner_effect = { sr_value = sr:region_himalayas			c_tag = c:CHI	open_annex = 1	open_owner_1 = 1	open_owner_2 = 0 } # 喜马拉雅	大清
+		# 西伯利亚
+		my_release_effect     = { c_tag = SIB		o_tag = c:RUS			s_value = s:STATE_TOMSK           } # 西伯利亚		俄罗斯		托木斯克
+		my_owner_effect       = { c_tag = c:SIB								s_value = s:STATE_CHUKOTKA        } # 楚科奇		西伯利亚
+		my_owner_effect       = { c_tag = c:SIB								s_value = s:STATE_KAMCHATKA       } # 勘察加		西伯利亚
+		my_owner_effect       = { c_tag = c:SIB								s_value = s:STATE_OKHOTSK         } # 霍尔次克		西伯利亚
+		my_annex_owner_effect = { sr_value = sr:region_siberia				c_tag = c:SIB	open_annex = 1	open_owner_1 = 1	open_owner_2 = 0 } # 西伯利亚	西伯利亚
+		my_annex_owner_effect = { sr_value = sr:region_northeast_asia		c_tag = c:JAP	open_annex = 1	open_owner_1 = 0 	open_owner_2 = 2 } # 东北亚		日本幕府
+		my_annex_owner_effect = { sr_value = sr:region_oceania				c_tag = c:NSW	open_annex = 1	open_owner_1 = 1	open_owner_2 = 0 } # 大洋洲		新南威尔士（澳大利亚）
+		# 欧洲 europe_strategic_regions
+		my_annex_effect       = { annex_tag = c:NET							be_annex_tag = c:BEL              } # 尼德兰		比利时
+		my_annex_effect       = { annex_tag = c:NET							be_annex_tag = c:LUX              } # 尼德兰		卢森堡
+		my_annex_effect       = { annex_tag = c:NET							be_annex_tag = c:SWI              } # 尼德兰		瑞士
+		my_owner_effect       = { c_tag = c:FRA								s_value = s:STATE_SAVOY           } # 法兰西		萨沃亚（萨伏伊）
+		my_annex_owner_effect = { sr_value = sr:region_southern_europe		c_tag = c:FRA	open_annex = 0	open_owner_1 = 0	open_owner_2 = 1 } # 南欧		法兰西
+		# 西班牙
+		my_annex_owner_effect = { sr_value = sr:region_southern_europe		c_tag = c:SPA	open_annex = 3	open_owner_1 = 0	open_owner_2 = 3 } # 南欧		西班牙
+		my_annex_effect       = { annex_tag = c:SPA							be_annex_tag = c:POR              } # 西班牙		葡萄牙
+		# 萨丁-皮埃蒙特
+		my_annex_owner_effect = { sr_value = sr:region_southern_europe		c_tag = c:SAR	open_annex = 3	open_owner_1 = 0	open_owner_2 = 3 } # 南欧		萨丁-皮埃蒙特
+		my_annex_effect       = { annex_tag = c:SAR							be_annex_tag = c:PAR              } # 萨丁-皮埃蒙特	帕尔马
+		# my_annex_effect     = { annex_tag = c:SAR							be_annex_tag = c:MOD              } # 萨丁-皮埃蒙特	摩德纳和雷焦
+		# my_annex_effect     = { annex_tag = c:SAR							be_annex_tag = c:LUC              } # 萨丁-皮埃蒙特	卢卡
+		my_annex_effect       = { annex_tag = c:SAR							be_annex_tag = c:TUS              } # 萨丁-皮埃蒙特	托斯卡纳
+		my_annex_effect       = { annex_tag = c:SAR							be_annex_tag = c:PAP              } # 萨丁-皮埃蒙特	教宗国
+		my_annex_effect       = { annex_tag = c:SAR							be_annex_tag = c:SIC              } # 萨丁-皮埃蒙特	两西西里
+		my_owner_effect       = { c_tag = c:SAR								s_value = s:STATE_MALTA           } # 萨丁-皮埃蒙特	马耳他
+		my_owner_effect       = { c_tag = c:SAR								s_value = s:STATE_CORSICA         } # 萨丁-皮埃蒙特	科西嘉
+		my_owner_effect       = { c_tag = c:SAR								s_value = s:STATE_VENETIA         } # 萨丁-皮埃蒙特	韦内廷（威尼西亚）
+		my_owner_effect       = { c_tag = c:SAR								s_value = s:STATE_ISTRIA          } # 萨丁-皮埃蒙特	屈斯滕兰（伊斯特里亚）
+		my_owner_effect       = { c_tag = c:SAR								s_value = s:STATE_LOMBARDY        } # 萨丁-皮埃蒙特	伦巴第
+		my_owner_effect       = { c_tag = c:SAR								s_value = s:STATE_SOUTH_TYROL     } # 萨丁-皮埃蒙特	南蒂罗尔
+		# 奥地利
+		my_annex_effect       = { annex_tag = c:AUS							be_annex_tag = c:HUN              } # 奥地利		匈牙利
+		# 希腊
+		my_owner_effect       = { c_tag = c:GRE	                            s_value = s:STATE_NORTHERN_THRACE } # 希腊			北特拉基亚（北色雷斯）
+		my_owner_effect       = { c_tag = c:GRE	                            s_value = s:STATE_BULGARIA        } # 希腊			图纳（保加利亚）
+		my_owner_effect       = { c_tag = c:GRE	                            s_value = s:STATE_THESSALIA       } # 希腊			特塞利亚（色萨利）
+		my_owner_effect       = { c_tag = c:GRE	                            s_value = s:STATE_MACEDONIA       } # 希腊			马其顿
+		my_owner_effect       = { c_tag = c:GRE	                            s_value = s:STATE_WESTERN_THRACE  } # 希腊			西特拉基亚（西色雷斯）
+		my_owner_effect       = { c_tag = c:GRE	                            s_value = s:STATE_CRETE           } # 希腊			克里特
+		my_owner_effect       = { c_tag = c:GRE	                            s_value = s:STATE_EASTERN_THRACE  } # 希腊			东特拉基亚（东色雷斯）
+		my_annex_effect       = { annex_tag = c:GRE							be_annex_tag = c:ION              } # 希腊			伊奥尼亚
+		# 塞尔维亚
+		my_annex_effect       = { annex_tag = c:SER							be_annex_tag = c:CRO              } # 塞尔维亚		克罗地亚
+		my_annex_effect       = { annex_tag = c:SER							be_annex_tag = c:MON              } # 塞尔维亚		黑山
+		my_owner_effect       = { c_tag = c:SER	                            s_value = s:STATE_SLOVENIA        } # 塞尔维亚		克赖恩（斯洛文尼亚）
+		my_owner_effect       = { c_tag = c:SER	                            s_value = s:STATE_DALMATIA        } # 塞尔维亚		达尔马廷（达尔马提亚）
+		my_owner_effect       = { c_tag = c:SER	                            s_value = s:STATE_BOSNIA          } # 塞尔维亚		博斯纳（波斯尼亚）
+		my_owner_effect       = { c_tag = c:SER	                            s_value = s:STATE_SKOPIA          } # 塞尔维亚		于斯屈普（斯科皮亚）
+		my_owner_effect       = { c_tag = c:SER	                            s_value = s:STATE_KOSOVO          } # 塞尔维亚		科索沃
+		my_owner_effect       = { c_tag = c:SER	                            s_value = s:STATE_ALBANIA         } # 塞尔维亚		阿尔巴尼亚
+		# my_owner_effect     = { c_tag = c:SER	                            s_value = s:STATE_DELVIDEK        } # 塞尔维亚		德尔维德克（伏伊伏丁那）
+		# my_owner_effect     = { c_tag = c:SER	                            s_value = s:STATE_BANAT           } # 塞尔维亚		巴纳特
+		my_annex_owner_effect = { sr_value = sr:region_balkans				c_tag = c:SER	open_annex = 0	open_owner_1 = 0	open_owner_2 = 1 } # 巴尔干		塞尔维亚
+		# 瓦拉几亚
+		my_annex_owner_effect = { sr_value = sr:region_balkans				c_tag = c:WAL	open_annex = 0	open_owner_1 = 0	open_owner_2 = 1 } # 巴尔干		瓦拉几亚
+		my_owner_effect       = { c_tag = c:WAL	                            s_value = s:STATE_BUKOVINA        } # 瓦拉几亚		布科维那
+		my_owner_effect       = { c_tag = c:WAL	                            s_value = s:STATE_DOBRUDJA        } # 瓦拉几亚		多布罗加
+		my_owner_effect       = { c_tag = c:WAL	                            s_value = s:STATE_BESSARABIA      } # 瓦拉几亚		比萨拉比亚
+		my_annex_effect       = { annex_tag = c:WAL							be_annex_tag = c:MOL              } # 瓦拉几亚		摩尔达维亚
+		my_annex_effect       = { annex_tag = c:WAL							be_annex_tag = c:TRS              } # 瓦拉几亚		特兰西瓦尼亚
+		# 普鲁士
+		my_annex_effect       = { annex_tag = c:PRU							be_annex_tag = c:BAD              } # 普鲁士		巴登
+		my_annex_effect       = { annex_tag = c:PRU							be_annex_tag = c:SAX              } # 普鲁士		萨克森
+		my_annex_effect       = { annex_tag = c:PRU							be_annex_tag = c:FRM              } # 普鲁士		法兰克福
+		my_annex_effect       = { annex_tag = c:PRU							be_annex_tag = c:MEC              } # 普鲁士		梅克伦堡-什未林
+		my_annex_effect       = { annex_tag = c:PRU							be_annex_tag = c:HOL              } # 普鲁士		荷尔斯泰因
+		my_annex_owner_effect = { sr_value = sr:region_western_europe		c_tag = c:PRU	open_annex = 4	open_owner_1 = 0	open_owner_2 = 0 } # 西欧		普鲁士
+		my_annex_owner_effect = { sr_value = sr:region_central_europe		c_tag = c:PRU	open_annex = 3	open_owner_1 = 0	open_owner_2 = 0 } # 中欧		普鲁士
+		my_annex_owner_effect = { sr_value = sr:region_central_europe		c_tag = c:PRU	open_annex = 5	open_owner_1 = 0	open_owner_2 = 0 } # 中欧		普鲁士
+		my_annex_owner_effect = { sr_value = sr:region_northern_europe		c_tag = c:SWE	open_annex = 1	open_owner_1 = 0	open_owner_2 = 0 } # 北欧		瑞典
+		my_annex_owner_effect = { sr_value = sr:region_russia				c_tag = c:RUS	open_annex = 1	open_owner_1 = 0	open_owner_2 = 1 } # 俄罗斯		俄罗斯
+		# 波兰
+		my_release_effect     = { c_tag = POL		o_tag = c:RUS			s_value = s:STATE_GREATER_POLAND  } # 波兰			俄罗斯		华沙
+		my_owner_effect       = { c_tag = c:POL	                            s_value = s:STATE_BREST           } # 波兰			格罗德诺（布列斯特）
+		my_owner_effect       = { c_tag = c:POL	                            s_value = s:STATE_MINSK           } # 波兰			明斯克
+		my_owner_effect       = { c_tag = c:POL	                            s_value = s:STATE_LESSER_POLAND   } # 波兰		  	卢布林
+		my_owner_effect       = { c_tag = c:POL	                            s_value = s:STATE_MAZOVIA         } # 波兰		  	普沃茨克（马佐夫舍）
+		my_owner_effect       = { c_tag = c:POL	                            s_value = s:STATE_WEST_GALICIA    } # 波兰			西加利钦（西加利西亚）
+		my_owner_effect       = { c_tag = c:POL	                            s_value = s:STATE_EAST_GALICIA    } # 波兰			东加利钦（东加利西亚）
+		my_owner_effect       = { c_tag = c:POL	                            s_value = s:STATE_KIEV            } # 波兰			基辅
+		my_owner_effect       = { c_tag = c:POL	                            s_value = s:STATE_VOLHYNIA        } # 波兰			沃里尼亚（沃伦）
+		if = {
+			limit = { exists = c:GER }
+			my_owner_effect   = { c_tag = c:POL	                            s_value = s:STATE_WEST_PRUSSIA    } # 波兰			西普鲁士
+			my_owner_effect   = { c_tag = c:POL	                            s_value = s:STATE_EAST_PRUSSIA    } # 波兰			东普鲁士
+			my_owner_effect   = { c_tag = c:POL	                            s_value = s:STATE_POSEN           } # 波兰		 	波森（波兹南）
+		}
+		# my_owner_effect     = { c_tag = c:POL	                            s_value = s:STATE_VITEBSK         } # 波兰			维捷布斯克
+		# my_owner_effect     = { c_tag = c:POL	                            s_value = s:STATE_MOGILEV         } # 波兰			莫吉廖夫
+		# my_owner_effect     = { c_tag = c:POL	                            s_value = s:STATE_CHERNIHIV       } # 波兰			切尔尼戈夫
+		# 波罗的海
+		my_owner_effect       = { c_tag = c:UBD	                            s_value = s:STATE_VILNIUS         } # 波罗的海		维尔纳（维尔纽斯）
+		my_owner_effect       = { c_tag = c:UBD	                            s_value = s:STATE_KAUNAS          } # 波罗的海		利特瓦（立陶宛）
+		my_annex_owner_effect = { sr_value = sr:region_eastern_europe		c_tag = c:UBD	open_annex = 0	open_owner_1 = 0	open_owner_2 = 1 } # 东欧		波罗的海
+		# 北美洲 north_america_strategic_regions
+		# 上加拿大
+		my_annex_effect       = { annex_tag = c:ONT							be_annex_tag = c:ALK              } # 上加拿大		俄美公司
+		my_annex_effect       = { annex_tag = c:ONT							be_annex_tag = c:ORG              } # 上加拿大		哥伦比亚
+		my_annex_effect       = { annex_tag = c:ONT							be_annex_tag = c:NBS              } # 上加拿大		新不伦瑞克
+		my_annex_owner_effect = { sr_value = sr:region_canada				c_tag = c:ONT	open_annex = 1	open_owner_1 = 1	open_owner_2 = 0 } # 加拿大		上加拿大
+		my_annex_owner_effect = { sr_value = sr:region_atlantic_coast		c_tag = c:ONT	open_annex = 2	open_owner_1 = 0	open_owner_2 = 0 } # 大西洋海岸	上加拿大
+		# 美利坚
+		my_annex_owner_effect = { sr_value = sr:region_great_plains			c_tag = c:USA	open_annex = 1	open_owner_1 = 1	open_owner_2 = 0 } # 大平原		美利坚
+		my_owner_effect       = { c_tag = c:USA	                            s_value = s:STATE_BERMUDA         } # 美利坚		百慕大
+		my_owner_effect       = { c_tag = c:USA	                            s_value = s:STATE_CALIFORNIA      } # 美利坚		加利福尼亚
+		my_owner_effect       = { c_tag = c:USA	                            s_value = s:STATE_WASHINGTON      } # 美利坚		南哥伦比亚
+		my_owner_effect       = { c_tag = c:USA	                            s_value = s:STATE_OREGON          } # 美利坚		俄勒冈
+		my_owner_effect       = { c_tag = c:USA	                            s_value = s:STATE_IDAHO           } # 美利坚		爱达荷
+		my_owner_effect       = { c_tag = c:USA	                            s_value = s:STATE_NEVADA          } # 美利坚		内华达
+		my_owner_effect       = { c_tag = c:USA	                            s_value = s:STATE_UTAH            } # 美利坚		犹他
+		my_owner_effect       = { c_tag = c:USA	                            s_value = s:STATE_ARIZONA         } # 美利坚		亚利桑那
+		my_annex_owner_effect = { sr_value = sr:region_central_america		c_tag = c:MEX	open_annex = 0	open_owner_1 = 0	open_owner_2 = 1 } # 中美洲		墨西哥
+		# 中美洲
+		my_annex_owner_effect = { sr_value = sr:region_central_america		c_tag = c:UCA	open_annex = 2	open_owner_1 = 1	open_owner_2 = 0 } # 中美洲		中美洲
+		my_annex_effect       = { annex_tag = c:UCA							be_annex_tag = c:CUB              } # 中美洲		古巴
+		my_annex_effect       = { annex_tag = c:UCA							be_annex_tag = c:HAI              } # 中美洲		海地
+		my_annex_effect       = { annex_tag = c:UCA							be_annex_tag = c:PCO              } # 中美洲		波多黎各
+		# 南美洲 south_america_strategic_regions
+		my_annex_owner_effect = { sr_value = sr:region_brazil				c_tag = c:BRZ	open_annex = 1	open_owner_1 = 1	open_owner_2 = 0 } # 巴西		巴西
+		my_annex_owner_effect = { sr_value = sr:region_andes				c_tag = c:NPU	open_annex = 1	open_owner_1 = 1	open_owner_2 = 0 } # 安第斯		北秘鲁
+		my_annex_owner_effect = { sr_value = sr:region_la_plata				c_tag = c:ARG	open_annex = 1	open_owner_1 = 1	open_owner_2 = 0 } # 拉普拉塔	阿根廷
+		my_annex_owner_effect = { sr_value = sr:region_gran_colombia		c_tag = c:CLM	open_annex = 1	open_owner_1 = 1	open_owner_2 = 0 } # 大哥伦比亚	新格拉纳达
+		# 西亚 & 南亚 west_south_asia_strategic_regions
+		my_set_capital_effect = { c_tag = c:TUR								s_value = STATE_ANKARA            } # 奥斯曼		安卡拉
+		my_annex_owner_effect = { sr_value = sr:region_near_east			c_tag = c:TUR	open_annex = 0	open_owner_1 = 0	open_owner_2 = 1 } # 近东		奥斯曼
+		if = {
+			limit = { exists = c:ARA }
+			my_annex_owner_effect = { sr_value = sr:region_near_east		c_tag = c:TUR	open_annex = 0	open_owner_1 = 1	open_owner_2 = 0 } # 近东		奥斯曼
+		}
+		my_annex_owner_effect = { sr_value = sr:region_arabia				c_tag = c:EGY	open_annex = 1	open_owner_1 = 1	open_owner_2 = 0 } # 阿拉伯		埃及
+		my_annex_owner_effect = { sr_value = sr:region_greater_persia		c_tag = c:PER	open_annex = 1	open_owner_1 = 1	open_owner_2 = 0 } # 大波斯		波斯
+		my_annex_owner_effect = { sr_value = sr:region_central_asia			c_tag = c:UZH	open_annex = 1	open_owner_1 = 0	open_owner_2 = 1 } # 中亚		大玉兹（哈萨克）
+		# 东印度
+		my_annex_owner_effect = { sr_value = sr:region_south_india			c_tag = c:BIC	open_annex = 1	open_owner_1 = 1	open_owner_2 = 0 } # 北印度		东印度
+		my_annex_owner_effect = { sr_value = sr:region_north_india			c_tag = c:BIC	open_annex = 1	open_owner_1 = 1	open_owner_2 = 0 } # 南印度		东印度
+
 		# 结束
 		trigger_event = {
 			id = my_cheat.1
@@ -313,6 +484,55 @@ my_cheat.1 = {
 	# 	name = 意识形态
 	# 	every_interest_group = {
 	# 		add_ideology = ideology_my_childbirth_policy		# 增加意识形态
+	# 	}
+	# 	trigger_event = {
+	# 		id = my_cheat.1
+	# 		days = 0
+	# 		popup = yes
+	# 	}
+	# 	ai_chance = {
+	# 		base = 0
+	# 	}
+	# }
+
+	# option = { # 附庸 加成
+	# 	name = 附庸_加成
+	# 	if = {
+	# 		limit = {
+	# 			any_direct_subject = {
+	# 				any_interest_group = {		# 利益集团
+	# 					NOT = {
+	# 						has_modifier = my_subject_interest_group_modifier
+	# 					}
+	# 				}
+	# 			}
+	# 		}
+	# 		every_direct_subject = {
+	# 			every_interest_group = {		# 利益集团
+	# 				if = {
+	# 					limit = {
+	# 						NOT = {
+	# 							has_modifier = my_subject_interest_group_modifier
+	# 						}
+	# 					}
+	# 				}
+	# 				add_modifier = my_subject_interest_group_modifier
+	# 			}
+	# 		}
+	# 	}
+	# 	else_if = {
+	# 		limit = {
+	# 			every_direct_subject = {
+	# 				every_interest_group = {	# 利益集团
+	# 					has_modifier = my_subject_interest_group_modifier
+	# 				}
+	# 			}
+	# 		}
+	# 		every_direct_subject = {
+	# 			every_interest_group = {		# 利益集团
+	# 				remove_modifier = my_subject_interest_group_modifier
+	# 			}
+	# 		}
 	# 	}
 	# 	trigger_event = {
 	# 		id = my_cheat.1
@@ -387,7 +607,22 @@ my_cheat.1 = {
 	# 	}
 	# }
 
-	# option = {
+	# option = { # 重置 生育法律
+	# 	name = 重置_生育法律
+	# 	my_activate_law = {
+	# 		my_law = law_no_childbirth_policy
+	# 	}
+	# 	trigger_event = {
+	# 		id = my_cheat.1
+	# 		days = 0
+	# 		popup = yes
+	# 	}
+	# 	ai_chance = {
+	# 		base = 0
+	# 	}
+	# }
+
+	# option = { # 拆除 部分建筑
 	# 	name = 拆除_部分建筑
 	# 	every_country = {
 	# 		if = {
